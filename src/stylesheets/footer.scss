@@ -1,0 +1,117 @@
+.footer {
+  @include default-wrapper;
+
+  padding-bottom: 0;
+  background-color: $secondary-color;
+  color: $text-color-light;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.4;
+
+  &__menu {
+    border-top: 1px solid $text-color-light;
+    display: flex;
+
+    &-links {
+      border-right: 1px solid $text-color-light;
+      padding: 40px 110px 30px 0;
+    }
+
+    &-nav {
+      @include reset-list;
+
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      margin-bottom: 120px;
+
+      &-item::before {
+        content: '/';
+        padding: 0 3px;
+      }
+
+      &-item:first-child::before {
+        content: none;
+      }
+    }
+
+    &-copyright {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &__contact {
+    padding: 40px 120px;
+
+    &-text {
+      margin-bottom: 23px;
+      max-width: 260px;
+      line-height: 18px;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__follow {
+    padding: 40px;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  &__copyright {
+    align-self: flex-end;
+
+    &-underline {
+      display: inline-block;
+      border-bottom: 1px solid $text-color-light;
+    }
+  }
+
+  &__social {
+    @include reset-list;
+
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    margin-bottom: 22px;
+  }
+}
+
+.input-email {
+  border: none;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  background-color: $secondary-color;
+  padding: 15px 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.3);
+  min-width: 320px;
+}
+
+.submit-btn {
+  padding: 15px 33px;
+  background: #fff;
+  outline: none;
+  border: none;
+  color: $secondary-color;
+}

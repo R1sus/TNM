@@ -1,0 +1,67 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin default-wrapper {
+  padding: 30px;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin section-title {
+  text-transform: uppercase;
+  font-size: 96px;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  margin: 0 0 60px;
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+// 1024 < width < 1440
+@mixin laptop-only {
+  @media (min-width: #{$tablet-landscape-width + 1px}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+// < 1440
+@mixin laptop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+// width > 1024
+@mixin wider-than-tablet {
+  @media (min-width: #{$tablet-landscape-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-landscape-width) {
+    @content;
+  }
+}
+
+@mixin wider-than-phone {
+  @media (min-width: #{$phone-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: $phone-width) {
+    @content;
+  }
+}

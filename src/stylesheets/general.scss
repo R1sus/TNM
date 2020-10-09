@@ -1,0 +1,29 @@
+:root {
+  --swiper-pagination-color: #181818;
+}
+
+body {
+  background: $primary-color;
+  font-size: $base-font-size;
+}
+
+.wrapper {
+  padding: 30px 30px 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  @include reset-link;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+// .test {
+//   transition: transform 0.4s $easing;
+//   transform: scale(2);
+// }

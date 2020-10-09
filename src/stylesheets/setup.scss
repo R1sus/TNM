@@ -1,0 +1,22 @@
+@import "~normalize.css";
+// @import "~jquery-modal/jquery.modal.min.css";
+@import "fonts.scss";
+
+$font: 'Aktiv Grotesk Corp';
+
+html {
+  font-family: sequel, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font;
+}

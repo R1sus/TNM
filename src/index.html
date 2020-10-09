@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The New Movement</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/loading-bar.css"/>
+    <script type="text/javascript" src="javascripts/loading-bar.js"></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader__logo">
+            <img src="images/white_logo.svg" alt="tnm logo">
+        </div>
+        <div class="preloader__bar-container">
+            <div class="preloader__counter">
+                <span class="preloader__counter-count" id="progUpdate">00</span>
+                <span> &mdash; 100%</span>
+            </div>
+            <div class="preloader__bar">
+                <progress value="00" max="100" id="progBar">
+                    <span id="downloadProgress">
+                    </span>
+                </progress>
+            </div>
+        </div> 
+    </div>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html"><img src="images/black_logo.svg" alt="logo"></a>
+        </div>
+        <nav>
+            <ul class="header__navigation">
+                <li class="header__navigation-item"><a href="">About</a></li>
+                <li class="header__navigation-item"><a href="">Projects</a></li>
+                <li class="header__navigation-item"><a href="">Manifesto</a></li>
+                <li class="header__navigation-item"><a href="">Podcast</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="">Contact</a>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro__container">
+                <img src="images/black_logo.svg" alt="">
+                <div class="intro__bottom">
+                    <div class="intro__description">
+                        <div class="intro__description-quote">
+                            “We are constantly moving around 
+                            to ultimately 
+                            find stillness”
+                        </div>
+                        <div class="intro__description-author">Adi cohen</div>
+                        <div class="intro__description-position">Architect</div>
+                    </div>
+                    <div class="intro__slider-container">
+                        <div class="intro__slider-controls">
+                            <button class="intro__slider-controls-btn">
+                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.9502 10.8994L1.00045 5.94967L5.9502 0.999919" stroke="#181818"/>
+                                    <path d="M1.4502 5.89941L19.4502 5.89941" stroke="#181818"/>
+                                </svg>                                        
+                            </button>
+                            <button class="intro__slider-controls-btn">
+                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5 1L18.4497 5.94975L13.5 10.8995" stroke="#181818"/>
+                                    <path d="M18 6L0 6" stroke="#181818"/>
+                                </svg> 
+                            </button>
+                        </div>
+                        <div class="intro__slider">
+                            <div class="intro__slider-item">
+                                <img src="images/intro-slider-item1.png" alt="item-slider">
+                            </div>
+                            <div class="intro__slider-item">
+                                <img src="images/intro-slider-item1.png" alt="item-slider">
+                            </div>
+                            <div class="intro__slider-item">
+                                <img src="images/intro-slider-item1.png" alt="item-slider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="about__container">
+                <div class="about__logo">
+                    <img src="images/t-n-m-logo.svg" alt="tnm logo">
+                </div>
+                <div class="about__description">
+                    <h6 class="about__subtitle">About tnm®</h6>
+                    <h5 class="about__title">
+                        The New Movement is a new school of architecture
+                        born in an endless journey to define the home
+                        (the structure) as a sanctum for the soul.
+                    </h5>
+                    <div class="about__text">
+                        <div class="about__text-col">
+                            <p>
+                                An architecture geared to fuel the creativity and 
+                                wellbeing of its inhabitants, whether they are permanent
+                                dwellers or transient visitors searching for inspiration.
+                            </p>
+                            <p>
+                                An architecture that relies on the paradoxical
+                                tension between constant movement and desired
+                                stillness, between the human memory palette and
+                                the unique site-specific properties of the location.
+                            </p>
+                        </div>
+                        <div class="about__text-col">
+                            <p>
+                                The New Movement is based on a number of pillars that
+                                together create a holistic experience of mindfulness,
+                                wellbeing and creativity. A place to re-charge your batteries
+                                after a long journey and to re-stock on energies before the next one.
+                            </p>
+                        </div>
+                    </div>
+                    <a class="about__link" href="">incomplete manifesto</a>
+                </div>
+            </div>
+            
+        </section>
+        <section class="projects">
+            <h1 class="projects__title">selected projects</h1>
+            <div class="projects__slider swiper-container">
+                <div class="projects__slider-nav">
+                    <div class="swiper-button-prev">
+                        <button class="projects__slider-controls-btn">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.9502 10.8994L1.00045 5.94967L5.9502 0.999919" stroke="#181818"/>
+                                <path d="M1.4502 5.89941L19.4502 5.89941" stroke="#181818"/>
+                            </svg>                                        
+                        </button>
+                    </div>
+                    <div class="swiper-button-next">
+                        <button class="projects__slider-controls-btn">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5 1L18.4497 5.94975L13.5 10.8995" stroke="#181818"/>
+                                <path d="M18 6L0 6" stroke="#181818"/>
+                            </svg> 
+                        </button>
+                    </div>
+                </div>
+                <div class="projects__slider-wrapper swiper-wrapper">
+                    <div class="projects__slider-item swiper-slide">
+                        <div class="projects__slider-num">01/04</div>
+                        <img src="images/projects-1.png" alt="project item">
+                        <div class="projects__slider-description">
+                            <div class="title">The Orangery Luxury Bar</div>
+                            <div class="projects__slider-info">
+                                Location: Undisclosed, South America.</br>
+                                Size: 500 m2</br>
+                                Year: 2018
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__slider-item swiper-slide">
+                        <div class="projects__slider-num">02/04</div>
+                        <img src="images/projects-2.png" alt="project item">
+                        <div class="projects__slider-description">
+                            <div class="title">Yoga Retreat San Marcos</div>
+                            <div class="projects__slider-info">
+                                Location: Undisclosed, South America.</br>
+                                Size: 500 m2</br>
+                                Year: 2019
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__slider-item swiper-slide">
+                        <div class="projects__slider-num">03/04</div>
+                        <img src="images/projects-1.png" alt="project item">
+                        <div class="projects__slider-description">
+                            <div class="title">The Orangery Luxury Bar</div>
+                            <div class="projects__slider-info">
+                                Location: Undisclosed, South America.</br>
+                                Size: 500 m2</br>
+                                Year: 2018
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__slider-item swiper-slide">
+                        <div class="projects__slider-num">04/04</div>
+                        <img src="images/projects-2.png" alt="project item">
+                        <div class="projects__slider-description">
+                            <div class="title">The Orangery Luxury Bar</div>
+                            <div class="projects__slider-info">
+                                Location: Undisclosed, South America.</br>
+                                Size: 500 m2</br>
+                                Year: 2018
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects__slider-pagination swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="tiny-house">
+            <h1 class="tiny-house__title">the tiny house project</h1>
+            <div class="tiny-house__wrapper">
+                <div class="tiny-house__description">
+                    <div class="tiny-house__description-container">
+                        <div class="tiny-house__description-quote">
+                            “As an architect living a nomadic lifestyle, 
+                            I have a special place in my heart for tiny living. Tiny houses 
+                            in rural areas spark my imagination.”
+                        </div>
+                        <div class="tiny-house__description-author">Adi cohen</div>
+                        <div class="tiny-house__description-position">Founder of The New Movement</div>
+                    </div>
+                </div>
+                <div class="tiny-house__article">
+                    <div class="tiny-house__article-images">
+                        <div class="tiny-house__article-img-big">
+                            <img src="images/tiny-project-img1.png" alt="tiny project img">
+                        </div>
+                        <div class="tiny-house__article-img-small">
+                            <img src="images/tiny-project-img2.png" alt="tiny project img">
+                        </div>
+                    </div>
+                    <div class="tiny-house__article-title">the tiny house</div>
+                    <div class="tiny-house__article-subtitle">
+                        The tiny house movement is growing all over the world,
+                        where more and more people value freedom,
+                        minimalism and well-being over busy city life.
+                    </div>
+                    <div class="tiny-house__article-text">
+                        <p>
+                            An architecture geared to fuel the creativity and wellbeing
+                            of its inhabitants, whether they are permanent dwellers or 
+                            transient visitors searching for inspiration.An architecture 
+                            that relies on the paradoxical tension between constant movement 
+                            and desired stillness, between the human memory palette and the unique 
+                            site-specific properties of the location.
+                        </p>
+                        <p>
+                            The New Movement is based on a number of pillars that 
+                            together create a holistic experience of mindfulness, wellbeing
+                            and creativity. A place to re-charge your batteries after a long
+                            journey and to re-stock on energies before the next one.
+                        </p>
+                    </div>
+                    <a class="tiny-house__article-link" href="">Read more</a>
+                </div>
+            </div>
+        </section>
+        <div class="cards">
+            <div class="cards__description">
+                <h1 class="cards__title">A 21ST CENTURY ARCHITECTURE PROCESS</h1>
+                <div class="cards__text">
+                    <div class="cards__text-title">process</div>
+                    <p>Just like many work processes that are 
+                        being re-written, architecture no longer 
+                        requires staying put, definitely not the 
+                        kind of architecture that works globally and in 
+                        remote locations and is based on inter-disciplinary
+                        and hyper-specialized teams</p>
+                </div>
+            </div>
+            <div class="cards__container">
+                <div class="cards__item">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <section class="podcast">
+            <h1 class="podcast__title">podcast</h1>
+        </section>
+    </main>
+    <footer class="footer">
+        <img src="images/white_logo.svg" alt="">
+
+        <div class="footer__menu">
+            <div class="footer__menu-links">
+                <h6 class="footer__title">Links</h6>
+                <ul class="footer__menu-nav">
+                    <li class="footer__menu-nav-item"><a href="">About</a></li>
+                    <li class="footer__menu-nav-item"><a href="">Projects</a></li>
+                    <li class="footer__menu-nav-item"><a href="">Manifesto</a></li>
+                    <li class="footer__menu-nav-item"><a href="">Contact</a></li>
+                </ul>
+                <div class="footer__menu-copyright">All ©Rights to the The New Movement</div>
+            </div>
+            <div class="footer__contact">
+                <h6 class="footer__title">Contact</h6>
+                <div class="footer__contact-text">
+                    The best way to reach me is via email.
+                    Unless I’m deep in the Amazones,
+                    I will get back to you within 24 hours.
+                </div>
+                <form class="footer__contact-form">
+                    <label for="email">Email</label>
+                    <input class="input-email" id="email" type="email" placeholder="Your email">
+                    <button class="submit-btn" type="submit">Send</button>
+                </form>
+            </div>
+            <div class="footer__follow">
+                <h6 class="footer__title">Follow</h6>
+                <div class="footer__follow-container">
+                    <ul class="footer__social">
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Linkendin</a></li>
+                    </ul>
+                    <div class="footer__copyright">Designed by
+                        <span class="footer__copyright-underline">Obys</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+    (function() {
+        var bar = document.getElementById('progBar'),
+            fallback = document.getElementById('downloadProgress'),
+            loaded = 0;
+
+        var load = function() {
+            loaded += 1;
+            bar.value = loaded;
+            $(fallback).empty().append("HTML5 progress tag not supported: ");
+            $('#progUpdate').empty().append(loaded);
+
+            if (loaded == 100) {
+                clearInterval(beginLoad);
+                $('.preloader').addClass('hide');
+            }
+        };
+
+        var beginLoad = setInterval(function() {
+            load();
+        }, 30);
+        
+    })();
+    </script>
+</body>
+</html>
