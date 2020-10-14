@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  border: 1px solid #181818;
+  margin: 0 10px;
+  padding: 20px;
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 17px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $primary-color;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__symbol {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #181818;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__text {
+    transition: all 0.5s $easing;
+    overflow: hidden;
+    padding-top: 10px;
+  }
+
+  &__bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 19px 17px;
+    transform: translate(0, calc(100% - 44px));
+    transition: transform 0.4s $easing;
+
+    .card:hover & {
+      transform: none;
+    }
+  }
+}

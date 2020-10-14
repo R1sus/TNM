@@ -264,20 +264,157 @@
                         and hyper-specialized teams</p>
                 </div>
             </div>
-            <div class="cards__container">
-                <div class="cards__item">
-                    
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card__top">
+                            <span class="card__num">01</span>
+                            <span class="card__symbol"></span>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__title">
+                                Tailor made
+                            </div>
+                            <div class="card__text">
+                                Having a location-independent team allows us
+                                to work with the most talented professionals
+                                and scale the team’s size and character according to the project.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card__top">
+                            <span class="card__num">02</span>
+                            <span class="card__symbol"></span>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__title">
+                                Innovative
+                            </div>
+                            <div class="card__text">
+                                Having a location-independent team allows us
+                                to work with the most talented professionals
+                                and scale the team’s size and character according to the project.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card__top">
+                            <span class="card__num">03</span>
+                            <span class="card__symbol"></span>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__title">
+                                Glocal
+                            </div>
+                            <div class="card__text">
+                                Having a location-independent team allows us
+                                to work with the most talented professionals
+                                and scale the team’s size and character according to the project.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card__top">
+                            <span class="card__num">04</span>
+                            <span class="card__symbol"></span>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__title">
+                                Scalability
+                            </div>
+                            <div class="card__text">
+                                Having a location-independent team allows us
+                                to work with the most talented professionals
+                                and scale the team’s size and character according to the project.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+        </div>
+        <div class="about-me">
+            <div class="about-me__subtitle">About me</div>
+            <div class="about-me__title">
+                One day, as I was working at one of Israel’s 
+                most prestigious architecture firms...
+            </div>
+            <div class="about-me__container">
+                <div class="about-me__text-title">
+                    ...I realized there must be
+                    more to life than sitting begind 
+                    a desk for 10 hours a day. I knew I needed a change.
+                    I knew I needed to explore a different kind of architecture.
+                </div>
+                <div class="about-me__text">
+                    So, I left everything behind and began travelling.
+                    I embraced the nomad lifestyle. Endless curiousity 
+                    and exploration in search of inspiration and the 
+                    elements that could potentially create a home that 
+                    embodied the freedom of the journey with the peace of the destination.
+                </div>
+                <div class="about-me__video">
+                    <video src="https://www.youtube.com/watch?v=KhQITnPjM4M&feature=emb_logo"></video>
+                    <div class="about-me__video-title">
+                        How I became an architect
+                    </div>
+                </div>
+            </div>
         </div>
         <section class="podcast">
             <h1 class="podcast__title">podcast</h1>
+            <div class="podcast__container">
+                <div class="podcast__description">
+                    <div class="podcast__description-title">S-2</div>
+                    <div class="podcast__description-subtitle">Season 2</div>
+                    <div class="podcast__description-text">
+                        Knowledge is meant to be shared. That’s why I have started my own podcast,
+                        where I host founders, entrepreneurs and extremely 
+                        talented people from all over the world to share their stories, 
+                        experiences and insights. Listen now to season 2.
+                    </div>
+                </div>
+                <div class="podcasts">
+                    <ul class="podcasts__list">
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">01. Happy Working Lab</span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">02. B-Hive Living</span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">03. Arctic Coworking </span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                    </ul>
+                    <a class="podcasts__link" href="">More podcasts</a>
+                </div>
+
+            </div>
         </section>
     </main>
     <footer class="footer">
         <img src="images/white_logo.svg" alt="">
-
         <div class="footer__menu">
             <div class="footer__menu-links">
                 <h6 class="footer__title">Links</h6>
@@ -299,7 +436,9 @@
                 <form class="footer__contact-form">
                     <label for="email">Email</label>
                     <input class="input-email" id="email" type="email" placeholder="Your email">
-                    <button class="submit-btn" type="submit">Send</button>
+                    <button data-content="Send" class="btn" type="submit">
+                        <span class="btn__text">Send</span>
+                    </button>
                 </form>
             </div>
             <div class="footer__follow">
@@ -311,7 +450,7 @@
                         <li><a href="">Linkendin</a></li>
                     </ul>
                     <div class="footer__copyright">Designed by
-                        <span class="footer__copyright-underline">Obys</span>
+                        <a href="http://obys.agency/" class="footer__copyright-underline">Obys</a>
                     </div>
                 </div>
             </div>
@@ -319,28 +458,28 @@
     </footer>
     <script>
 
-    (function() {
-        var bar = document.getElementById('progBar'),
-            fallback = document.getElementById('downloadProgress'),
-            loaded = 0;
+        (function() {
+            var bar = document.getElementById('progBar'),
+                fallback = document.getElementById('downloadProgress'),
+                loaded = 0;
 
-        var load = function() {
-            loaded += 1;
-            bar.value = loaded;
-            $(fallback).empty().append("HTML5 progress tag not supported: ");
-            $('#progUpdate').empty().append(loaded);
+            var load = function() {
+                loaded += 1;
+                bar.value = loaded;
+                $(fallback).empty().append("HTML5 progress tag not supported: ");
+                $('#progUpdate').empty().append(loaded);
 
-            if (loaded == 100) {
-                clearInterval(beginLoad);
-                $('.preloader').addClass('hide');
-            }
-        };
+                if (loaded == 100) {
+                    clearInterval(beginLoad);
+                    $('.preloader').addClass('hide');
+                }
+            };
 
-        var beginLoad = setInterval(function() {
-            load();
-        }, 30);
-        
-    })();
+            var beginLoad = setInterval(function() {
+                load();
+            }, 30);
+            
+        })();
     </script>
 </body>
 </html>

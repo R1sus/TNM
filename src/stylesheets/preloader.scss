@@ -15,7 +15,6 @@
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  transition: all 1s $easing;
 
   &__counter {
     font-size: 24px;
@@ -48,5 +47,6 @@
     opacity: 0;
     visibility: hidden;
     z-index: -1;
+    transition: all 1s $easing;
   }
 }

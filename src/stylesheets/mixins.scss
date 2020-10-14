@@ -24,6 +24,14 @@
   margin: 0 0 60px;
 }
 
+@mixin title-decor {
+  &::before {
+    content: '\25CF';
+    margin-right: 5px;
+    font-size: 25px;
+  }
+}
+
 @mixin desktop {
   @media (min-width: $desktop-width) {
     @content;
