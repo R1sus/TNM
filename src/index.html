@@ -7,41 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/loading-bar.css"/>
-    <script type="text/javascript" src="javascripts/loading-bar.js"></script>
 </head>
 <body>
+    <div class="cursor active mobile-hide" id="cursor"></div>
     <div class="preloader">
         <div class="preloader__logo">
             <img src="images/white_logo.svg" alt="tnm logo">
         </div>
         <div class="preloader__bar-container">
             <div class="preloader__counter">
-                <span class="preloader__counter-count" id="progUpdate">00</span>
+                <span class="preloader__counter-count" id="counter">00</span>
                 <span> &mdash; 100%</span>
             </div>
-            <div class="preloader__bar">
-                <progress value="00" max="100" id="progBar">
-                    <span id="downloadProgress">
-                    </span>
-                </progress>
-            </div>
+            <div class="preloader__bar" id="progress"></div>
         </div> 
     </div>
     <header class="header">
-        <div class="header__logo">
-            <a href="index.html"><img src="images/black_logo.svg" alt="logo"></a>
-        </div>
-        <nav>
-            <ul class="header__navigation">
-                <li class="header__navigation-item"><a href="">About</a></li>
-                <li class="header__navigation-item"><a href="">Projects</a></li>
-                <li class="header__navigation-item"><a href="">Manifesto</a></li>
-                <li class="header__navigation-item"><a href="">Podcast</a></li>
-            </ul>
-        </nav>
-        <div>
-            <a href="">Contact</a>
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="index.html"><img src="images/black_logo.svg" alt="logo"></a>
+            </div>
+            <nav class="mobile-hide">
+                <ul class="header__navigation">
+                    <li class="header__navigation-item"><a href="">About</a></li>
+                    <li class="header__navigation-item"><a href="">Projects</a></li>
+                    <li class="header__navigation-item"><a href="">Manifesto</a></li>
+                    <li class="header__navigation-item"><a href="">Podcast</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a class="mobile-hide" href="">Contact</a>
+            </div>
+            <button class="hamburger hamburger--spin mobile-show" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <div class="mobile-nav">
+                <div class="mobile-nav__container">
+                    <div class="mobile-nav__top">
+                        <div class="mobile-nav__logo">
+                            <a href="index.html"><img src="images/white_logo.svg" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="mobile-nav__menu">
+                        <ul class="mobile-nav__navigation">
+                            <li class="mobile-nav__navigation-item"><a href="">About</a></li>
+                            <li class="mobile-nav__navigation-item"><a href="">Projects</a></li>
+                            <li class="mobile-nav__navigation-item"><a href="">Manifesto</a></li>
+                            <li class="mobile-nav__navigation-item"><a href="">Podcast</a></li>
+                        </ul>
+                        <a class="mobile-nav__navigation-item" href="">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <main>
@@ -50,11 +69,11 @@
                 <img src="images/black_logo.svg" alt="">
                 <div class="intro__bottom">
                     <div class="intro__description">
-                        <div class="intro__description-quote">
+                        <blockquote class="intro__description-quote">
                             “We are constantly moving around 
                             to ultimately 
                             find stillness”
-                        </div>
+                        </blockquote>
                         <div class="intro__description-author">Adi cohen</div>
                         <div class="intro__description-position">Architect</div>
                     </div>
@@ -207,11 +226,11 @@
             <div class="tiny-house__wrapper">
                 <div class="tiny-house__description">
                     <div class="tiny-house__description-container">
-                        <div class="tiny-house__description-quote">
+                        <blockquote class="tiny-house__description-quote">
                             “As an architect living a nomadic lifestyle, 
                             I have a special place in my heart for tiny living. Tiny houses 
                             in rural areas spark my imagination.”
-                        </div>
+                        </blockquote>
                         <div class="tiny-house__description-author">Adi cohen</div>
                         <div class="tiny-house__description-position">Founder of The New Movement</div>
                     </div>
@@ -360,7 +379,14 @@
                     embodied the freedom of the journey with the peace of the destination.
                 </div>
                 <div class="about-me__video">
-                    <video src="https://www.youtube.com/watch?v=KhQITnPjM4M&feature=emb_logo"></video>
+                    <div class="about-me__video-wrap">
+                        <video
+                            id="video"
+                            src="videos/My-life-journey-How-I-became-a-nomad-architect.mp4"
+                            poster="images/video-poster.png">
+                        </video>
+                        <button class="about-me__video-btn magnet" id="play-button"></button>
+                    </div>
                     <div class="about-me__video-title">
                         How I became an architect
                     </div>
@@ -373,12 +399,12 @@
                 <div class="podcast__description">
                     <div class="podcast__description-title">S-2</div>
                     <div class="podcast__description-subtitle">Season 2</div>
-                    <div class="podcast__description-text">
+                    <p class="podcast__description-text">
                         Knowledge is meant to be shared. That’s why I have started my own podcast,
                         where I host founders, entrepreneurs and extremely 
                         talented people from all over the world to share their stories, 
                         experiences and insights. Listen now to season 2.
-                    </div>
+                    </p>
                 </div>
                 <div class="podcasts">
                     <ul class="podcasts__list">
@@ -406,6 +432,46 @@
                             </div>
                             <span class="podcasts__item-duration">31:24</span>
                         </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">04. ETXE Co-living</span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">05. Carper Co-living</span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">06. Woke Co-living </span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">07. B-Hive Living </span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
+                        <li class="podcasts__item">
+                            <span class="podcasts__item-title">08. Kindred Quarters</span>
+                            <div class="podcasts__item-info">
+                                <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                <span class="podcasts__item-countru">UK / Portugal</span>
+                            </div>
+                            <span class="podcasts__item-duration">31:24</span>
+                        </li>
                     </ul>
                     <a class="podcasts__link" href="">More podcasts</a>
                 </div>
@@ -424,7 +490,7 @@
                     <li class="footer__menu-nav-item"><a href="">Manifesto</a></li>
                     <li class="footer__menu-nav-item"><a href="">Contact</a></li>
                 </ul>
-                <div class="footer__menu-copyright">All ©Rights to the The New Movement</div>
+                <div class="footer__menu-copyright mobile-hide">All ©Rights to the The New Movement</div>
             </div>
             <div class="footer__contact">
                 <h6 class="footer__title">Contact</h6>
@@ -449,6 +515,7 @@
                         <li><a href="">Facebook</a></li>
                         <li><a href="">Linkendin</a></li>
                     </ul>
+                    <div class="footer__menu-copyright mobile-show">All ©Rights to the The New Movement</div>
                     <div class="footer__copyright">Designed by
                         <a href="http://obys.agency/" class="footer__copyright-underline">Obys</a>
                     </div>
@@ -458,28 +525,6 @@
     </footer>
     <script>
 
-        (function() {
-            var bar = document.getElementById('progBar'),
-                fallback = document.getElementById('downloadProgress'),
-                loaded = 0;
-
-            var load = function() {
-                loaded += 1;
-                bar.value = loaded;
-                $(fallback).empty().append("HTML5 progress tag not supported: ");
-                $('#progUpdate').empty().append(loaded);
-
-                if (loaded == 100) {
-                    clearInterval(beginLoad);
-                    $('.preloader').addClass('hide');
-                }
-            };
-
-            var beginLoad = setInterval(function() {
-                load();
-            }, 30);
-            
-        })();
     </script>
 </body>
 </html>

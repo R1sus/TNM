@@ -10,13 +10,34 @@
   justify-content: space-between;
   line-height: 1.4;
 
+  @include phone {
+    padding: 30px 15px;
+    height: auto;
+  }
+
+  img {
+    @include phone {
+      margin-bottom: 30px;
+    }
+  }
+
   &__menu {
     border-top: 1px solid $text-color-light;
     display: flex;
 
+    @include phone {
+      flex-direction: column;
+    }
+
     &-links {
       border-right: 1px solid $text-color-light;
       padding: 40px 110px 30px 0;
+
+      @include phone {
+        border: none;
+        padding: 30px 0;
+        border-bottom: 1px solid $text-color-light;
+      }
     }
 
     &-nav {
@@ -35,6 +56,10 @@
       &-item:first-child::before {
         content: none;
       }
+
+      @include phone {
+        margin-bottom: 0;
+      }
     }
 
     &-copyright {
@@ -44,6 +69,10 @@
 
   &__contact {
     padding: 40px 120px;
+
+    @include phone {
+      padding: 30px 0;
+    }
 
     &-text {
       margin-bottom: 23px;
@@ -64,6 +93,10 @@
     display: flex;
     flex-direction: column;
 
+    @include phone {
+      padding: 20px 0;
+    }
+
     &-container {
       display: flex;
       flex-direction: column;
@@ -74,6 +107,11 @@
 
   &__copyright {
     align-self: flex-end;
+
+    @include phone {
+      align-self: start;
+      padding-top: 10px;
+    }
 
     &-underline {
       display: inline-block;
@@ -86,6 +124,10 @@
 
     text-decoration: underline;
     text-transform: uppercase;
+
+    @include phone {
+      margin-bottom: 50px;
+    }
   }
 
   &__title {
@@ -93,6 +135,10 @@
     font-weight: normal;
     letter-spacing: -0.05em;
     margin-bottom: 22px;
+
+    @include phone {
+      font-size: 21px;
+    }
   }
 }
 
@@ -106,12 +152,8 @@
   width: 100%;
   color: rgba(255, 255, 255, 0.3);
   min-width: 320px;
-}
 
-.submit-btn {
-  padding: 15px 33px;
-  background: #fff;
-  outline: none;
-  border: none;
-  color: $secondary-color;
+  @include phone {
+    min-width: auto;
+  }
 }

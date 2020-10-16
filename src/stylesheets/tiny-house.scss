@@ -1,0 +1,138 @@
+.tiny-house {
+  @include default-wrapper;
+
+  @include phone {
+    padding-top: 60px;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__wrapper {
+    border: solid $secondary-color;
+    border-width: 1px 0;
+    display: flex;
+
+    @include phone {
+      flex-direction: column;
+      border-width: 0 0 1px;
+    }
+  }
+
+  &__description {
+    padding: 70px 0;
+    flex-basis: 22%;
+    border-right: 1px solid $secondary-color;
+
+    @include phone {
+      border: none;
+      padding: 30px 0;
+    }
+
+    &-container {
+      padding-left: 20px;
+      border-left: 1px solid $secondary-color;
+    }
+
+    &-quote {
+      font-size: 24px;
+      max-width: 250px;
+      margin-bottom: 40px;
+
+      @include phone {
+        font-size: 21px;
+      }
+    }
+
+    &-author {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__article {
+    padding: 70px 0;
+    flex: 1;
+    padding-left: 110px;
+    line-height: 1.4;
+
+    @include phone {
+      padding: 30px 0;
+    }
+
+    &-title {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &-text {
+      max-width: 500px;
+      margin-bottom: 50px;
+
+      @include phone {
+        margin-bottom: 30px;
+      }
+
+      p {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+      text-decoration: underline;
+
+      @include phone {
+        margin-bottom: 30px;
+        display: block;
+      }
+    }
+
+    &-subtitle {
+      font-size: 24px;
+      margin-bottom: 25px;
+      max-width: 500px;
+
+      @include phone {
+        font-size: 21px;
+      }
+    }
+
+    &-images {
+      position: relative;
+      margin-bottom: 57px;
+
+      @include phone {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-img-big {
+      max-width: 450px;
+
+      @include phone {
+        max-width: 222px;
+      }
+    }
+
+    &-img-small {
+      max-width: 450px;
+      position: absolute;
+      top: 120px;
+      left: 30%;
+
+      @include phone {
+        top: 30px;
+        max-width: 204px;
+      }
+    }
+  }
+}

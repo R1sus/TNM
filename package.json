@@ -1,8 +1,8 @@
 {
-  "name": "static-site-boilerplate",
-  "description": "A modern boilerplate for static website development",
+  "name": "tnm",
+  "description": "The New Movement",
   "version": "1.1.0",
-  "homepage": "http://staticsiteboilerplate.com",
+  "homepage": "https://r1sus.github.io/TNM",
   "author": {
     "name": "Eric Alli",
     "url": "http://ericalli.com"
@@ -34,7 +34,8 @@
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "build:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
-    "deploy": "node ./config/site.deploy.js"
+    "predeploy": "npm run build:dist",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -51,6 +52,7 @@
     "eslint-loader": "^2.2.1",
     "eslint-plugin-import": "^2.18.2",
     "file-loader": "^4.2.0",
+    "gh-pages": "^3.1.0",
     "glob": "^7.1.4",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^4.0.0-beta.8",
@@ -84,6 +86,7 @@
     "figlet": "^1.2.3",
     "ftp-deploy": "^2.3.3",
     "jquery": "^3.4.1",
+    "magnet-mouse": "github:fluffy-factory/magnet-mouse",
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",
     "sanitize.css": "^11.0.0",

@@ -1,0 +1,109 @@
+.podcast {
+  @include default-wrapper;
+
+  padding-bottom: 0;
+
+  @include phone {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__description {
+    padding: 70px 0;
+    flex-basis: 22%;
+    border-right: 1px solid $secondary-color;
+
+    @include phone {
+      border: none;
+      padding: 30px 0;
+    }
+
+    &-title {
+      @include section-title;
+
+      margin-bottom: 30px;
+    }
+
+    &-subtitle {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &-text {
+      max-width: 230px;
+
+      @include phone {
+        max-width: none;
+      }
+    }
+  }
+
+  &__container {
+    border-top: 1px solid $secondary-color;
+    display: flex;
+
+    @include phone {
+      flex-direction: column;
+    }
+  }
+
+  .podcasts {
+    padding: 80px 0 80px 115px;
+    width: 100%;
+
+    @include phone {
+      padding: 0;
+    }
+
+    &__list {
+      @include reset-list;
+
+      margin-bottom: 26px;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(24, 24, 24, 0.3);
+      padding: 12px 0 20px;
+
+      @include phone {
+        padding: 12px 0 50px;
+        position: relative;
+      }
+
+      &-title {
+        font-size: 24px;
+        width: 340px;
+
+        @include phone {
+          font-size: 21px;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+
+        @include phone {
+          position: absolute;
+          top: 40px;
+          flex-direction: row;
+        }
+      }
+    }
+
+    &__link {
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+}

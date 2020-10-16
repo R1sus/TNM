@@ -2,35 +2,42 @@
   @include default-wrapper;
 
   position: relative;
-  padding-bottom: 30px;
-  border-bottom: 1px solid $secondary-color;
-  display: flex;
-  justify-content: space-between;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
-}
 
-.header__logo {
-  max-width: 140px;
+  @include phone {
+    padding: 15px;
+  }
 
-  img {
+  &__wrapper {
+    border-bottom: 1px solid $secondary-color;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  &__logo {
     max-width: 140px;
-    height: auto;
-  }
-}
 
-.header__navigation {
-  @include reset-list;
-
-  display: flex;
-
-  &-item::after {
-    content: '/';
-    padding: 0 3px;
+    img {
+      max-width: 140px;
+      height: auto;
+    }
   }
 
-  &-item:last-child::after {
-    content: none;
+  &__navigation {
+    @include reset-list;
+
+    display: flex;
+
+    &-item::after {
+      content: '/';
+      padding: 0 3px;
+    }
+
+    &-item:last-child::after {
+      content: none;
+    }
   }
 }

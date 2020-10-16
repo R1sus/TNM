@@ -1,3 +1,56 @@
+.cards {
+  @include default-wrapper;
+
+  @include phone {
+    padding-top: 60px;
+  }
+
+  &__title {
+    @include section-title;
+
+    max-width: 55%;
+
+    @include phone {
+      max-width: none;
+    }
+  }
+
+  &__description {
+    display: flex;
+
+    @include phone {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    line-height: 1.4;
+    max-width: 310px;
+    padding-left: 100px;
+
+    @include phone {
+      padding-left: 0;
+    }
+
+    &-title {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -34,6 +87,10 @@
 
   &__title {
     font-size: 24px;
+
+    @include phone {
+      font-size: 21px;
+    }
   }
 
   &__text {

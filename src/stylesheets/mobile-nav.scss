@@ -1,0 +1,58 @@
+.mobile-nav {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $text-color-light;
+  font-size: 35px;
+  line-height: 107%;
+  padding: 0 15px 20px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: all 700ms ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    transition: all 500ms $easing;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    border-bottom: 1px solid $text-color-light;
+    padding-bottom: 20px;
+  }
+
+  &__logo {
+    max-width: 140px;
+
+    img {
+      max-width: 140px;
+      height: auto;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 50px;
+  }
+
+  &__navigation {
+    @include reset-list;
+
+    display: flex;
+    flex-direction: column;
+  }
+}

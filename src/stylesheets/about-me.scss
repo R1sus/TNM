@@ -1,0 +1,123 @@
+.about-me {
+  @include default-wrapper;
+
+  @include phone {
+    padding-top: 60px;
+  }
+
+  &__title {
+    @include section-title;
+
+    max-width: 82%;
+    margin-bottom: 0;
+
+    @include phone {
+      max-width: none;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @include title-decor;
+
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__container {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -40px auto 0;
+
+    @include phone {
+      margin-top: 0;
+      max-width: none;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    padding-right: 80px;
+
+    @include phone {
+      padding-right: 0;
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      padding-right: 80px;
+
+      @include phone {
+        font-size: 21px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__video {
+    &-title {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &-wrap {
+      height: 321px;
+      position: relative;
+      width: 100%;
+
+      @include phone {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+
+      video {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    &-btn {
+      border: none;
+      outline: none;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include phone {
+        bottom: calc(50% - 32px);
+        left: calc(50% - 32px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6.5px 0 6.5px 13px;
+        border-color: transparent transparent transparent $secondary-color;
+      }
+    }
+  }
+}

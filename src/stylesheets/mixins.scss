@@ -11,9 +11,12 @@
 
 @mixin default-wrapper {
   padding: 30px;
-  // max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+
+  @include phone {
+    padding: 20px 15px;
+  }
 }
 
 @mixin section-title {
@@ -22,6 +25,11 @@
   font-weight: normal;
   letter-spacing: -0.05em;
   margin: 0 0 60px;
+
+  @include phone {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
 }
 
 @mixin title-decor {

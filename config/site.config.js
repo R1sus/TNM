@@ -15,7 +15,7 @@ const config = {
   site_description: 'A modern boilerplate for static website development',
 
   // Your website's URL, used for sitemap
-  site_url: '',
+  site_url: 'http://example.com',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
