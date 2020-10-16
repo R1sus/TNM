@@ -105,22 +105,34 @@ mm.init();
 
 
 // cursor
-const cursor = $('.cursor');
+var $cursor = $('.cursor'),
+    $wrapper = $('body'); 
 
-body.addEventListener('mousemove', cursorListener);
+  function moveCursor(e) {
+    TweenLite.to($cursor, 0.3, {
+      css: {
+        left: e.pageX,
+        top: e.pageY
+      }
+    });
+  }
 
-$('a, button').hover(addActiveClass);
 
-function addActiveClass() {
-  cursor.toggleClass('active');
-}
+$($wrapper).mouseover(function(e){
+  e.stopPropagation();
+  TweenLite.to($cursor,0.4,{scale:1,autoAlpha:1})
+  $($wrapper).on('mousemove', moveCursor);
+});
 
-function cursorListener(e) {
-  cursor.css({
-    top: (e.pageY - 14) + 'px' , // half of cursor size
-    left: (e.pageX - 14) + 'px' ,
-  });
-}
+$($wrapper).mouseout(function(e){
+    e.stopPropagation();
+    TweenLite.to($cursor,0.4,{scale:0.1,autoAlpha:0})
+});
+
+$('a').hover(function(e) {
+  e.stopPropagation();
+  TweenLite.to($cursor,0.4,{scale:4,autoAlpha:0, skew: 3})
+});
 
 // mobile menu
 
