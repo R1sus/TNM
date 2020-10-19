@@ -94,7 +94,11 @@
   }
 
   &__link {
-    text-decoration: underline;
     text-transform: uppercase;
+
+    &.cool-link::after,
+    &.cool-link::before {
+      background-color: #fff;
+    }
   }
 }

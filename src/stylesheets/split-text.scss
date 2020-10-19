@@ -1,0 +1,28 @@
+.split-text,
+.split-word {
+  > span {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    .visible-char,
+    .visible-word {
+      color: transparent;
+    }
+
+    .invisible-char,
+    .invisible-word {
+      user-select: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0, 50%);
+      opacity: 0.01;
+
+      @include tablet {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}

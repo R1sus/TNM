@@ -3,4 +3,9 @@
   padding-right: 10px;
   flex-grow: 1;
   max-width: 25%;
+
+  @include phone {
+    max-width: 90%;
+    // width: 270px;
+  }
 }

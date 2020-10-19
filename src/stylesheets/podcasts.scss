@@ -74,6 +74,7 @@
       justify-content: space-between;
       border-top: 1px solid rgba(24, 24, 24, 0.3);
       padding: 12px 0 20px;
+      position: relative;
 
       @include phone {
         padding: 12px 0 50px;
@@ -103,7 +104,12 @@
 
     &__link {
       text-transform: uppercase;
-      text-decoration: underline;
+      // text-decoration: underline;
+
+      &.cool-link::after,
+      &.cool-link::before {
+        background-color: $secondary-color;
+      }
     }
   }
 }

@@ -6,6 +6,5 @@
   border: 1px solid #777;
   border-radius: 50%;
   z-index: 99999;
-  backface-visibility: hidden;
-  visibility: hidden;
+  pointer-events: none;
 }

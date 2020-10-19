@@ -88,11 +88,14 @@
 
     &-link {
       text-transform: uppercase;
-      text-decoration: underline;
+
+      &.cool-link::after,
+      &.cool-link::before {
+        background-color: $secondary-color;
+      }
 
       @include phone {
         margin-bottom: 30px;
-        display: block;
       }
     }
 

@@ -1,11 +1,12 @@
 @import "~normalize.css";
-// @import "~jquery-modal/jquery.modal.min.css";
 @import 'mixins.scss';
 @import 'variables.scss';
 @import "fonts.scss";
 @import 'setup.scss';
 @import 'cursor.scss';
 @import 'hamburger.scss';
+@import 'locomotive.scss';
+@import 'split-text.scss';
 @import 'mobile-nav.scss';
 @import 'row.scss';
 @import 'col.scss';
@@ -17,7 +18,9 @@
 @import 'about.scss';
 @import 'intro.scss';
 @import 'tiny-house.scss';
+@import 'menu-hover.scss';
 @import 'podcasts.scss';
 @import 'projects.scss';
 @import 'footer.scss';
 @import 'card.scss';
+@import 'contact.scss';

@@ -1,0 +1,118 @@
+.contact {
+  position: fixed;
+  background-color: rgba(24, 24, 24, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: all 700ms ease-in-out;
+
+  @include phone {
+    background-color: $primary-color;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    transition: all 500ms $easing;
+
+    @include phone {
+      z-index: 5;
+    }
+  }
+
+  &__container {
+    width: 60%;
+    max-width: 890px;
+    background-color: $primary-color;
+    padding: 25px;
+    position: relative;
+
+    @include phone {
+      width: 100%;
+      max-width: none;
+      padding: 90px 15px 15px;
+    }
+  }
+
+  &__close {
+    right: -80px;
+    top: 0;
+    position: absolute;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include phone {
+      top: 35px;
+      right: 15px;
+      background-color: $secondary-color;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  &__input {
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(24, 24, 24, 0.3);
+    outline: none;
+    background-color: transparent;
+    padding: 15px 0;
+    width: 100%;
+    color: rgba(24, 24, 24, 0.4);
+  }
+
+  &__title {
+    @include section-title;
+
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    margin: 30px 0 10px;
+    align-self: flex-start;
+  }
+}
+
+.close-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before,
+  &::after {
+    content: ' ';
+    height: 25px;
+    width: 1px;
+    background-color: $secondary-color;
+
+    @include phone {
+      background-color: $primary-color;
+    }
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

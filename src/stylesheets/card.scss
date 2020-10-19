@@ -48,6 +48,11 @@
 
   &__container {
     display: flex;
+
+    @include phone {
+      flex-direction: row nowrap;
+      overflow-y: scroll;
+    }
   }
 }
 
@@ -62,6 +67,11 @@
   position: relative;
   flex-grow: 1;
   overflow: hidden;
+
+  @include phone {
+    min-height: 328px;
+    width: 270px;
+  }
 
   &::after {
     content: '';
@@ -107,6 +117,12 @@
     padding: 0 19px 17px;
     transform: translate(0, calc(100% - 44px));
     transition: transform 0.4s $easing;
+
+    @include phone {
+      position: relative;
+      transform: none;
+      padding: 0;
+    }
 
     .card:hover & {
       transform: none;

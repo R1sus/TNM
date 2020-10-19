@@ -6,6 +6,11 @@
   position: relative;
   overflow: hidden;
 
+  &-reverse {
+    color: #fff;
+    background: $secondary-color;
+  }
+
   &:focus {
     outline: none;
   }

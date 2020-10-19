@@ -1,10 +1,13 @@
 .footer {
   @include default-wrapper;
 
+  // position: sticky;
+  // bottom: 0;
+  // left: 0;
   padding-bottom: 0;
   background-color: $secondary-color;
   color: $text-color-light;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,6 +19,8 @@
   }
 
   img {
+    margin-bottom: 100px;
+
     @include phone {
       margin-bottom: 30px;
     }
@@ -122,7 +127,7 @@
   &__social {
     @include reset-list;
 
-    text-decoration: underline;
+    // text-decoration: underline;
     text-transform: uppercase;
 
     @include phone {
