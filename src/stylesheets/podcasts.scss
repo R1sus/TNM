@@ -39,9 +39,11 @@
 
     &-text {
       max-width: 230px;
+      opacity: 0.1;
 
       @include phone {
         max-width: none;
+        opacity: 1;
       }
     }
   }

@@ -18,6 +18,22 @@
     }
   }
 
+  &__logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    img {
+      opacity: 0.01;
+      max-height: 100px;
+
+      &.divider {
+        margin-right: 30px;
+      }
+    }
+  }
+
   &__bottom {
     display: flex;
     flex-flow: row nowrap;

@@ -2,6 +2,10 @@
   --swiper-pagination-color: #181818;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   cursor: none;
 
@@ -13,6 +17,11 @@
 body {
   background: $primary-color;
   font-size: $base-font-size;
+}
+
+.scroll-container {
+  display: block;
+  padding-bottom: 0;
 }
 
 a {
@@ -130,63 +139,63 @@ img {
   }
 }
 
-// [data-scroll-section] {
-//   position: relative;
-//   z-index: 15;
+[data-scroll-section] {
+  position: relative;
+  z-index: 15;
 
-//   + [data-scroll-section] {
-//     z-index: 14;
+  + [data-scroll-section] {
+    z-index: 14;
 
-//     + [data-scroll-section] {
-//       z-index: 13;
+    + [data-scroll-section] {
+      z-index: 13;
 
-//       + [data-scroll-section] {
-//         z-index: 12;
+      + [data-scroll-section] {
+        z-index: 12;
 
-//         + [data-scroll-section] {
-//           z-index: 11;
+        + [data-scroll-section] {
+          z-index: 11;
 
-//           + [data-scroll-section] {
-//             z-index: 10;
+          + [data-scroll-section] {
+            z-index: 10;
 
-//             + [data-scroll-section] {
-//               z-index: 9;
+            + [data-scroll-section] {
+              z-index: 9;
 
-//               + [data-scroll-section] {
-//                 z-index: 8;
+              + [data-scroll-section] {
+                z-index: 8;
 
-//                 + [data-scroll-section] {
-//                   z-index: 7;
+                + [data-scroll-section] {
+                  z-index: 7;
 
-//                   + [data-scroll-section] {
-//                     z-index: 6;
+                  + [data-scroll-section] {
+                    z-index: 6;
 
-//                     + [data-scroll-section] {
-//                       z-index: 5;
+                    + [data-scroll-section] {
+                      z-index: 5;
 
-//                       + [data-scroll-section] {
-//                         z-index: 4;
+                      + [data-scroll-section] {
+                        z-index: 4;
 
-//                         + [data-scroll-section] {
-//                           z-index: 3;
+                        + [data-scroll-section] {
+                          z-index: 3;
 
-//                           + [data-scroll-section] {
-//                             z-index: 2;
+                          + [data-scroll-section] {
+                            z-index: 2;
 
-//                             + [data-scroll-section] {
-//                               z-index: 1;
-//                             }
-//                           }
-//                         }
-//                       }
-//                     }
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+                            + [data-scroll-section] {
+                              z-index: 1;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

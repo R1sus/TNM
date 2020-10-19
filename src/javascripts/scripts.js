@@ -36,10 +36,11 @@ const load = () => {
   if (i === 100) {
     clearInterval(t);
     $('.preloader').addClass('hide');
+    animateIntro();
   }
 };
 
-const beginLoad = setInterval(load, 30);
+// const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
   const slider = tns({
@@ -234,329 +235,143 @@ const imgAnimationConfig = {
   stagger: 0.05,
 };
 
-// const DOM = getDOM();
-
 const animateIntro = () => {
-  const splitDescription = document.querySelectorAll('.intro .split-word .invisible-char');
-  const slider = document.querySelector('.intro__slider');
+  const DOM = getDOM();
+  const {
+    title,
+    description,
+  } = DOM.intro;
   const tl = new TimelineLite();
   tl.to(
-    splitDescription,
+    title,
     animationConfig,
-    '-=1',
   ).to(
-    slider,
+    description,
     {
       ...animationConfig,
-      duration: 2,
+      stagger: 0.01,
     },
-    '-=0.5',
-  );
-}
-
-const animateTitle = () => {
-  const splitTitle = document.querySelectorAll('.reloading__title img');
-  const splitDescription = document.querySelectorAll('.reloading__description .split-text .invisible-char');
-  const bg = document.querySelector('.reloading__bg');
-  const tl = new TimelineLite();
-  // const tlDescription = new TimelineLite();
-  tl.to(
-    splitTitle,
-    animationConfig,
-  ).to(
-    splitDescription,
-    animationConfig,
     '-=1',
-  ).to(
-    bg,
-    {
-      ...animationConfig,
-      duration: 2,
-    },
-    '-=0.5',
   );
 };
 
-  // const animateBrand = () => {
-  //   const {
-  //     bg,
-  //     headerWords,
-  //     textTopChars,
-  //     description,
-  //     newColorsTitle,
-  //     newColorsItems,
-  //   } = DOM.brand;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(bg, imgAnimationConfig)
-  //     .to(textTopChars, animationConfig, '-=1')
-  //     .to(headerWords, animationConfig, '-=1')
-  //     .to(description, animationConfig, '-=1')
-  //     .to(newColorsTitle, animationConfig, '-=0.5')
-  //     .to(newColorsItems, animationConfig, '-=0.5');
-  // };
+const animateAbout = () => {
+  const DOM = getDOM();
+  const {
+    title,
+    text,
+    img,
+  } = DOM.about;
 
-  // const animateVToV = () => {
-  //   const {
-  //     titleChars,
-  //     videos,
-  //   } = DOM.vToV;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(titleChars, animationConfig)
-  //     .to(videos, { ...animationConfig, stagger: .1 }, '-=1');
-  // };
+  const tl = new TimelineLite();
+  tl.to(title, animationConfig, '-=1')
+    .to(text, animationConfig, '-=0.5')
+    .to(img, imgAnimationConfig, '-=1');
+};
 
-  // const animateTer = () => {
-  //   const {
-  //     topLine,
-  //     text,
-  //     botLine,
-  //     images,
-  //   } = DOM.ter;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(topLine, animationConfig)
-  //     .to(text, animationConfig, '-=1')
-  //     .to(images, imgAnimationConfig, '-=1')
-  //     .to(botLine, animationConfig, '-=2');
-  // };
+const animateProjects = () => {
+  const DOM = getDOM();
+  const {
+    title
+  } = DOM.projects;
+  const tl = new TimelineLite();
+  tl
+    .to(title, animationConfig);
+};
 
-  // const animateGWhite = () => {
-  //   const {
-  //     title,
-  //     text,
-  //   } = DOM.g;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(text, animationConfig, '-=0.5');
-  // };
+const animateTiny = () => {
+  const DOM = getDOM();
+  const {
+    title,
+    images,
+  } = DOM.tiny;
+  const tl = new TimelineLite();
+  tl
+    .to(title, animationConfig)
+    .to(images, imgAnimationConfig, '-=1');
+};
 
-  // const animatePlans = () => {
-  //   const {
-  //     title,
-  //     description,
-  //   } = DOM.plans;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=0.5');
-  // };
+const animateCards = () => {
+  const DOM = getDOM();
+  const {
+    title,
+  } = DOM.cards;
+  const tl = new TimelineLite();
+  tl
+    .to(title, animationConfig);
+};
 
-  // const animateE = () => {
-  //   const {
-  //     logo,
-  //     topLine,
-  //     text,
-  //     bottomLine,
-  //     button,
-  //   } = DOM.e;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(logo, animationConfig)
-  //     .to(topLine, animationConfig, '-=0.5')
-  //     .to(text, animationConfig, '-=0.5')
-  //     .to(bottomLine, animationConfig, '-=0.5')
-  //     .to(button, animationConfig, '-=0.5');
-  // };
+const animateAboutMe = () => {
+  const DOM = getDOM();
+  const {
+    title
+  } = DOM.aboutMe;
+  const tl = new TimelineLite();
+  tl
+    .to(title, animationConfig);
+};
 
-  // const animateService = () => {
-  //   const {
-  //     title,
-  //     description,
-  //     nav,
-  //     service,
-  //   } = DOM.services;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=0.5')
-  //     .to(nav, animationConfig, '-=0.5')
-  //     .to(service, animationConfig, '-=0.1');
-  // };
+const animatePodcasts = () => {
+  const DOM = getDOM();
+  const {
+    title,
+    subT,
+    text,
+  } = DOM.podcasts;
+  const tl = new TimelineLite();
+  tl
+    .to(title, animationConfig)
+    .to(subT, animationConfig, '+=0.5')
+    .to(text, imgAnimationConfig, '+=0.7');
+};
 
-  // const animateSubService = () => {
-  //   const {
-  //     title,
-  //     description,
-  //     listItems,
-  //   } = DOM.subService;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=0.5')
-  //     .to(
-  //       listItems,
-  //       marginAnimationConfig,
-  //       '-=0.1',
-  //     );
-  // };
+let scroll = null;
+const onLocomotiveScroll = (e) => {
+  const DOM = getDOM();
+  const winHeight = $(window).height();
+  if ($(DOM.about.self).offset().top < winHeight) {
+    animateAbout();
+  }
+  if ($(DOM.projects.self).offset().top < winHeight) {
+    animateProjects();
+  }
+  if ($(DOM.tiny.self).offset().top < winHeight) {
+    animateTiny();
+  }
+  if ($(DOM.cards.self).offset().top < winHeight) {
+    animateCards();
+  }
+  if ($(DOM.aboutMe.self).offset().top < winHeight) {
+    animateAboutMe();
+  }
+  if ($(DOM.podcasts.self).offset().top < winHeight) {
+    animatePodcasts();
+  }
+};
 
-  // const animateSafety = () => {
-  //   const {
-  //     title,
-  //     description,
-  //     blockquote,
-  //     sheriff,
-  //     bg,
-  //   } = DOM.safety;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=0.25')
-  //     .to(blockquote, animationConfig, '-=0.25')
-  //     .to(sheriff, marginAnimationConfig, '-=0.25')
-  //     .to(bg, marginAnimationConfig, '-=0.25');
-  // };
+const initScroll = () => {
+  if (!scroll) {
+    scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+    });
+  }
+  scroll.on('scroll', onLocomotiveScroll);
+};
 
-  // const animateNewNav = () => {
-  //   const {
-  //     title,
-  //     description,
-  //     bg,
-  //   } = DOM.newNav;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=0.25')
-  //     .to(bg, marginAnimationConfig, '-=0.25');
-  // };
 
-  // const animateNewDirection = () => {
-  //   const {
-  //     title,
-  //     description,
-  //     bg,
-  //     img,
-  //   } = DOM.newDirection;
-  //   const tl = new TimelineLite();
-  //   tl
-  //     .to(title, animationConfig)
-  //     .to(description, animationConfig, '-=1.0')
-  //     .to(bg, marginAnimationConfig, '-=0.75')
-  //     .to(img, marginAnimationConfig, '-=0.5');
-  // };
-
-  let scroll = null;
-  const onLocomotiveScroll = (e) => {
-    const offsetTop = e.scroll.y;
-    $(DOM.fixedLeftSide).toggleClass('scrolled', offsetTop > 100);
-    if (offsetTop > 1000) {
-      $(DOM.up).fadeIn();
-    } else {
-      $(DOM.up).fadeOut();
-    }
-    const winHeight = $(window).height();
-    // if ($(DOM.brand.self).offset().top < winHeight) {
-    //   animateBrand();
-    // }
-    // if ($(DOM.vToV.self).offset().top < winHeight) {
-    //   animateVToV();
-    // }
-    // if ($(DOM.ter.self).offset().top < winHeight) {
-    //   animateTer();
-    // }
-    // if ($(DOM.g.white).offset().top < winHeight) {
-    //   animateGWhite();
-    // }
-    // if ($(DOM.plans.self).offset().top < winHeight) {
-    //   animatePlans();
-    // }
-    // if ($(DOM.land.self).offset().top < winHeight) {
-    //   animateLand();
-    // }
-    // if ($(DOM.services.self).offset().top < winHeight) {
-    //   animateService();
-    // }
-    // if ($(DOM.subService.self).offset().top < winHeight) {
-    //   animateSubService();
-    // }
-    // if ($(DOM.safety.self).offset().top < winHeight) {
-    //   animateSafety();
-    // }
-    // if ($(DOM.newNav.self).offset().top < winHeight) {
-    //   animateNewNav();
-    // }
-    // if ($(DOM.newDirection.self).offset().top < winHeight) {
-    //   animateNewDirection();
-    // }
-    // if ($(DOM.e.self).offset().top < winHeight) {
-    //   // animateE();
-    //   $(DOM.scrollPlease).fadeOut();
-    // } else {
-    //   $(DOM.scrollPlease).fadeIn();
-    // }
-  };
-  const initScroll = () => {
-    if (!scroll) {
-      scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-      });
-      // animateIntro();
-    }
-    scroll.on('scroll', onLocomotiveScroll);
-  };
-  const onWindowScroll = () => {
-    // $(DOM.mobileHeader).toggleClass('scrolled', !!$(window).scrollTop());
-    // if ($(DOM.brand.self).offset().top < $(window).scrollTop()) {
-      // animateBrand();
-      // $(DOM.up).fadeIn();
-    // } else {
-      // $(DOM.up).fadeOut();
-    // }
-    // if ($(DOM.e.self).offset().top < $(window).height()) {
-    //   animateE();
-    //   $(DOM.scrollPlease).fadeOut();
-    // } else {
-    //   $(DOM.scrollPlease).fadeIn();
-    // }
-  };
-  // const initialize = () => {
-  //   if ($(window).width() > 1024) {
-  //     initScroll();
-  //   } else {
-  //     $(window).on('scroll', onWindowScroll);
-  //   }
-  // };
-  // initialize();
-  // const animateAll = () => {
-  //   animateTitle();
-  //   animateBrand();
-  //   animateVToV();
-  //   animateTer();
-  //   animateGWhite();
-  //   animatePlans();
-  //   animateLand();
-  //   // animateValues();
-  //   animateService();
-  //   animateSubService();
-  //   animateSafety();
-  //   animateNewNav();
-  //   animateNewDirection();
-  // };
-  // $(window).on('resize', () => {
-  //   if (!$('html').hasClass('has-scroll-init')) {
-  //     $('.main-container').css('overflow', 'hidden');
-  //     splitText();
-      // animateAll();
-    // }
-  // });
-  // $(DOM.up).on('click', () => {
-  //   if (scroll) {
-  //     scroll.scrollTo('top');
-  //   } else {
-  //     window.scrollTo(0, 0);
-  //   }
-  // });
+const animateAll = () => {
+  animateIntro();
+  animateAbout();
+  animateProjects();
+  animateTiny();
+  animateCards();
+  animateAboutMe();
+  animatePodcasts();
+};
 
 setTimeout(() => {
-  const scrol1l = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-  });
-  // initScroll(),
+  splitText();
   initVideo(),
   initCursor(),
   // initMagnetBtn(),
@@ -564,4 +379,5 @@ setTimeout(() => {
   initCarousel();
   initMenu();
   initContactModal();
+  setTimeout(initScroll, 100);
 }, 1000);

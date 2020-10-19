@@ -22,6 +22,14 @@
   &__logo {
     flex-basis: 25%;
 
+    img {
+      opacity: 0.01;
+
+      @include phone {
+        opacity: 1;
+      }
+    }
+
     @include phone {
       width: 50%;
       margin-bottom: 30px;
@@ -43,9 +51,11 @@
     font-weight: normal;
     max-width: 300px;
     margin-bottom: 30px;
+    opacity: 0.1;
 
     @include phone {
       font-size: 21px;
+      opacity: 1;
     }
   }
 
@@ -82,6 +92,7 @@
 
     p {
       margin-bottom: 23px;
+      opacity: 0.1;
 
       &:last-child {
         margin-bottom: 0;
@@ -89,6 +100,7 @@
 
       @include phone {
         margin-bottom: 20px !important;
+        opacity: 1;
       }
     }
   }

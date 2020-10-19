@@ -116,6 +116,14 @@
       @include phone {
         margin-bottom: 30px;
       }
+
+      img {
+        opacity: 0.1;
+
+        @include phone {
+          opacity: 1;
+        }
+      }
     }
 
     &-img-big {
