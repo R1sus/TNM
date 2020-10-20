@@ -6,7 +6,7 @@ import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import MagnetMouse from 'magnet-mouse';
 import initMagneticVideoBtn from './magnetic';
-import gsap, { TimelineLite } from 'gsap';
+import gsap, { TimelineLite, Expo } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import LocomotiveScroll from 'locomotive-scroll';
 import getDOM from './dom';
@@ -40,7 +40,7 @@ const load = () => {
   }
 };
 
-// const beginLoad = setInterval(load, 30);
+const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
   const slider = tns({
@@ -83,6 +83,17 @@ const initCarousel = () => {
     }
   });
 };
+
+const initProjectModal = () => {
+  $('.projects__slider-item').on('click', clickSlide);
+
+  const clickSlide = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('click');
+    $('.project-slide').toggleClass('show');
+  };
+}
 
 const initVideo = () => {
   const playButton = document.getElementById('play-button');
@@ -216,7 +227,7 @@ const animationConfig = {
   opacity: 1,
   y: 0,
   transformOrigin: '0% 50%',
-  ease: 'power2',
+  ease: Expo.easeOut,
   stagger: 0.05,
 };
 
@@ -229,10 +240,10 @@ const marginAnimationConfig = {
 };
 
 const imgAnimationConfig = {
-  duration: 2,
+  duration: 2.5,
   opacity: 1,
   ease: 'power2',
-  stagger: 0.05,
+  stagger: 0.07,
 };
 
 const animateIntro = () => {
@@ -240,6 +251,8 @@ const animateIntro = () => {
   const {
     title,
     description,
+    slider,
+    text,
   } = DOM.intro;
   const tl = new TimelineLite();
   tl.to(
@@ -252,6 +265,22 @@ const animateIntro = () => {
       stagger: 0.01,
     },
     '-=1',
+  ).to(
+    text,
+    {
+      ...animationConfig,
+    duration: 2,
+    },
+    '-=0.5'
+  ).to(
+    slider,
+    {
+      ...animationConfig,
+      duration: 2.5,
+      transform: 'scale(1)',
+      ease: 'power2',
+    },
+    '-=1.5',
   );
 };
 
@@ -261,22 +290,53 @@ const animateAbout = () => {
     title,
     text,
     img,
+    subtitle,
+    link,
   } = DOM.about;
 
   const tl = new TimelineLite();
-  tl.to(title, animationConfig, '-=1')
-    .to(text, animationConfig, '-=0.5')
-    .to(img, imgAnimationConfig, '-=1');
+  tl.to(title, {
+      ...animationConfig,
+      ease: 'circ',
+      duration: 4,
+    })
+    .to(img, {
+      ...imgAnimationConfig,
+      duration: 2.5,
+      transform: 'scale(1)',
+      ease: 'power2',
+    }, '-=3')
+    .to(subtitle, {
+      ...animationConfig,
+      duration: 2,
+      ease: 'slowMo',
+    }, '-=2')
+    .to(text, {
+      ...animationConfig,
+      duration: 3,
+      ease: 'circ',
+    }, '-=2.5')
+    .to(link, {
+      ...animationConfig,
+      ease: 'expo',
+      duration: 1.5,
+    }, '-=2');
 };
 
 const animateProjects = () => {
   const DOM = getDOM();
   const {
-    title
+    title,
+    slider,
   } = DOM.projects;
   const tl = new TimelineLite();
   tl
-    .to(title, animationConfig);
+    .to(title, {
+      ...animationConfig,
+      duration: 4,
+      stagger: .1
+    })
+    .to(slider, imgAnimationConfig, '-=3.5');
 };
 
 const animateTiny = () => {
@@ -284,31 +344,96 @@ const animateTiny = () => {
   const {
     title,
     images,
+    description,
+    titleA,
+    subTitleA,
+    text,
+    link,
   } = DOM.tiny;
   const tl = new TimelineLite();
   tl
-    .to(title, animationConfig)
-    .to(images, imgAnimationConfig, '-=1');
+    .to(title, {
+      ...animationConfig,
+      duration: 4,
+      stagger: .1
+    })
+    .to(images, imgAnimationConfig, '-=3.5')
+    .to(description, {
+      ...animationConfig,
+      duration: 3,
+      ease: 'circ',
+    }, '-=2')
+    .to(subTitleA, {
+      ...animationConfig,
+      duration: 2,
+    }, '-=3')
+    .to(titleA, {
+      ...animationConfig,
+      duration: 2,
+      ease: 'slowMo',
+    }, '-=2.5')
+    .to(text, {
+      ...animationConfig,
+      duration: 3,
+      ease: 'circ',
+    }, '-=2.5')
+    .to(link, {
+      ...animationConfig,
+      ease: 'expo',
+      duration: 1.5,
+    }, '-=1.5');
 };
 
 const animateCards = () => {
   const DOM = getDOM();
   const {
     title,
+    text,
+    container,
   } = DOM.cards;
   const tl = new TimelineLite();
   tl
-    .to(title, animationConfig);
+    .to(title, {
+      ...animationConfig,
+      duration: 4,
+      stagger: .1
+    })
+    .to(text, {
+      ...animationConfig,
+      duration: 2,
+      ease: 'slowMo',
+    }, '-=3.5')
+    .to(container, {
+      ...imgAnimationConfig,
+      duration: 2,
+      ease: 'power3',
+    }, '-=2');
 };
 
 const animateAboutMe = () => {
   const DOM = getDOM();
   const {
-    title
+    title,
+    textTitle,
+    text,
+    video,
   } = DOM.aboutMe;
   const tl = new TimelineLite();
   tl
-    .to(title, animationConfig);
+    .to(title, {
+      ...animationConfig,
+      duration: 3,
+    })
+    .to(textTitle, {
+      ...animationConfig,
+      duration: 2,
+    }, '-=3')
+    .to(text, {
+      ...animationConfig,
+      duration: 2,
+      ease: 'slowMo',
+    }, '-=3.5')
+    .to(video, imgAnimationConfig, '-=2');
 };
 
 const animatePodcasts = () => {
@@ -317,34 +442,45 @@ const animatePodcasts = () => {
     title,
     subT,
     text,
+    desc,
   } = DOM.podcasts;
   const tl = new TimelineLite();
   tl
-    .to(title, animationConfig)
-    .to(subT, animationConfig, '+=0.5')
-    .to(text, imgAnimationConfig, '+=0.7');
+    .to(title, {
+      ...animationConfig,
+      duration: 4,
+      stagger: .1
+    })
+    .to(subT, animationConfig, '-=3.5')
+    .to(desc, {
+      ...animationConfig,
+      duration: 2
+    }, '-=2')
+    .to(text, {...animationConfig, duration: 2, stagger: 1.2 }, '-=3');
 };
 
 let scroll = null;
 const onLocomotiveScroll = (e) => {
   const DOM = getDOM();
   const winHeight = $(window).height();
-  if ($(DOM.about.self).offset().top < winHeight) {
+  const offset = winHeight / 2;
+  // animateIntro();
+  if ($(DOM.about.self).offset().top < offset) {
     animateAbout();
   }
-  if ($(DOM.projects.self).offset().top < winHeight) {
+  if ($(DOM.projects.self).offset().top < offset) {
     animateProjects();
   }
-  if ($(DOM.tiny.self).offset().top < winHeight) {
+  if ($(DOM.tiny.self).offset().top < offset) {
     animateTiny();
   }
-  if ($(DOM.cards.self).offset().top < winHeight) {
+  if ($(DOM.cards.self).offset().top < offset) {
     animateCards();
   }
-  if ($(DOM.aboutMe.self).offset().top < winHeight) {
+  if ($(DOM.aboutMe.self).offset().top < offset) {
     animateAboutMe();
   }
-  if ($(DOM.podcasts.self).offset().top < winHeight) {
+  if ($(DOM.podcasts.self).offset().top < offset) {
     animatePodcasts();
   }
 };
@@ -354,6 +490,9 @@ const initScroll = () => {
     scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
+      getSpeed: true,
+      getDirection: true,
+      useKeyboard: true
     });
   }
   scroll.on('scroll', onLocomotiveScroll);
@@ -378,6 +517,7 @@ setTimeout(() => {
   initMobileMenu(),
   initCarousel();
   initMenu();
+  initProjectModal();
   initContactModal();
   setTimeout(initScroll, 100);
 }, 1000);

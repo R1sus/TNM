@@ -23,7 +23,8 @@
     flex-basis: 25%;
 
     img {
-      opacity: 0.01;
+      opacity: 0.00000001;
+      transform: scale(1.2);
 
       @include phone {
         opacity: 1;
@@ -51,7 +52,7 @@
     font-weight: normal;
     max-width: 300px;
     margin-bottom: 30px;
-    opacity: 0.1;
+    opacity: 0.00000001;
 
     @include phone {
       font-size: 21px;
@@ -68,6 +69,15 @@
     display: flex;
     align-items: center;
     margin-bottom: 23px;
+    opacity: 0;
+    transform-origin: 0 100%;
+    transform: translate(0, -100px);
+
+    @include phone {
+      opacity: 1;
+      transform-origin: 0 50%;
+      transform: none;
+    }
   }
 
   &__text {
@@ -92,7 +102,7 @@
 
     p {
       margin-bottom: 23px;
-      opacity: 0.1;
+      opacity: 0.0000001;
 
       &:last-child {
         margin-bottom: 0;
@@ -107,6 +117,15 @@
 
   &__link {
     text-transform: uppercase;
+    opacity: 0;
+    transform-origin: 0 100%;
+    transform: translate(0, -100px);
+
+    @include phone {
+      opacity: 1;
+      transform-origin: 0 50%;
+      transform: none;
+    }
 
     &.cool-link::after,
     &.cool-link::before {

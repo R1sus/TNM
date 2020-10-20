@@ -14,6 +14,11 @@
   &__slider {
     position: relative;
     letter-spacing: -0.03em;
+    opacity: 0.00001;
+
+    @include phone {
+      opacity: 1;
+    }
 
     &-num {
       margin-bottom: 15px;

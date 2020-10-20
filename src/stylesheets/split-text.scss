@@ -16,8 +16,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(0, 50%);
-      opacity: 0.01;
+      transform: translate(0, 100%);
 
       @include tablet {
         transform: none;

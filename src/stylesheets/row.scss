@@ -4,9 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: 0.1;
 
   @include phone {
     flex-flow: row nowrap;
     overflow-y: scroll;
+    opacity: 1;
   }
 }

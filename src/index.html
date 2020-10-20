@@ -42,6 +42,43 @@
             </form>
         </div>
     </div>
+
+    <!-- <div class="project-modal">
+        <div class="project-modal__container">
+            <div class="contact__close">
+                <a href="#" class="close-btn"></a>
+            </div>
+            <div class="project-modal__top">
+                <div class="num">01/04</div> -->
+                <!-- controls ?  -->
+            <!-- </div>
+            <div class="project-modal__img">
+                <img src="images/projects-1.png" alt="">
+            </div>
+            <div class="project-modal__description">
+                <div class="project-modal__col">
+                    Yoga Retreat San Marcos
+                </div>
+                <div class="project-modal__col">
+                    <div class="projects__slider-info">
+                        Location: Undisclosed, South America.</br>
+                        Size: 500 m2</br>
+                        Year: 2018
+                    </div>
+                    <p>Overlooking 3 volcanoes and the magnificent Atitlan lake, a new place was born.</p>
+                    <p>Bringing harmony to both body and mind, the center is built for Yoga and Ayurveda.</p>
+                    <p>Using the contrast between the common local stone foundations to the lightness of 
+                        elevated structures, the design follows the experience of the guest: 
+                        Leaving behind the intense rhythm of modern life, and offers a new way
+                        to connect with oneself, with community and nature.</p>
+                    <p>The project contains a variety of public spaces: a one of a kind Yoga Shala,
+                    ceremonial space, therapy rooms, ecological pool and a silent retreat area, 
+                    as well as luxurious private cabins with panoramic views.</p>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
     <div class="scroll-container" data-scroll-container>
         <header class="header" data-scroll-section>
             <div class="header__wrapper">
@@ -87,7 +124,7 @@
         <main>
             <section class="intro" data-scroll-section>
                 <div class="intro__container">
-                    <div class="intro__logo">
+                    <div class="intro__logo mobile-hide">
                         <img src="images/logo/logo-t.svg" alt="">
                         <img src="images/logo/logo-h.svg" alt="">
                         <img class="divider" src="images/logo/logo-e.svg" alt="">
@@ -106,13 +143,10 @@
                         <img src="images/logo/logo-t.svg" alt="">
                         <img src="images/logo/logo-r.svg" alt="">
                     </div>
+                    <img class="mobile-show" src="images/black_logo.svg" alt="">
                     <div class="intro__bottom">
                         <div class="intro__description">
-                            <blockquote class="split-word intro__description-quote">
-                                “We are constantly moving around 
-                                to ultimately 
-                                find stillness”
-                            </blockquote>
+                            <blockquote class="split-word intro__description-quote">“We are constantly moving around to ultimately find stillness”</blockquote>
                             <div class="intro__description-author">Adi cohen</div>
                             <div class="intro__description-position">Architect</div>
                         </div>
@@ -159,7 +193,7 @@
                             (the structure) as a sanctum for the soul.
                         </h5>
                         <div class="about__text">
-                            <div class="about__text-col">
+                            <div class="about__text-col" data-scroll data-scroll-speed="0.8">
                                 <p>
                                     An architecture geared to fuel the creativity and 
                                     wellbeing of its inhabitants, whether they are permanent
@@ -172,7 +206,7 @@
                                     the unique site-specific properties of the location.
                                 </p>
                             </div>
-                            <div class="about__text-col">
+                            <div class="about__text-col" data-scroll data-scroll-speed="1.2">
                                 <p>
                                     The New Movement is based on a number of pillars that
                                     together create a holistic experience of mindfulness,
@@ -187,7 +221,7 @@
                 
             </section>
             <section class="projects" data-scroll-section>
-                <h1 class="projects__title split-text">selected projects</h1>
+                <h1 class="projects__title split-word">selected projects</h1>
                 <div class="projects__slider swiper-container">
                     <div class="projects__slider-nav">
                         <div class="swiper-button-prev">
@@ -261,7 +295,7 @@
                 </div>
             </section>
             <section class="tiny-house" data-scroll-section>
-                <h1 class="tiny-house__title split-text">the tiny house project</h1>
+                <h1 class="tiny-house__title split-word">the tiny house project</h1>
                 <div class="tiny-house__wrapper">
                     <div class="tiny-house__description">
                         <div class="tiny-house__description-container">
@@ -284,13 +318,9 @@
                             </div>
                         </div>
                         <div class="tiny-house__article-title">the tiny house</div>
-                        <div class="tiny-house__article-subtitle">
-                            The tiny house movement is growing all over the world,
-                            where more and more people value freedom,
-                            minimalism and well-being over busy city life.
-                        </div>
+                        <div class="tiny-house__article-subtitle split-word">The tiny house movement is growing all over the world, where more and more people value freedom, minimalism and well-being over busy city life.</div>
                         <div class="tiny-house__article-text">
-                            <p>
+                            <p data-scroll data-scroll-speed="0.7">
                                 An architecture geared to fuel the creativity and wellbeing
                                 of its inhabitants, whether they are permanent dwellers or 
                                 transient visitors searching for inspiration.An architecture 
@@ -298,7 +328,7 @@
                                 and desired stillness, between the human memory palette and the unique 
                                 site-specific properties of the location.
                             </p>
-                            <p>
+                            <p data-scroll data-scroll-speed="1.1">
                                 The New Movement is based on a number of pillars that 
                                 together create a holistic experience of mindfulness, wellbeing
                                 and creativity. A place to re-charge your batteries after a long
@@ -311,7 +341,7 @@
             </section>
             <div class="cards" data-scroll-section>
                 <div class="cards__description">
-                    <h1 class="cards__title split-text">A 21ST CENTURY ARCHITECTURE PROCESS</h1>
+                    <h1 class="cards__title split-word">A 21ST CENTURY ARCHITECTURE PROCESS</h1>
                     <div class="cards__text">
                         <div class="cards__text-title">process</div>
                         <p>Just like many work processes that are 
@@ -399,17 +429,9 @@
             </div>
             <div class="about-me" data-scroll-section>
                 <div class="about-me__subtitle">About me</div>
-                <div class="about-me__title split-word">
-                    One day, as I was working at one of Israel’s 
-                    most prestigious architecture firms...
-                </div>
+                <div class="about-me__title split-word">One day, as I was working at one of Israel’s most prestigious architecture firms...</div>
                 <div class="about-me__container">
-                    <div class="about-me__text-title">
-                        ...I realized there must be
-                        more to life than sitting begind 
-                        a desk for 10 hours a day. I knew I needed a change.
-                        I knew I needed to explore a different kind of architecture.
-                    </div>
+                    <div class="about-me__text-title split-word">...I realized there must be more to life than sitting begind a desk for 10 hours a day. I knew I needed a change. I knew I needed to explore a different kind of architecture.</div>
                     <div class="about-me__text">
                         So, I left everything behind and began travelling.
                         I embraced the nomad lifestyle. Endless curiousity 
@@ -433,7 +455,7 @@
                 </div>
             </div>
             <section class="podcast" data-scroll-section>
-                <h1 class="podcast__title split-text">podcast</h1>
+                <h1 class="podcast__title split-word">podcast</h1>
                 <div class="podcast__container">
                     <div class="podcast__description">
                         <div class="podcast__description-title split-text">S-2</div>
@@ -518,10 +540,61 @@
                 </div>
             </section>
         </main>
-        <section class="c-section -fixed" data-scroll-section data-persistent>
+        <section class="-fixed" data-scroll-section data-persistent style="position: relative;">
             <div class="c-fixed_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
                 <div class="c-fixed_target" id="fixed-target"></div>
-                <!-- <div class="c-fixed" data-scroll data-scroll-sticky>  -->
+                <div class="c-fixed" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+                    <footer class="footer">
+                        <img src="images/white_logo.svg" alt="">
+                        <div class="footer__menu">
+                            <div class="footer__menu-links">
+                                <h6 class="footer__title">Links</h6>
+                                <ul class="footer__menu-nav">
+                                    <li class="footer__menu-nav-item"><a href="">About</a></li>
+                                    <li class="footer__menu-nav-item"><a href="">Projects</a></li>
+                                    <li class="footer__menu-nav-item"><a href="">Manifesto</a></li>
+                                    <li class="footer__menu-nav-item"><a href="">Contact</a></li>
+                                </ul>
+                                <div class="footer__menu-copyright mobile-hide">All ©Rights to the The New Movement</div>
+                            </div>
+                            <div class="footer__contact">
+                                <h6 class="footer__title">Contact</h6>
+                                <div class="footer__contact-text">
+                                    The best way to reach me is via email.
+                                    Unless I’m deep in the Amazones,
+                                    I will get back to you within 24 hours.
+                                </div>
+                                <form class="footer__contact-form">
+                                    <label for="email">Email</label>
+                                    <input class="input-email" id="email" type="email" placeholder="Your email">
+                                    <button data-content="Send" class="btn" type="submit">
+                                        <span class="btn__text">Send</span>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="footer__follow">
+                                <h6 class="footer__title">Follow</h6>
+                                <div class="footer__follow-container">
+                                    <ul class="footer__social">
+                                        <li><a href="" class="cool-link">Instagram</a></li>
+                                        <li><a href="" class="cool-link">Facebook</a></li>
+                                        <li><a href="" class="cool-link">Linkendin</a></li>
+                                    </ul>
+                                    <div class="footer__menu-copyright mobile-show">All ©Rights to the The New Movement</div>
+                                    <div class="footer__copyright">Designed by
+                                        <a href="http://obys.agency/" class="cool-link">Obys</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="c-section -fixed" data-scroll-section data-persistent>
+            <div class="c-fixed_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                <div class="c-fixed_target" id="fixed-target"></div>
+               
                     <footer class="footer c-fixed" data-scroll data-scroll-sticky>
                         <img src="images/white_logo.svg" alt="">
                         <div class="footer__menu">
@@ -566,9 +639,9 @@
                             </div>
                         </div>
                     </footer>
-                <!-- </div> -->
+                
             </div>
-        </section>
+        </section> -->
     </div>
 </body>
 </html>

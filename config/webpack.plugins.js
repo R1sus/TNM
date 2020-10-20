@@ -131,7 +131,7 @@ const google = new GoogleAnalyticsPlugin({
 
 module.exports = [
   clean,
-  stylelint,
+  // stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
   fs.existsSync(config.favicon) && favicons,

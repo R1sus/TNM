@@ -42,9 +42,13 @@
   &__text {
     margin-bottom: 30px;
     padding-right: 80px;
+    opacity: 0.0001;
+    transform: translate(0, -50px);
 
     @include phone {
       padding-right: 0;
+      opacity: 1;
+      transform: none;
     }
 
     &-title {
@@ -60,6 +64,12 @@
   }
 
   &__video {
+    opacity: 0;
+
+    @include phone {
+      opacity: 1;
+    }
+
     &-title {
       @include title-decor;
 
