@@ -5,6 +5,7 @@
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
+  z-index: 16;
 
   @include phone {
     padding: 15px;
