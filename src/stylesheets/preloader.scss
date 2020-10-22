@@ -16,6 +16,10 @@
   opacity: 1;
   visibility: visible;
 
+  &__logo {
+    width: 100%;
+  }
+
   &__counter {
     font-size: 24px;
     margin-bottom: 18px;

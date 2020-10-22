@@ -1,6 +1,10 @@
 .project-modal {
   @extend .contact;
 
+  @include phone {
+    overflow-y: scroll;
+  }
+
   &.project-modal-slide-1,
   &.project-modal-slide-3 {
     justify-content: flex-start;
@@ -22,33 +26,65 @@
     background-color: $primary-color;
     padding: 30px;
     position: relative;
+
+    @include phone {
+      width: 100%;
+      max-width: none;
+      padding: 90px 15px 15px;
+      height: 100%;
+      overflow-y: scroll;
+    }
   }
 
   &__top {
     margin-bottom: 18px;
+
+    @include phone {
+      display: none;
+    }
   }
 
   &__img {
     margin-bottom: 18px;
+
+    @include phone {
+      padding-top: 20px;
+    }
   }
 
   &__col {
     min-width: 30%;
+
+    @include phone {
+      margin-bottom: 20px;
+    }
   }
 
   &__description {
     display: flex;
     justify-content: space-between;
 
+    @include phone {
+      flex-direction: column;
+    }
+
     p {
       margin-bottom: 18px;
       padding-left: 80px;
+
+      @include phone {
+        padding-left: 0;
+      }
     }
   }
 
   &__info {
     margin-bottom: 30px;
     padding-left: 80px;
+
+    @include phone {
+      padding-left: 0;
+    }
   }
 
   &__close {

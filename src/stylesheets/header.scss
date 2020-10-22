@@ -1,6 +1,7 @@
 .header {
   @include default-wrapper;
 
+  padding-bottom: 0;
   position: relative;
   font-size: 14px;
   line-height: 16px;
@@ -15,7 +16,7 @@
     border-bottom: 1px solid $secondary-color;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
 
   &__logo {

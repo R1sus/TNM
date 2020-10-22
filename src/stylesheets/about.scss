@@ -4,14 +4,18 @@
   height: 100vh;
   background-color: $secondary-color;
   color: $text-color-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include phone {
     height: auto;
+    align-items: flex-start;
   }
 
   &__container {
     display: flex;
-    padding: 118px 0;
+    // padding: 118px 0;
 
     @include phone {
       padding: 90px 0;
@@ -48,7 +52,7 @@
 
   &__title {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 116%;
     font-weight: normal;
     max-width: 300px;
     margin-bottom: 30px;
@@ -83,7 +87,7 @@
   &__text {
     display: flex;
     margin-bottom: 30px;
-    line-height: 1.4;
+    line-height: 126%;
 
     @include phone {
       flex-direction: column;

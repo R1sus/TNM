@@ -1,7 +1,7 @@
 .intro {
   @include default-wrapper;
 
-  height: calc(100vh - 80px);
+  height: calc(100vh - 77px);
 
   @include phone {
     height: auto;
@@ -22,11 +22,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 0 auto;
+    height: 120px;
 
     img {
       opacity: 0.0001;
-      max-height: 100px;
+      width: auto;
+      height: 100%;
 
       &.divider {
         margin-right: 30px;
@@ -70,7 +71,7 @@
     &-quote {
       max-width: 250px;
       font-size: 24px;
-      line-height: 1.1;
+      line-height: 1;
       margin-bottom: 100px;
 
       @include phone {

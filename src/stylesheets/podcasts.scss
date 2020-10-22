@@ -45,6 +45,7 @@
     &-text {
       max-width: 230px;
       opacity: 0.0001;
+      line-height: 126%;
 
       @include phone {
         max-width: none;
