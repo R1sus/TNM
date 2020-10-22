@@ -45,9 +45,12 @@
   &__menu {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     height: 100%;
-    padding-top: 50px;
+  }
+
+  .contact-link-mob {
+    padding-top: 50vh;
   }
 
   &__navigation {

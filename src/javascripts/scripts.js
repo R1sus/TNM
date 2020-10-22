@@ -14,6 +14,7 @@ import getDOM from './dom';
 import initMenu from './image-hover';
 
 Swiper.use([Navigation, Pagination]);
+require('jquery-modal');
 
 window.jQuery = $;
 window.$ = $;
@@ -61,7 +62,6 @@ const initCarousel = () => {
     watchSlidesVisibility: true,
     slidesPerView: 2,
     slidesPerGroup: 2,
-    // parallax: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'progressbar',
@@ -80,19 +80,25 @@ const initCarousel = () => {
         slidesPerView: 2,
         slidesPerGroup: 2,
       }
+    },
+    on: {
+      click: function (swiper, event) {
+        initProjectModal(event.target);
+      }
     }
   });
 };
 
-const initProjectModal = () => {
-  $('.projects__slider-item').on('click', clickSlide);
-
-  const clickSlide = (e) => {
+const initProjectModal = (target) => {
+  console.log(target);
+  const slide = $(target).closest('.projects__slider-item');
+  const slideNum = slide.attr("data-slide");
+  console.log(slideNum);
+  $(`.project-modal.project-modal-slide-${slideNum}`).toggleClass('show');
+  $(`.project-modal__close-${slideNum}`).on('click', (e) => { 
     e.preventDefault();
-    e.stopPropagation();
-    console.log('click');
-    $('.project-slide').toggleClass('show');
-  };
+    $(`.project-modal.project-modal-slide-${slideNum}`).removeClass('show');
+  })
 }
 
 const initVideo = () => {
@@ -105,8 +111,10 @@ const initVideo = () => {
     }
     if (video.paused == true) {
       video.play();
+      $('#play-button').toggleClass('pause');
     } else {
         video.pause();
+        $('#play-button').toggleClass('pause');
     }
   });
 };
@@ -405,9 +413,9 @@ const animateCards = () => {
     }, '-=3.5')
     .to(container, {
       ...imgAnimationConfig,
-      duration: 2,
+      duration: 2.5,
       ease: 'power3',
-    }, '-=2');
+    }, '-=2.5');
 };
 
 const animateAboutMe = () => {
@@ -517,7 +525,6 @@ setTimeout(() => {
   initMobileMenu(),
   initCarousel();
   initMenu();
-  initProjectModal();
   initContactModal();
   setTimeout(initScroll, 100);
 }, 1000);

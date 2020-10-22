@@ -1,3 +1,68 @@
 .project-modal {
   @extend .contact;
+
+  &.project-modal-slide-1,
+  &.project-modal-slide-3 {
+    justify-content: flex-start;
+  }
+
+  &.project-modal-slide-2,
+  &.project-modal-slide-4 {
+    justify-content: flex-end;
+
+    .project-modal__close {
+      right: auto;
+      left: -80px;
+    }
+  }
+
+  &__container {
+    width: 55%;
+    max-width: 740px;
+    background-color: $primary-color;
+    padding: 30px;
+    position: relative;
+  }
+
+  &__top {
+    margin-bottom: 18px;
+  }
+
+  &__img {
+    margin-bottom: 18px;
+  }
+
+  &__col {
+    min-width: 30%;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin-bottom: 18px;
+      padding-left: 80px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+    padding-left: 80px;
+  }
+
+  &__close {
+    @extend .contact__close;
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include phone {
+      top: 35px;
+      right: 15px;
+      background-color: $secondary-color;
+    }
+  }
 }
