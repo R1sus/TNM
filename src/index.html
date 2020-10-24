@@ -11,10 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 </head>
 <body>
-
-    <div class="cursor mobile-hide" id="cursor"></div>
-
-    <div class="preloader">
+    <div id="cursor" class="cursor mobile-hide">
+        <div class="cursor__circle"></div>
+    </div>
+    
+    <!-- <div class="preloader">
         <div class="preloader__logo">
             <img src="images/white_logo.svg" alt="tnm logo">
         </div>
@@ -25,7 +26,7 @@
             </div>
             <div class="preloader__bar" id="progress"></div>
         </div> 
-    </div>
+    </div> -->
 
     <div class="contact">
         <div class="contact__container">
@@ -51,12 +52,38 @@
             <div class="project-modal__close project-modal__close-1">
                 <a href="#" class="close-btn"></a>
             </div>
-            <div class="project-modal__top">
-                <div class="num">01 / 04</div>
-                <!-- controls ?  -->
-            </div>
-            <div class="project-modal__img">
-                <img src="images/projects-1.png" alt="">
+            <div class="project-modal__slider-container">
+                <div class="project-modal__top">
+                    <div class="project-modal__slider-controls">
+                        <a class="project-modal__slider-controls-btn" href="#">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.9502 10.8994L1.00045 5.94967L5.9502 0.999919" stroke="#181818"/>
+                                <path d="M1.4502 5.89941L19.4502 5.89941" stroke="#181818"/>
+                            </svg>                                        
+                        </a>
+                        <a class="project-modal__slider-controls-btn" href="#">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5 1L18.4497 5.94975L13.5 10.8995" stroke="#181818"/>
+                                <path d="M18 6L0 6" stroke="#181818"/>
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-modal__slider">
+                    <div class="project-modal__slider-item">
+                        <div class="num">01 / 03</div>
+                        <img src="images/projects-1.png" alt="item-slider">
+                    </div>
+                    <div class="project-modal__slider-item">
+                        <div class="num">02 / 03</div>
+                        <img src="images/projects-2.png" alt="item-slider">
+                    </div>
+                    <div class="project-modal__slider-item">
+                        <div class="num">03 / 03</div>
+                        <img src="images/projects-1.png" alt="item-slider">
+                    </div>
+                </div>
             </div>
             <div class="project-modal__description">
                 <div class="project-modal__col">
@@ -87,12 +114,37 @@
             <div class="project-modal__close project-modal__close-2">
                 <a href="#" class="close-btn"></a>
             </div>
-            <div class="project-modal__top">
-                <div class="num">02 / 04</div>
-                <!-- controls ?  -->
-            </div>
-            <div class="project-modal__img">
-                <img src="images/projects-2.png" alt="">
+            <div class="project-modal__slider-container">
+                <div class="project-modal__top">
+                    <div class="project-modal__slider-controls project-modal__slider-controls2">
+                        <a class="project-modal__slider-controls-btn" href="#">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.9502 10.8994L1.00045 5.94967L5.9502 0.999919" stroke="#181818"/>
+                                <path d="M1.4502 5.89941L19.4502 5.89941" stroke="#181818"/>
+                            </svg>                                        
+                        </a>
+                        <a class="project-modal__slider-controls-btn" href="#">
+                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5 1L18.4497 5.94975L13.5 10.8995" stroke="#181818"/>
+                                <path d="M18 6L0 6" stroke="#181818"/>
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                <div class="project-modal__slider project-modal__slider2">
+                    <div class="project-modal__slider-item">
+                        <div class="num">01 / 03</div>
+                        <img src="images/projects-2.png" alt="item-slider">
+                    </div>
+                    <div class="project-modal__slider-item">
+                        <div class="num">02 / 03</div>
+                        <img src="images/projects-2.png" alt="item-slider">
+                    </div>
+                    <div class="project-modal__slider-item">
+                        <div class="num">03 / 03</div>
+                        <img src="images/projects-1.png" alt="item-slider">
+                    </div>
+                </div>
             </div>
             <div class="project-modal__description">
                 <div class="project-modal__col">

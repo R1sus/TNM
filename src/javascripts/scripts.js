@@ -41,7 +41,7 @@ const load = () => {
   }
 };
 
-const beginLoad = setInterval(load, 30);
+// const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
   const slider = tns({
@@ -52,6 +52,26 @@ const initCarousel = () => {
     nav: false,
     animateIn: 'show-slide',
     animateOut: 'hide-slide',
+    mode: 'gallery',
+    speed: 800
+  });
+
+  const projectModalSlider = tns({
+    container: '.project-modal__slider2',
+    items: 1,
+    arrowKeys: true,
+    controlsContainer: '.project-modal__slider-controls2',
+    nav: false,
+    mode: 'gallery',
+    speed: 800
+  });
+
+  const projectModalSlider2 = tns({
+    container: '.project-modal__slider',
+    items: 1,
+    arrowKeys: true,
+    controlsContainer: '.project-modal__slider-controls',
+    nav: false,
     mode: 'gallery',
     speed: 800
   });
@@ -90,10 +110,8 @@ const initCarousel = () => {
 };
 
 const initProjectModal = (target) => {
-  console.log(target);
   const slide = $(target).closest('.projects__slider-item');
   const slideNum = slide.attr("data-slide");
-  console.log(slideNum);
   $(`.project-modal.project-modal-slide-${slideNum}`).toggleClass('show');
   $(`.project-modal__close-${slideNum}`).on('click', (e) => { 
     e.preventDefault();
@@ -132,33 +150,71 @@ const initMagnetBtn = () => {
 };
 
 const initCursor = () => {
-  var $cursor = $('.cursor'),
-    $wrapper = $('body'); 
+  const cursor = document.querySelector('#cursor');
+  const cursorCircle = cursor.querySelector('.cursor__circle');
 
-  function moveCursor(e) {
-    TweenLite.to($cursor, 0.2, {
-      css: {
-        left: e.pageX,
-        top: e.pageY
-      }
-    });
+  const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+  const pos = { x: 0, y: 0 }; // cursor's coordinates
+  const speed = 0.1; // between 0 and 1
+
+  const updateCoordinates = e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
   }
-  $('html').mouseover(function(e){
-    if (e.target.tagName.toLowerCase() === 'a') {
-      return
-    }
-    TweenLite.to($cursor,0.4,{scale:1,autoAlpha:1})
-    $($wrapper).on('mousemove', moveCursor);
-  });
+
+  window.addEventListener('mousemove', updateCoordinates);
+
+  function getAngle(diffX, diffY) {
+    return Math.atan2(diffY, diffX) * 180 / Math.PI;
+  }
+
+  function getSqueeze(diffX, diffY) {
+    const distance = Math.sqrt(
+      Math.pow(diffX, 2) + Math.pow(diffY, 2)
+    );
+    const maxSqueeze = 0.15;
+    const accelerator = 1500;
+    return Math.min(distance / accelerator, maxSqueeze);
+  }
+
+  const updateCursor = () => {
+    const diffX = Math.round(mouse.x - pos.x);
+    const diffY = Math.round(mouse.y - pos.y);
+    
+    pos.x += diffX * speed;
+    pos.y += diffY * speed;
+    
+    const angle = getAngle(diffX, diffY);
+    const squeeze = getSqueeze(diffX, diffY);
+    
+    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+    const rotate = 'rotate(' + angle +'deg)';
+    const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+
+    cursor.style.transform = translate;
+    cursorCircle.style.transform = rotate + scale;
+  };
+
+  function loop() {
+    updateCursor();
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
+
+  const cursorModifiers = document.querySelectorAll('a');
+
+  cursorModifiers.forEach(curosrModifier => {
+    curosrModifier.addEventListener('mouseenter', function() {
+      const className = "hover";
+      cursor.classList.add(className);
+    });
   
-  $('a').hover(
-    function(e) {
-      TweenLite.to($cursor,0.3,{ scale:2 })
-    },
-    function(e) {
-      TweenLite.to($cursor,0.3,{ scale:1 })
-    }
-  );
+    curosrModifier.addEventListener('mouseleave', function() {
+      const className = "hover";
+      cursor.classList.remove(className);
+    });
+  });
 };
 
 const initMobileMenu = () => {

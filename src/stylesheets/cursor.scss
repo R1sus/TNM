@@ -1,10 +1,31 @@
-.cursor {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  margin: -14px 0 0 -14px;
-  border: 1px solid #777;
-  border-radius: 50%;
-  z-index: 99999;
+#cursor {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
   pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor__circle {
+    width: 15px;
+    height: 15px;
+    margin-top: -50%;
+    margin-left: -50%;
+    border-radius: 50%;
+    border: solid 1px #777;
+    transition:
+      opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  #cursor.hover .cursor__circle {
+    width: 28px;
+    height: 28px;
+  }
 }

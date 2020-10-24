@@ -20,6 +20,18 @@
     }
   }
 
+  &__slider-item .num {
+    position: absolute;
+    top: -34px;
+  }
+
+  &__slider-controls-btn {
+    background-color: transparent;
+    border: 0;
+    margin: 0 5px;
+    outline: none;
+  }
+
   &__container {
     width: 55%;
     max-width: 740px;
@@ -38,18 +50,25 @@
 
   &__top {
     margin-bottom: 18px;
+    display: flex;
+    justify-content: flex-end;
 
     @include phone {
       display: none;
     }
   }
 
-  &__img {
+  &__slider-container {
     margin-bottom: 18px;
 
     @include phone {
       padding-top: 20px;
     }
+  }
+
+  &__slider-controls {
+    border: 0;
+    outline: none;
   }
 
   &__col {

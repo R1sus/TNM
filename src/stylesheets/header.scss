@@ -2,6 +2,7 @@
   @include default-wrapper;
 
   padding-bottom: 0;
+  padding-top: 20px;
   position: relative;
   font-size: 14px;
   line-height: 16px;
@@ -16,7 +17,11 @@
     border-bottom: 1px solid $secondary-color;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  a {
+    padding: 10px 0;
   }
 
   &__logo {
