@@ -1,11 +1,19 @@
 .manifesto {
-  padding: 0 30px 146px;
+  padding: 0 30px 116px;
+
+  @include phone {
+    padding: 0 15px 60px;
+  }
 
   &__title {
     @include inner-title;
 
     margin-bottom: 116px;
     margin-top: 0;
+
+    @include phone {
+      margin-bottom: 50px;
+    }
   }
 
   &__subtitle {
@@ -18,6 +26,11 @@
     text-transform: uppercase;
     float: left;
     min-width: 35%;
+
+    @include phone {
+      float: none;
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -26,6 +39,11 @@
       font-weight: normal;
       font-size: 48px;
       line-height: 116%;
+
+      @include phone {
+        font-size: 26px;
+        line-height: 116%;
+      }
 
       p {
         margin-bottom: 30px;
@@ -39,6 +57,15 @@
     display: flex;
     padding-top: 29px;
 
+    @include phone {
+      padding-top: 20px;
+      flex-direction: column;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
     &-container {
       flex: 1;
     }
@@ -46,6 +73,12 @@
     &-img {
       width: 450px;
       margin-right: 20px;
+
+      @include phone {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
 
     &-title {
@@ -54,14 +87,20 @@
       margin-bottom: 30px;
       font-style: normal;
       font-weight: normal;
+
+      @include phone {
+        font-size: 21px;
+        line-height: 115%;
+      }
     }
 
     &-text-big {
       font-size: 24px;
       line-height: 116%;
 
-      p {
-        margin-bottom: 30px;
+      @include phone {
+        font-size: 21px;
+        line-height: 115%;
       }
     }
   }

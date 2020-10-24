@@ -41,9 +41,18 @@
   line-height: 103.4%;
   letter-spacing: -0.05em;
 
+  @include phone {
+    font-size: 35px;
+    line-height: 107%;
+  }
+
   &::before {
     content: '/';
     margin-right: 25px;
+
+    @include phone {
+      margin-right: 10px;
+    }
   }
 }
 

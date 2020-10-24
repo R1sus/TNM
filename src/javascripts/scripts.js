@@ -41,7 +41,7 @@ const load = () => {
   }
 };
 
-const beginLoad = setInterval(load, 30);
+// const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
   if (document.querySelector('.intro__slider') !== null) {
