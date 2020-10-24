@@ -41,40 +41,46 @@ const load = () => {
   }
 };
 
-// const beginLoad = setInterval(load, 30);
+const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
-  const slider = tns({
-    container: '.intro__slider',
-    items: 1,
-    arrowKeys: true,
-    controlsContainer: '.intro__slider-controls',
-    nav: false,
-    animateIn: 'show-slide',
-    animateOut: 'hide-slide',
-    mode: 'gallery',
-    speed: 800
-  });
+  if (document.querySelector('.intro__slider') !== null) {
+    const slider = tns({
+      container: '.intro__slider',
+      items: 1,
+      arrowKeys: true,
+      controlsContainer: '.intro__slider-controls',
+      nav: false,
+      animateIn: 'show-slide',
+      animateOut: 'hide-slide',
+      mode: 'gallery',
+      speed: 800
+    });
+  }
 
-  const projectModalSlider = tns({
-    container: '.project-modal__slider2',
-    items: 1,
-    arrowKeys: true,
-    controlsContainer: '.project-modal__slider-controls2',
-    nav: false,
-    mode: 'gallery',
-    speed: 800
-  });
+  if (document.querySelector('.project-modal__slider2') !== null) {
+    const projectModalSlider = tns({
+      container: '.project-modal__slider2',
+      items: 1,
+      arrowKeys: true,
+      controlsContainer: '.project-modal__slider-controls2',
+      nav: false,
+      mode: 'gallery',
+      speed: 800
+    });
+  }
 
-  const projectModalSlider2 = tns({
-    container: '.project-modal__slider',
-    items: 1,
-    arrowKeys: true,
-    controlsContainer: '.project-modal__slider-controls',
-    nav: false,
-    mode: 'gallery',
-    speed: 800
-  });
+  if (document.querySelector('.project-modal__slider') !== null) {
+    const projectModalSlider2 = tns({
+      container: '.project-modal__slider',
+      items: 1,
+      arrowKeys: true,
+      controlsContainer: '.project-modal__slider-controls',
+      nav: false,
+      mode: 'gallery',
+      speed: 800
+    });
+  }
 
   const mySwiper = new Swiper('.projects__slider', {
     effect: 'fade',
@@ -550,16 +556,18 @@ const onLocomotiveScroll = (e) => {
 };
 
 const initScroll = () => {
-  if (!scroll) {
-    scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      getSpeed: true,
-      getDirection: true,
-      useKeyboard: true
-    });
+  if ( document.querySelector('[data-scroll-container]') !== null ) {
+    if (!scroll) {
+      scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        getSpeed: true,
+        getDirection: true,
+        useKeyboard: true
+      });
+    }
+    scroll.on('scroll', onLocomotiveScroll);
   }
-  scroll.on('scroll', onLocomotiveScroll);
 };
 
 

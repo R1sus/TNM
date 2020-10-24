@@ -1,0 +1,68 @@
+.manifesto {
+  padding: 0 30px 146px;
+
+  &__title {
+    @include inner-title;
+
+    margin-bottom: 116px;
+    margin-top: 0;
+  }
+
+  &__subtitle {
+    @include title-decor;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    float: left;
+    min-width: 35%;
+  }
+
+  &__text {
+    &-big {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 116%;
+
+      p {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__article {
+    font-size: 14px;
+    line-height: 126%;
+    display: flex;
+    padding-top: 29px;
+
+    &-container {
+      flex: 1;
+    }
+
+    &-img {
+      width: 450px;
+      margin-right: 20px;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 116%;
+      margin-bottom: 30px;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    &-text-big {
+      font-size: 24px;
+      line-height: 116%;
+
+      p {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ html {
 body {
   background: $primary-color;
   font-size: $base-font-size;
+  color: $secondary-color;
 }
 
 .scroll-container {
@@ -139,9 +140,9 @@ img {
   }
 }
 
-// main {
-//   padding-bottom: 150px;
-// }
+.main {
+  padding-top: 16px;
+}
 
 [data-scroll-section] {
   position: relative;

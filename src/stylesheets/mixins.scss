@@ -33,6 +33,20 @@
   }
 }
 
+@mixin inner-title {
+  text-transform: uppercase;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 103.4%;
+  letter-spacing: -0.05em;
+
+  &::before {
+    content: '/';
+    margin-right: 25px;
+  }
+}
+
 @mixin title-decor {
   &::before {
     content: '\25CF';
