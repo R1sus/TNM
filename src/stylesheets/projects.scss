@@ -52,6 +52,21 @@
       }
     }
 
+    &-img {
+      overflow: hidden;
+
+      img {
+        transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
+        transition-duration: 0.8s;
+        transition-property: transform, opacity;
+
+        &:hover {
+          opacity: 0.9;
+          transform: scale(1.05);
+        }
+      }
+    }
+
     &-nav {
       position: absolute;
       right: 0;

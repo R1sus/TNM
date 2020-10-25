@@ -101,7 +101,7 @@ const initCarousel = () => {
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slidesPerView: 2,
-    slidesPerGroup: 2,
+    slidesPerGroup: 1,
     pagination: {
       el: '.swiper-pagination',
       type: 'progressbar',
@@ -118,7 +118,7 @@ const initCarousel = () => {
       },
       768: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
+        slidesPerGroup: 1,
       }
     },
     on: {
@@ -337,36 +337,51 @@ const animateIntro = () => {
     author,
     description,
     slider,
+    pos,
     text,
+    controls,
   } = DOM.intro;
   const tl = new TimelineLite();
-  tl.to(
-    title,
-    animationConfig,
-  ).to(
-    description,
+  tl.to(title,
     {
       ...animationConfig,
-      stagger: 0.01,
+      duration: 0.9,
     },
-    '-=1',
-  ).to(
-    text,
-    {
-      ...animationConfig,
+  ).to(text, {
+    ...animationConfig,
+    height: 'auto',
     duration: 2,
-    },
-    '-=0.5'
-  ).to(
-    slider,
+  }, '-=0.8')
+  .to(description,
     {
       ...animationConfig,
-      duration: 2.5,
+      duration: 0.8,
+    },
+    '-=1.5',
+  ).to(author,
+    {
+      ...animationConfig,
+    duration: 1.2,
+    },
+    '-=1'
+  ).to(pos, 
+    {
+      ...animationConfig
+    }, '-=0.7'
+  ).to(slider,
+    {
+      ...animationConfig,
+      duration: 1.2,
       transform: 'scale(1)',
       ease: 'power2',
     },
-    '-=1.5',
-  );
+    '-=1',
+  ).to(controls, 
+    {
+      ...animationConfig,
+      duration: 0.8,
+      ease: 'power2',
+    }, '-=1');
 };
 
 const animateAbout = () => {
@@ -380,30 +395,31 @@ const animateAbout = () => {
   } = DOM.about;
 
   const tl = new TimelineLite();
-  tl.to(title, {
-      ...animationConfig,
-      ease: 'circ',
-      duration: 4,
-    })
-    .to(img, {
+  tl.to(img, {
       ...imgAnimationConfig,
-      duration: 2.5,
+      duration: 1.3,
       transform: 'scale(1)',
       ease: 'power2',
-    }, '-=3')
+    })
+    .to(title, {
+      ...animationConfig,
+      ease: 'Power3.easeOut',
+      duration: 1.5,
+      stagger: '0.5',
+    }, '-=1.3')
     .to(subtitle, {
       ...animationConfig,
-      duration: 2,
-      ease: 'slowMo',
-    }, '-=2')
+      duration: 1.3,
+      ease: 'Power3.easeOut',
+    }, '-=1.5')
     .to(text, {
       ...animationConfig,
-      duration: 3,
-      ease: 'circ',
-    }, '-=2.5')
+      duration: 2.5,
+      ease: 'Power3.easeOut',
+    }, '-=1')
     .to(link, {
       ...animationConfig,
-      ease: 'expo',
+      ease: 'Power3.easeOut',
       duration: 1.5,
     }, '-=2');
 };
@@ -418,10 +434,10 @@ const animateProjects = () => {
   tl
     .to(title, {
       ...animationConfig,
-      duration: 4,
+      duration: 2,
       stagger: .1
     })
-    .to(slider, imgAnimationConfig, '-=3.5');
+    .to(slider, imgAnimationConfig, '-=2.5');
 };
 
 const animateTiny = () => {
@@ -430,6 +446,9 @@ const animateTiny = () => {
     title,
     images,
     description,
+    quote,
+    author,
+    pos,
     titleA,
     subTitleA,
     text,
@@ -439,34 +458,54 @@ const animateTiny = () => {
   tl
     .to(title, {
       ...animationConfig,
-      duration: 4,
+      duration: 2,
       stagger: .1
     })
-    .to(images, imgAnimationConfig, '-=3.5')
-    .to(description, {
+    .to(images, {
+      ...imgAnimationConfig,
+      duration: 1.5,
+    }, '-=1.5')
+    .to(description, { //container
       ...animationConfig,
-      duration: 3,
-      ease: 'circ',
-    }, '-=2')
+      height: 'auto',
+      duration: 2,
+    }, '-=1.5')
+    .to(quote,
+      {
+        ...animationConfig,
+        duration: 0.8,
+      },
+      '-=1.5',
+    ).to(author,
+      {
+        ...animationConfig,
+      duration: 1.2,
+      },
+      '-=1'
+    ).to(pos, 
+      {
+        ...animationConfig
+      }, '-=0.7'
+    )
     .to(subTitleA, {
       ...animationConfig,
-      duration: 2,
-    }, '-=3')
+      duration: 1.5,
+    }, '-=1')
     .to(titleA, {
       ...animationConfig,
-      duration: 2,
-      ease: 'slowMo',
-    }, '-=2.5')
+      duration: 1.5,
+      ease: 'Power3.easeOut',
+    }, '-=0.5')
     .to(text, {
       ...animationConfig,
-      duration: 3,
-      ease: 'circ',
-    }, '-=2.5')
+      duration: 1.5,
+      ease: 'Power3.easeOut',
+    }, '-=1')
     .to(link, {
       ...animationConfig,
-      ease: 'expo',
+      ease: 'Power3.easeOut',
       duration: 1.5,
-    }, '-=1.5');
+    }, '-=1');
 };
 
 const animateCards = () => {
@@ -480,7 +519,7 @@ const animateCards = () => {
   tl
     .to(title, {
       ...animationConfig,
-      duration: 4,
+      duration: 2,
       stagger: .1
     })
     .to(text, {
@@ -507,7 +546,7 @@ const animateAboutMe = () => {
   tl
     .to(title, {
       ...animationConfig,
-      duration: 3,
+      duration: 2,
     })
     .to(textTitle, {
       ...animationConfig,
@@ -533,10 +572,13 @@ const animatePodcasts = () => {
   tl
     .to(title, {
       ...animationConfig,
-      duration: 4,
+      duration: 2,
       stagger: .1
     })
-    .to(subT, animationConfig, '-=3.5')
+    .to(subT, {
+      ...animationConfig,
+      duration: 1.5,
+    }, '-=3.5')
     .to(desc, {
       ...animationConfig,
       duration: 2
@@ -549,25 +591,27 @@ const onLocomotiveScroll = (e) => {
   const DOM = getDOM();
   const winHeight = $(window).height();
   const offset = winHeight / 2;
-  // animateIntro();
-  if ($(DOM.about.self).offset().top < offset) {
-    animateAbout();
-  }
-  if ($(DOM.projects.self).offset().top < offset) {
-    animateProjects();
-  }
-  if ($(DOM.tiny.self).offset().top < offset) {
-    animateTiny();
-  }
-  if ($(DOM.cards.self).offset().top < offset) {
-    animateCards();
-  }
-  if ($(DOM.aboutMe.self).offset().top < offset) {
-    animateAboutMe();
-  }
-  if ($(DOM.podcasts.self).offset().top < offset) {
-    animatePodcasts();
-  }
+  if($('.scroll-container').hasClass('general')) {
+    // animateIntro();
+    if ($(DOM.about.self).offset().top < offset - 150) {
+      animateAbout();
+    }
+    if ($(DOM.projects.self).offset().top < offset) {
+      animateProjects();
+    }
+    if ($(DOM.tiny.self).offset().top < offset) {
+      animateTiny();
+    }
+    if ($(DOM.cards.self).offset().top < offset) {
+      animateCards();
+    }
+    if ($(DOM.aboutMe.self).offset().top < offset) {
+      animateAboutMe();
+    }
+    if ($(DOM.podcasts.self).offset().top < offset) {
+      animatePodcasts();
+    }
+}
 };
 
 const initScroll = () => {

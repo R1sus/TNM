@@ -34,6 +34,42 @@
       padding-left: 20px;
       border-left: 1px solid $secondary-color;
       opacity: 0;
+      height: 0;
+      // transform-origin: 0 100%;
+      // transform: translate(0, 100px);
+
+      @include phone {
+        opacity: 1;
+        // transform-origin: 0 50%;
+        // transform: none;
+        height: auto;
+      }
+    }
+
+    &-quote {
+      font-size: 24px;
+      max-width: 250px;
+      margin-bottom: 40px;
+      line-height: 116%;
+      opacity: 0;
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
+
+      @include phone {
+        font-size: 21px;
+        opacity: 1;
+        transform-origin: 0 50%;
+        transform: none;
+      }
+    }
+
+    &-author {
+      @include title-decor;
+
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, 100px);
 
@@ -44,23 +80,16 @@
       }
     }
 
-    &-quote {
-      font-size: 24px;
-      max-width: 250px;
-      margin-bottom: 40px;
-      line-height: 116%;
+    &-position {
+      opacity: 0;
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
 
       @include phone {
-        font-size: 21px;
+        opacity: 1;
+        transform-origin: 0 50%;
+        transform: none;
       }
-    }
-
-    &-author {
-      @include title-decor;
-
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
     }
   }
 
@@ -74,7 +103,7 @@
       padding: 30px 0;
     }
 
-    &-title {
+    &-subtitle {
       @include title-decor;
 
       text-transform: uppercase;
@@ -82,8 +111,8 @@
       align-items: center;
       margin-bottom: 15px;
       opacity: 0;
-      // transform-origin: 0 100%;
-      // transform: translate(0, -100px);
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
 
       @include phone {
         opacity: 1;
@@ -96,9 +125,15 @@
       max-width: 500px;
       margin-bottom: 50px;
       line-height: 126%;
+      opacity: 0;
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
 
       @include phone {
         margin-bottom: 30px;
+        opacity: 1;
+        transform-origin: 0 50%;
+        transform: none;
       }
 
       p {
@@ -110,7 +145,7 @@
       text-transform: uppercase;
       opacity: 0;
       transform-origin: 0 100%;
-      transform: translate(0, -100px);
+      transform: translate(0, 100px);
 
       &.cool-link::after,
       &.cool-link::before {
@@ -125,14 +160,20 @@
       }
     }
 
-    &-subtitle {
+    &-title {
       font-size: 24px;
       margin-bottom: 25px;
       max-width: 500px;
       line-height: 116%;
+      opacity: 0;
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
 
       @include phone {
         font-size: 21px;
+        opacity: 1;
+        transform-origin: 0 50%;
+        transform: none;
       }
     }
 

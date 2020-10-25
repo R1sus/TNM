@@ -194,7 +194,7 @@ export default class MenuItem {
     /* eslint-disable-next-line */
     this.animatableProperties.rotation.current = this.firstRAFCycle ? 0 : map(mouseDistanceX, 0, 175, 0, direction.x < 0 ? this.mouseArea === 'up' ? 60 : -60 : this.mouseArea === 'up' ? -60 : 60);
     // new filter value
-    this.animatableProperties.brightness.current = this.firstRAFCycle ? 1 : map(mouseDistanceX, 0, 100, 1, 8);
+    // this.animatableProperties.brightness.current = this.firstRAFCycle ? 1 : map(mouseDistanceX, 0, 100, 1, 8);
 
     // set up the interpolated values
     // for the first cycle, both the interpolated values need to be the same so there's no "lerped" animation between the previous and current state
@@ -208,7 +208,7 @@ export default class MenuItem {
       x: this.animatableProperties.tx.previous,
       y: this.animatableProperties.ty.previous,
       rotation: this.animatableProperties.rotation.previous,
-      filter: `brightness(${this.animatableProperties.brightness.previous})`,
+      // filter: `brightness(${this.animatableProperties.brightness.previous})`,
     });
 
     // loop

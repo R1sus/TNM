@@ -112,11 +112,11 @@ img {
 }
 
 .show-slide {
-  animation: show-slide 1 800ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
+  animation: show-slide 1 600ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
 }
 
 .hide-slide {
-  animation: hide-slide 1 800ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
+  animation: hide-slide 1 600ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
 }
 
 @keyframes show-slide {
