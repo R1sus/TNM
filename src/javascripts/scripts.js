@@ -26,6 +26,8 @@ let i = 1;
 let t;
 
 const load = () => {
+  const preloader = document.querySelector('.preloader');
+  
   i++;
   counter.innerHTML = i;
   progress.style.width = `${i}%`;
@@ -36,12 +38,24 @@ const load = () => {
   }
   if (i === 100) {
     clearInterval(t);
-    $('.preloader').addClass('hide');
-    animateIntro();
+    const tl = new TimelineLite();
+    tl.to(preloader, {
+      duration: 1.2,
+      opacity: 0,
+      y: 0,
+      transformOrigin: '0% 50%',
+      top: '-100vh',
+      ease: Expo.easeInOut,
+      stagger: 5,
+    }).to(preloader, {
+      visibility: 'hidden',
+      zIndex: '-1',
+    });
+    setTimeout(() => animateIntro(), 600);  
   }
 };
 
-// const beginLoad = setInterval(load, 30);
+const beginLoad = setInterval(load, 30);
 
 const initCarousel = () => {
   if (document.querySelector('.intro__slider') !== null) {
@@ -320,6 +334,7 @@ const animateIntro = () => {
   const DOM = getDOM();
   const {
     title,
+    author,
     description,
     slider,
     text,
