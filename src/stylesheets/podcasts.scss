@@ -12,14 +12,32 @@
     @include section-title;
   }
 
+  &__line {
+    &-top {
+      width: 0;
+      opacity: 0;
+      height: 1px;
+      background-color: $secondary-color;
+    }
+
+    &-ver {
+      width: 1px;
+      opacity: 0;
+      height: 0;
+      background-color: $secondary-color;
+    }
+  }
+
   &__description {
     padding: 70px 0;
-    flex-basis: 22%;
-    border-right: 1px solid $secondary-color;
+    flex-basis: 28%;
+    min-width: 360px;
+    // border-right: 1px solid $secondary-color;
 
     @include phone {
       border: none;
       padding: 30px 0;
+      min-width: none;
     }
 
     &-title {
@@ -55,7 +73,7 @@
   }
 
   &__container {
-    border-top: 1px solid $secondary-color;
+    // border-top: 1px solid $secondary-color;
     display: flex;
 
     @include phone {
@@ -75,6 +93,17 @@
       @include reset-list;
 
       margin-bottom: 26px;
+      // opacity: 0.00001;
+      // transform-origin: 0 100%;
+      // transform: translate(0, +200px);
+      // height: 100px;
+  
+      // @include phone {
+      //   opacity: 1;
+      //   transform-origin: 0 50%;
+      //   transform: none;
+      // }
+      
     }
 
     &__item {
@@ -83,10 +112,12 @@
       border-top: 1px solid rgba(24, 24, 24, 0.3);
       padding: 12px 0 20px;
       position: relative;
+      opacity: 0.00001;
 
       @include phone {
         padding: 12px 0 50px;
         position: relative;
+        opacity: 1;
       }
 
       &-title {

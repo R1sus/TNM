@@ -68,7 +68,7 @@ const initCarousel = () => {
       animateIn: 'show-slide',
       animateOut: 'hide-slide',
       mode: 'gallery',
-      speed: 800
+      speed: 500
     });
   }
 
@@ -371,8 +371,7 @@ const animateIntro = () => {
   ).to(slider,
     {
       ...animationConfig,
-      duration: 1.2,
-      transform: 'scale(1)',
+      duration: 0.8,
       ease: 'power2',
     },
     '-=1',
@@ -381,7 +380,7 @@ const animateIntro = () => {
       ...animationConfig,
       duration: 0.8,
       ease: 'power2',
-    }, '-=1');
+    }, '-=0.7');
 };
 
 const animateAbout = () => {
@@ -453,6 +452,9 @@ const animateTiny = () => {
     subTitleA,
     text,
     link,
+    lineTop,
+    lineVer,
+    lineBottom,
   } = DOM.tiny;
   const tl = new TimelineLite();
   tl
@@ -461,15 +463,25 @@ const animateTiny = () => {
       duration: 2,
       stagger: .1
     })
+    .to(lineTop, {
+      ...imgAnimationConfig,
+      duration: 1,
+      width: '100%',
+    }, '-=1.5')
+    .to(lineVer, {
+      ...imgAnimationConfig,
+      duration: 1,
+      height: 'auto',
+    }, '-=1.5')
     .to(images, {
       ...imgAnimationConfig,
-      duration: 1.5,
+      duration: 1,
     }, '-=1.5')
     .to(description, { //container
       ...animationConfig,
       height: 'auto',
       duration: 2,
-    }, '-=1.5')
+    }, '-=1.2')
     .to(quote,
       {
         ...animationConfig,
@@ -505,7 +517,12 @@ const animateTiny = () => {
       ...animationConfig,
       ease: 'Power3.easeOut',
       duration: 1.5,
-    }, '-=1');
+    }, '-=1')
+    .to(lineBottom, {
+      ...imgAnimationConfig,
+      duration: 1,
+      width: '100%',
+    }, '-=2.5');
 };
 
 const animateCards = () => {
@@ -514,6 +531,7 @@ const animateCards = () => {
     title,
     text,
     container,
+    card,
   } = DOM.cards;
   const tl = new TimelineLite();
   tl
@@ -531,7 +549,14 @@ const animateCards = () => {
       ...imgAnimationConfig,
       duration: 2.5,
       ease: 'power3',
-    }, '-=2.5');
+    }, '-=2.5')
+    .to(card, {
+      opacity: 1,
+      transform: "translate(0, 0) skewY(0deg)",
+      ease:"Expo.easeOut", 
+      duration: 0.4,
+      delay: (pos) => pos * 0.09,
+    }, '-=1.5');
 };
 
 const animateAboutMe = () => {
@@ -541,6 +566,7 @@ const animateAboutMe = () => {
     textTitle,
     text,
     video,
+    videoTitle,
   } = DOM.aboutMe;
   const tl = new TimelineLite();
   tl
@@ -550,14 +576,17 @@ const animateAboutMe = () => {
     })
     .to(textTitle, {
       ...animationConfig,
-      duration: 2,
-    }, '-=3')
+      duration: 1.5,
+    }, '-=1.5')
     .to(text, {
       ...animationConfig,
-      duration: 2,
-      ease: 'slowMo',
-    }, '-=3.5')
-    .to(video, imgAnimationConfig, '-=2');
+      duration: 1.5,
+    }, '-=1')
+    .to(video, animationConfig, '-=1')
+    .to(videoTitle, {
+      ...animationConfig,
+      duration: 1.5,
+    }, '-=0.5')
 };
 
 const animatePodcasts = () => {
@@ -567,7 +596,11 @@ const animatePodcasts = () => {
     subT,
     text,
     desc,
+    lineTop,
+    lineVer,
+    listItems,
   } = DOM.podcasts;
+
   const tl = new TimelineLite();
   tl
     .to(title, {
@@ -575,15 +608,32 @@ const animatePodcasts = () => {
       duration: 2,
       stagger: .1
     })
+    .to(lineTop, {
+      ...imgAnimationConfig,
+      duration: 1,
+      width: '100%',
+    }, '-=1.5')
+    .to(lineVer, {
+      ...imgAnimationConfig,
+      duration: 1,
+      height: 'auto',
+    }, '-=1.5')
     .to(subT, {
       ...animationConfig,
       duration: 1.5,
-    }, '-=3.5')
+    }, '-=1.5')
     .to(desc, {
       ...animationConfig,
-      duration: 2
-    }, '-=2')
-    .to(text, {...animationConfig, duration: 2, stagger: 1.2 }, '-=3');
+      duration: 1.5
+    }, '-=1')
+    .to(text, {...animationConfig, duration: 1 }, '-=1')
+    .to(listItems, {
+      ...animationConfig,
+      duration: 0.8,
+      ease: 'Expo.easeOut',
+      opacity: 1,
+      delay: (pos) => pos * 0.06,
+    }, '-=1.5');
 };
 
 let scroll = null;
@@ -592,7 +642,7 @@ const onLocomotiveScroll = (e) => {
   const winHeight = $(window).height();
   const offset = winHeight / 2;
   if($('.scroll-container').hasClass('general')) {
-    // animateIntro();
+    animateIntro();
     if ($(DOM.about.self).offset().top < offset - 150) {
       animateAbout();
     }

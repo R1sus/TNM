@@ -36,19 +36,24 @@ const getDOM = () => ({
     subTitleA: qsa('.tiny-house__article-subtitle'),
     text: qs('.tiny-house__article-text'),
     link: qs('.tiny-house__article-link'),
+    lineTop: qs('.tiny-house__line-top'),
+    lineVer: qs('.tiny-house__line-ver'),
+    lineBottom: qs('.tiny-house__line-bottom'),
   },
   cards: {
     self: qs('.cards'),
     title: qsa('.cards .cards__title .invisible-word'),
     text: qs('.cards__text'),
     container: qs('.cards .row'),
+    card: qsa('.card'),
   },
   aboutMe: {
     self: qs('.about-me'),
     title: qsa('.about-me .about-me__title .invisible-word'),
-    textTitle: qsa('.about-me__text-title .invisible-word'),
+    textTitle: qsa('.about-me__text-title'),
     text: qs('.about-me__text'),
     video: qs('.about-me__video'),
+    videoTitle: qs('.about-me__video-title'),
   },
   podcasts: {
     self: qs('.podcast'),
@@ -56,6 +61,11 @@ const getDOM = () => ({
     subT: qsa('.podcast__description-title .invisible-char'),
     desc: qs('.podcast__description-subtitle'),
     text: qs('.podcast__description-text'),
+    list: qs('.podcasts__list'),
+    listItems: qsa('.podcasts__item'),
+    lineTop: qs('.podcast__line-top'),
+    lineVer: qs('.podcast__line-ver'),
+    // lineBottom: qs('.tiny-house__line-bottom'),
   },
 });
 

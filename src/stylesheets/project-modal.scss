@@ -1,5 +1,6 @@
 .project-modal {
   @extend .contact;
+  overflow-y: scroll;
 
   @include phone {
     overflow-y: scroll;

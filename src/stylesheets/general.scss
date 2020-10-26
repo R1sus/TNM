@@ -111,35 +111,6 @@ img {
   }
 }
 
-.show-slide {
-  animation: show-slide 1 600ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
-}
-
-.hide-slide {
-  animation: hide-slide 1 600ms cubic-bezier(0.85, 0.01, 0.19, 1) normal both;
-}
-
-@keyframes show-slide {
-  from {
-    transform: translateX(800px);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes hide-slide {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-1800px);
-    opacity: 0;
-  }
-}
-
 .main {
   padding-top: 16px;
 }
