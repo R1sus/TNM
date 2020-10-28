@@ -46,7 +46,9 @@
       align-items: flex-start;
 
       &.mobile-hide {
-        display: none;
+        @include phone {
+          display: none;
+        }
       }
 
       img {

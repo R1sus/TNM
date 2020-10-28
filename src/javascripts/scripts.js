@@ -59,19 +59,6 @@ if (preloader !== null) {
 }
 
 const initCarousel = () => {
-  if (document.querySelector('.intro__slider') !== null) {
-    const slider = tns({
-      container: '.intro__slider',
-      items: 1,
-      arrowKeys: true,
-      controlsContainer: '.intro__slider-controls',
-      nav: false,
-      animateIn: 'show-slide',
-      animateOut: 'hide-slide',
-      mode: 'gallery',
-      speed: 500
-    });
-  }
 
   if (document.querySelector('.project-modal__slider2') !== null) {
     const projectModalSlider = tns({
@@ -96,6 +83,42 @@ const initCarousel = () => {
       speed: 800
     });
   }
+
+  const sliderOptions = {
+    loop: true,
+    speed: 1000,
+    parallax: true,
+    grabCursor: true,
+    spaceBetween: 0,
+    mousewheel: {
+      releaseOnEdges: true
+    },
+    on: {
+      init: function() {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          $(swiper.slides[i])
+            .find('.img-container')
+            .attr({
+              'data-swiper-parallax': 0.75 * swiper.width
+            });
+        }
+      }
+    },
+    navigation: {
+      nextEl: '.intro__slider-controls-btn.next',
+      prevEl: '.intro__slider-controls-btn.prev'
+    },
+    pagination: {
+      el: '.intro__slider-num',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+        return '0'+ current + ' / ' + '0' + total;
+      },
+    },
+  };
+
+  const photoSlider = new Swiper('.photo-slider', sliderOptions);
 
   const mySwiper = new Swiper('.projects__slider', {
     effect: 'fade',
