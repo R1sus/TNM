@@ -59,13 +59,13 @@ const getDOM = () => ({
     self: qs('.podcast'),
     title: qsa('.podcast .podcast__title .invisible-word'),
     subT: qsa('.podcast__description-title .invisible-char'),
-    desc: qs('.podcast__description-subtitle'),
-    text: qs('.podcast__description-text'),
+    desc: qsa('.podcast__description-subtitle'),
+    text: qsa('.podcast__description-text'),
     list: qs('.podcasts__list'),
     listItems: qsa('.podcasts__item'),
-    lineTop: qs('.podcast__line-top'),
-    lineVer: qs('.podcast__line-ver'),
-    // lineBottom: qs('.tiny-house__line-bottom'),
+    lineTop: qsa('.podcast__line-top'),
+    lineVer: qsa('.podcast__line-ver'),
+    link: qs('.podcasts__link'),
   },
 });
 

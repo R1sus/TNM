@@ -75,14 +75,14 @@
   flex-grow: 1;
   overflow: hidden;
   line-height: 126%;
-
   opacity: 0;
   transform: translate(0, 25%) skewY(-2.5deg);
-  
 
   @include phone {
     min-height: 328px;
     width: 270px;
+    opacity: 1;
+    transform: none;
   }
 
   &::after {

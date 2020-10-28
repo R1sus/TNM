@@ -25,9 +25,9 @@ const progress = document.querySelector('#progress');
 let i = 1;
 let t;
 
+const preloader = document.querySelector('.preloader');
+let beginLoad;
 const load = () => {
-  const preloader = document.querySelector('.preloader');
-  
   i++;
   counter.innerHTML = i;
   progress.style.width = `${i}%`;
@@ -54,8 +54,9 @@ const load = () => {
     setTimeout(() => animateIntro(), 600);  
   }
 };
-
-const beginLoad = setInterval(load, 30);
+if (preloader !== null) {
+  beginLoad = setInterval(load, 30);
+}
 
 const initCarousel = () => {
   if (document.querySelector('.intro__slider') !== null) {
@@ -599,6 +600,7 @@ const animatePodcasts = () => {
     lineTop,
     lineVer,
     listItems,
+    link,
   } = DOM.podcasts;
 
   const tl = new TimelineLite();
@@ -624,17 +626,73 @@ const animatePodcasts = () => {
     }, '-=1.5')
     .to(desc, {
       ...animationConfig,
-      duration: 1.5
+      duration: 1.5,
+      delay: (pos) => pos * 0.08,
     }, '-=1')
-    .to(text, {...animationConfig, duration: 1 }, '-=1')
+    .to(text,{
+      ...animationConfig,
+      duration: 1,
+      delay: (pos) => pos * 0.08,
+    }, '-=1')
     .to(listItems, {
       ...animationConfig,
       duration: 0.8,
       ease: 'Expo.easeOut',
       opacity: 1,
       delay: (pos) => pos * 0.06,
-    }, '-=1.5');
+    }, '-=1.5')
+    .to(link, {
+      ...animationConfig,
+      duration: 1.5,
+    }, '-=0.5');
 };
+
+const animatePagePodcasts = () => {
+  const DOM = getDOM();
+  const {
+    link,
+    subT,
+    text,
+    desc,
+    lineTop,
+    lineVer,
+    listItems,
+  } = DOM.podcasts;
+
+  const tl = new TimelineLite();
+  tl.to(lineTop, {
+    ...imgAnimationConfig,
+    duration: 1,
+    delay: (pos) => pos * 0.06,
+    width: '100%',
+  })
+  .to(lineVer, {
+    ...imgAnimationConfig,
+    duration: 1,
+    delay: (pos) => pos * 0.06,
+    height: 'auto',
+  }, '-=1.5')
+  .to(subT, {
+    ...animationConfig,
+    duration: 1.5,
+  }, '-=1.5')
+  .to(desc, {
+    ...animationConfig,
+    duration: 1.5
+  }, '-=1')
+  .to(text, {...animationConfig, duration: 1 }, '-=1')
+  .to(listItems, {
+    ...animationConfig,
+    duration: 0.8,
+    ease: 'Expo.easeOut',
+    opacity: 1,
+    delay: (pos) => pos * 0.06,
+  }, '-=1.5');
+  // .to(link, {
+  //   ...animationConfig,
+  //   duration: 1.5,
+  // }, '-=1.5');
+}
 
 let scroll = null;
 const onLocomotiveScroll = (e) => {
@@ -661,7 +719,12 @@ const onLocomotiveScroll = (e) => {
     if ($(DOM.podcasts.self).offset().top < offset) {
       animatePodcasts();
     }
-}
+  }
+  if($('.scroll-container').hasClass('scroll-podcasts')) {
+    if ($(DOM.podcasts.self).offset().top < offset) {
+      animatePagePodcasts();
+    }
+  }
 };
 
 const initScroll = () => {

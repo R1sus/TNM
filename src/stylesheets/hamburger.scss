@@ -22,6 +22,14 @@
   opacity: 0.7;
 }
 
+.podcasts-page {
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: $text-color-light;
+  }
+}
+
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
@@ -52,6 +60,10 @@
   transition-property: transform;
   transition-duration: 0.15s;
   transition-timing-function: ease;
+
+  .podcasts-page & {
+    background-color: $text-color-light;
+  }
 
   .is-active & {
     background-color: #fff !important;

@@ -15,6 +15,10 @@
       opacity: 0;
       height: 1px;
       background-color: $secondary-color;
+
+      @include phone {
+        width: 100%;
+      }
     }
 
     &-ver {
@@ -22,6 +26,10 @@
       opacity: 0;
       height: 0;
       background-color: $secondary-color;
+
+      @include phone {
+        height: auto;
+      }
     }
 
     &-bottom {
@@ -29,12 +37,14 @@
       opacity: 0;
       height: 1px;
       background-color: $secondary-color;
+
+      @include phone {
+        width: 100%;
+      }
     }
   }
 
   &__wrapper {
-    // border: solid $secondary-color;
-    // border-width: 1px 0;
     display: flex;
 
     @include phone {
@@ -52,7 +62,7 @@
     @include phone {
       border: none;
       padding: 30px 0;
-      min-width: none;
+      min-width: 0;
     }
 
     &-container {
