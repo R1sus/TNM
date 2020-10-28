@@ -390,7 +390,8 @@ const animateIntro = () => {
     '-=1'
   ).to(pos, 
     {
-      ...animationConfig
+      ...animationConfig,
+      duration: 1.2,
     }, '-=0.7'
   ).to(slider,
     {
@@ -515,7 +516,7 @@ const animateTiny = () => {
     .to(quote,
       {
         ...animationConfig,
-        duration: 0.8,
+        duration: 1.8,
       },
       '-=1.5',
     ).to(author,

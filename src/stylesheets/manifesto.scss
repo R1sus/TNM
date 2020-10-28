@@ -48,7 +48,7 @@
       }
 
       p {
-        margin-bottom: 30px;
+        margin-bottom: 45px;
       }
     }
   }
@@ -70,6 +70,11 @@
 
     &-container {
       flex: 1;
+      max-width: 40vw;
+
+      @include phone {
+        max-width: none;
+      }
     }
 
     &-img {

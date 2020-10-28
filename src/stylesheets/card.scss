@@ -9,7 +9,8 @@
     @include section-title;
 
     max-width: 55%;
-    letter-spacing: normal;
+    letter-spacing: -0.02em;
+    line-height: 90%;
 
     @include phone {
       max-width: none;

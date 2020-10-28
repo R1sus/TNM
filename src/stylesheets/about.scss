@@ -15,6 +15,7 @@
 
   &__container {
     display: flex;
+    width: 100%;
     // padding: 118px 0;
 
     @include phone {

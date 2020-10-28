@@ -8,8 +8,9 @@
   &__title {
     @include section-title;
 
-    max-width: 82%;
+    // max-width: 82%;
     margin-bottom: 0;
+    line-height: 93%;
 
     @include phone {
       max-width: none;

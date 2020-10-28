@@ -29,11 +29,11 @@
     }
 
     img {
-      opacity: 0.0001;
+      // opacity: 0.0001;
       width: auto;
       height: 100%;
       transform-origin: 0 100%;
-      transform: translate(0, 400px);
+      transform: translate(0, 200px);
       margin-right: 8px;
 
       @include phone {
@@ -178,7 +178,7 @@
     margin-right: -30px;
     margin-bottom: -30px;
     overflow: hidden;
-    max-width: 700px;
+    // max-width: 700px;
 
     @include phone {
       width: 100%;
