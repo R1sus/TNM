@@ -10,8 +10,7 @@
   align-items: center;
   opacity: 0;
   color: $secondary-color;
-  // visibility: hidden;
-  z-index: 16;
+  z-index: 17;
   pointer-events: none;
   transition: opacity 700ms ease-in-out;
 
@@ -32,10 +31,10 @@
   }
 
   &__container {
-    width: 60%;
-    max-width: 890px;
+    width: 64%;
+    max-width: 880px;
     background-color: $primary-color;
-    padding: 25px;
+    padding: 27px 22px;
     position: relative;
 
     @include phone {
@@ -60,6 +59,8 @@
     @include phone {
       top: 35px;
       right: 15px;
+      width: 50px;
+      height: 50px;
       background-color: $secondary-color;
     }
   }
@@ -79,6 +80,8 @@
     padding: 15px 0;
     width: 100%;
     color: rgba(24, 24, 24, 0.4);
+    border-radius: 0;
+    -webkit-appearance: none;
   }
 
   &__title {

@@ -14,7 +14,7 @@
     justify-content: space-between;
 
     @include phone {
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
   }
 
@@ -35,6 +35,10 @@
       transform-origin: 0 100%;
       transform: translate(0, 400px);
       margin-right: 8px;
+
+      @include phone {
+        transform: none;
+      }
 
       &.divider {
         margin-right: 38px;
@@ -179,12 +183,13 @@
       font-size: 0;
     }
   }
+
   &__slider-item-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    
   }
+
   &__slider-image-holder {
     overflow: hidden;
     display: flex;
@@ -194,6 +199,7 @@
     max-height: 400px;
     // width: calc(100% - 100px);
   }
+
   &__slider-image {
     // width: calc(100% + 100px);
   }

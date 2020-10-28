@@ -1,5 +1,6 @@
 .project-modal {
   @extend .contact;
+
   overflow-y: scroll;
 
   @include phone {
@@ -18,6 +19,11 @@
     .project-modal__close {
       right: auto;
       left: -80px;
+
+      @include phone {
+        left: auto;
+        right: 15px;
+      }
     }
   }
 

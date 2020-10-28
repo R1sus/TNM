@@ -25,6 +25,8 @@
     line-height: 16px;
     text-transform: uppercase;
     float: left;
+    display: flex;
+    align-items: center;
     min-width: 35%;
 
     @include phone {

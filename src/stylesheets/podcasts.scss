@@ -25,6 +25,7 @@
 
       @include phone {
         width: 100%;
+        opacity: 1;
       }
     }
 
@@ -40,6 +41,7 @@
 
       @include phone {
         height: auto;
+        opacity: 1;
       }
     }
   }
@@ -178,7 +180,6 @@
 }
 
 .podcasts {
-
   @include phone {
     padding-bottom: 60px;
   }
@@ -213,6 +214,12 @@
     line-height: 16px;
     text-transform: uppercase;
     margin-bottom: 23px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      background-color: $text-color-light;
+    }
   }
 
   &__text-big {
@@ -229,6 +236,8 @@
   }
 }
 
-// .podcast__item {
-//   padding-bottom: 90px;
-// }
+.podcasts-page {
+  .podcast__description-subtitle::before {
+    background-color: $text-color-light;
+  }
+}

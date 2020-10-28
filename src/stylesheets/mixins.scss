@@ -58,9 +58,12 @@
 
 @mixin title-decor {
   &::before {
-    content: '\25CF';
+    content: '';
     margin-right: 5px;
-    font-size: 25px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $secondary-color;
   }
 }
 
