@@ -392,21 +392,27 @@ const animateAbout = () => {
     img,
     subtitle,
     link,
+    logo,
   } = DOM.about;
 
   const tl = new TimelineLite();
-  tl.to(img, {
-      ...imgAnimationConfig,
-      duration: 1.3,
-      transform: 'scale(1)',
-      ease: 'power2',
+  tl
+  .to(logo,{
+      ...animationConfig,
+      duration: 0.9,
     })
+    // .to(img, {
+    //   ...imgAnimationConfig,
+    //   duration: 1.3,
+    //   transform: 'scale(1)',
+    //   ease: 'power2',
+    // })
     .to(title, {
       ...animationConfig,
       ease: 'Power3.easeOut',
       duration: 1.5,
       stagger: '0.5',
-    }, '-=1.3')
+    }, '-=0.8')
     .to(subtitle, {
       ...animationConfig,
       duration: 1.3,

@@ -57,13 +57,20 @@
 }
 
 @mixin title-decor {
+  position: relative;
+  padding-left: 15px;
+  text-transform: uppercase;
+
   &::before {
     content: '';
-    margin-right: 5px;
+    position: absolute;
+    display: inline-block;
+    left: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: $secondary-color;
+    top: calc(50% - 5px);
   }
 }
 

@@ -20,9 +20,9 @@
   &__subtitle {
     @include title-decor;
 
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
+    // text-transform: uppercase;
+    // display: flex;
+    // align-items: center;
     margin-bottom: 15px;
   }
 
@@ -90,9 +90,9 @@
     &-title {
       @include title-decor;
 
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
+      // text-transform: uppercase;
+      // display: flex;
+      // align-items: center;
       margin-bottom: 15px;
       opacity: 0;
       transform-origin: 0 100%;

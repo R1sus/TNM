@@ -13,7 +13,8 @@ const getDOM = () => ({
   },
   about: {
     self: qs('.about'),
-    img: qs('.about__logo img'),
+    logo: qsa('.about__logo-wrap img'),
+    img: qs('.about__logo .img'),
     title: qsa('.about__title'),
     text: qsa('.about__text-col p'),
     subtitle: qs('.about__subtitle'),

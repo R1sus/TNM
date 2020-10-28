@@ -66,9 +66,9 @@
     &-subtitle {
       @include title-decor;
 
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
+      // text-transform: uppercase;
+      // display: flex;
+      // align-items: center;
       margin-bottom: 15px;
       opacity: 0.0001;
 
@@ -212,10 +212,10 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     margin-bottom: 23px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
 
     &::before {
       background-color: $text-color-light;

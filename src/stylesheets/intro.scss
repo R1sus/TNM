@@ -106,9 +106,9 @@
     &-author {
       @include title-decor;
 
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
+      // text-transform: uppercase;
+      // display: flex;
+      // align-items: center;
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, 100px);
