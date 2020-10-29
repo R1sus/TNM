@@ -10,6 +10,7 @@ import gsap, { TimelineLite, Expo } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import LocomotiveScroll from 'locomotive-scroll';
 import getDOM from './dom';
+import cursor from './cursor';
 
 import initMenu from './image-hover';
 
@@ -24,6 +25,8 @@ const counter = document.querySelector('#counter');
 const progress = document.querySelector('#progress');
 let i = 1;
 let t;
+
+cursor.init();
 
 const preloader = document.querySelector('.preloader');
 let beginLoad;
@@ -193,73 +196,73 @@ const initMagnetBtn = () => {
   mm.init();
 };
 
-const initCursor = () => {
-  const cursor = document.querySelector('#cursor');
-  const cursorCircle = cursor.querySelector('.cursor__circle');
+// const initCursor = () => {
+//   const cursor = document.querySelector('#cursor');
+//   const cursorCircle = cursor.querySelector('.cursor__circle');
 
-  const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
-  const pos = { x: 0, y: 0 }; // cursor's coordinates
-  const speed = 0.1; // between 0 and 1
+//   const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+//   const pos = { x: 0, y: 0 }; // cursor's coordinates
+//   const speed = 0.1; // between 0 and 1
 
-  const updateCoordinates = e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  }
+//   const updateCoordinates = e => {
+//     mouse.x = e.clientX;
+//     mouse.y = e.clientY;
+//   }
 
-  window.addEventListener('mousemove', updateCoordinates);
+//   window.addEventListener('mousemove', updateCoordinates);
 
-  function getAngle(diffX, diffY) {
-    return Math.atan2(diffY, diffX) * 180 / Math.PI;
-  }
+//   function getAngle(diffX, diffY) {
+//     return Math.atan2(diffY, diffX) * 180 / Math.PI;
+//   }
 
-  function getSqueeze(diffX, diffY) {
-    const distance = Math.sqrt(
-      Math.pow(diffX, 2) + Math.pow(diffY, 2)
-    );
-    const maxSqueeze = 0.15;
-    const accelerator = 1500;
-    return Math.min(distance / accelerator, maxSqueeze);
-  }
+//   function getSqueeze(diffX, diffY) {
+//     const distance = Math.sqrt(
+//       Math.pow(diffX, 2) + Math.pow(diffY, 2)
+//     );
+//     const maxSqueeze = 0.15;
+//     const accelerator = 1500;
+//     return Math.min(distance / accelerator, maxSqueeze);
+//   }
 
-  const updateCursor = () => {
-    const diffX = Math.round(mouse.x - pos.x);
-    const diffY = Math.round(mouse.y - pos.y);
+//   const updateCursor = () => {
+//     const diffX = Math.round(mouse.x - pos.x);
+//     const diffY = Math.round(mouse.y - pos.y);
     
-    pos.x += diffX * speed;
-    pos.y += diffY * speed;
+//     pos.x += diffX * speed;
+//     pos.y += diffY * speed;
     
-    const angle = getAngle(diffX, diffY);
-    const squeeze = getSqueeze(diffX, diffY);
+//     const angle = getAngle(diffX, diffY);
+//     const squeeze = getSqueeze(diffX, diffY);
     
-    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
-    const rotate = 'rotate(' + angle +'deg)';
-    const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+//     const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+//     const rotate = 'rotate(' + angle +'deg)';
+//     const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
 
-    cursor.style.transform = translate;
-    cursorCircle.style.transform = rotate + scale;
-  };
+//     cursor.style.transform = translate;
+//     cursorCircle.style.transform = rotate + scale;
+//   };
 
-  function loop() {
-    updateCursor();
-    requestAnimationFrame(loop);
-  }
+//   function loop() {
+//     updateCursor();
+//     requestAnimationFrame(loop);
+//   }
 
-  requestAnimationFrame(loop);
+//   requestAnimationFrame(loop);
 
-  const cursorModifiers = document.querySelectorAll('a');
+//   const cursorModifiers = document.querySelectorAll('a');
 
-  cursorModifiers.forEach(curosrModifier => {
-    curosrModifier.addEventListener('mouseenter', function() {
-      const className = "hover";
-      cursor.classList.add(className);
-    });
+//   cursorModifiers.forEach(curosrModifier => {
+//     curosrModifier.addEventListener('mouseenter', function() {
+//       const className = "hover";
+//       cursor.classList.add(className);
+//     });
   
-    curosrModifier.addEventListener('mouseleave', function() {
-      const className = "hover";
-      cursor.classList.remove(className);
-    });
-  });
-};
+//     curosrModifier.addEventListener('mouseleave', function() {
+//       const className = "hover";
+//       cursor.classList.remove(className);
+//     });
+//   });
+// };
 
 const initMobileMenu = () => {
   const hamburger = $('.hamburger');
@@ -786,7 +789,7 @@ const animateAll = () => {
 setTimeout(() => {
   splitText();
   initVideo(),
-  initCursor(),
+  // initCursor(),
   // initMagnetBtn(),
   initMobileMenu(),
   initCarousel();

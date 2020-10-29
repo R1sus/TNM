@@ -1,31 +1,125 @@
-#cursor {
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  will-change: transform;
-  mix-blend-mode: difference;
-}
+// #cursor {
+//   position: fixed;
+//   z-index: 9999;
+//   left: 0;
+//   top: 0;
+//   pointer-events: none;
+//   will-change: transform;
+//   mix-blend-mode: difference;
+// }
 
-@media (hover: hover) and (pointer: fine) {
-  .cursor__circle {
-    width: 15px;
-    height: 15px;
-    margin-top: -50%;
-    margin-left: -50%;
+// @media (hover: hover) and (pointer: fine) {
+//   .cursor__circle {
+//     width: 15px;
+//     height: 15px;
+//     margin-top: -50%;
+//     margin-left: -50%;
+//     border-radius: 50%;
+//     border: solid 1px #777;
+//     transition:
+//       opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+//       background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+//       border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+//       width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+//       height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+//   }
+
+//   #cursor.hover .cursor__circle {
+//     width: 28px;
+//     height: 28px;
+//   }
+// }
+
+.cursor-drag {
+  display: none;
+  width: 80px;
+  height: 80px;
+
+  &__inner {
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 100%;
+    margin-left: -40px;
+    margin-top: -40px;
+  }
+
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (any-pointer: fine) {
+    @include wider-than-tablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      pointer-events: none;
+      z-index: 40;
+    }
+  }
+
+  circle {
+    fill: none;
+    stroke: #777;
+    stroke-width: 1px;
+    transform: scale(0.6);
+    transform-origin: 50% 50%;
+    transition: all 0.8s $easing;
+  }
+
+  &__circle-copy {
+    position: absolute;
+    z-index: 1;
+    // background-color: rgba(#679096, 0.1);
+    animation: bg-animation 20s ease infinite;
+    background-size: 700% 700%;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    margin-top: -40px;
+    margin-left: -40px;
+    transform: scale(0.6);
+    transform-origin: 50% 50%;
+    transition: all 0.8s $easing;
+    opacity: 0;
     border-radius: 50%;
     border: solid 1px #777;
-    transition:
-      opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  #cursor.hover .cursor__circle {
-    width: 28px;
-    height: 28px;
+  ellipse {
+    opacity: 0;
+    transition: all 0.8s $easing;
   }
+
+  // &.hover-carousel {
+  //   circle {
+  //     transform: scale(1);
+  //     fill: $secondary-color;
+  //   }
+
+  //   ellipse {
+  //     opacity: 1;
+  //   }
+  // }
+
+  &.hover-link {
+    circle {
+      transform: scale(1);
+      // fill: rgba(#DAE9EB, 0);
+      stroke: rgba(#777, 0);
+    }
+
+    .cursor-drag__circle-copy {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes bg-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

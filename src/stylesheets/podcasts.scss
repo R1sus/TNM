@@ -137,6 +137,10 @@
         @include phone {
           font-size: 21px;
         }
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       &-info {

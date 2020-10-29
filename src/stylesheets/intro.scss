@@ -19,33 +19,36 @@
   }
 
   &__logo {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 120px;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 8px;
+    width: 100%;
 
-    &-img-sm {
-      max-height: 70px;
-    }
+    &-item {
+      display: table-cell;
+      vertical-align: top;
+      // margin-right: 8px;
 
-    img {
-      // opacity: 0.0001;
-      width: auto;
-      height: 100%;
-      transform-origin: 0 100%;
-      transform: translate(0, 200px);
-      margin-right: 8px;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: translate(0, 150px);
+        padding-right: 8px;
 
-      @include phone {
-        transform: none;
-      }
+        &.divider {
+          padding-left: 30px;
+        }
 
-      &.divider {
-        margin-right: 38px;
+        @include phone {
+          transform: none;
+        }
       }
 
       &:last-child {
-        margin-right: 0;
+        img {
+          padding-right: 0;
+        }
       }
     }
 

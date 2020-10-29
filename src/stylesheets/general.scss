@@ -7,7 +7,7 @@ html {
 }
 
 * {
-  cursor: none;
+  // cursor: none;
 
   @include phone {
     cursor: auto;
@@ -18,11 +18,17 @@ body {
   background: $primary-color;
   font-size: $base-font-size;
   color: $secondary-color;
+  cursor: url('../images/cursor.svg') 5 5, auto;
 
   &.podcasts-page {
     background: $secondary-color;
     color: $text-color-light;
   }
+}
+
+button,
+a {
+  cursor: url('../images/cursor.svg') 5 5, auto;
 }
 
 .scroll-container {
