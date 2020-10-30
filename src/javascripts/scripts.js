@@ -721,10 +721,6 @@ const animatePagePodcasts = () => {
     opacity: 1,
     delay: (pos) => pos * 0.06,
   }, '-=1.5');
-  // .to(link, {
-  //   ...animationConfig,
-  //   duration: 1.5,
-  // }, '-=1.5');
 }
 
 let scroll = null;

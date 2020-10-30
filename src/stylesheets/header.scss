@@ -13,6 +13,15 @@
     padding: 15px;
   }
 
+  nav {
+    padding-left: 25vw;
+    flex: 1;
+
+    @include phone {
+      padding-left: 0;
+    }
+  }
+
   &__wrapper {
     border-bottom: 1px solid $secondary-color;
     display: flex;

@@ -74,6 +74,16 @@
   }
 }
 
+@mixin title-sub {
+  font-size: 14px;
+  line-height: 110.4%;
+  letter-spacing: -0.03em;
+  position: relative;
+  vertical-align: top;
+  left: -12px;
+  top: 5px;
+}
+
 @mixin desktop {
   @media (min-width: $desktop-width) {
     @content;

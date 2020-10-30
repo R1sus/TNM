@@ -9,6 +9,25 @@
 
   &__title {
     @include section-title;
+
+    position: relative;
+
+    &.sub {
+      span:last-child:not(.invisible-word) {
+        @include title-sub;
+      }
+    }
+
+    @include phone {
+      display: flex;
+
+      sub {
+        font-size: 12px;
+        line-height: 110.4%;
+        vertical-align: top;
+        padding-left: 5px;
+      }
+    }
   }
 
   &__slider {
