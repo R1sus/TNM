@@ -1,0 +1,219 @@
+.inner {
+  padding: 0 30px 116px;
+
+  @include phone {
+    padding: 0 15px 60px;
+  }
+
+  &__title {
+    @include inner-title;
+
+    margin-bottom: 130px;
+    margin-top: 10px;
+
+    @include phone {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__image-section {
+    max-width: 66%;
+    margin-left: auto;
+
+    @include phone {
+      max-width: 80%;
+      margin-left: unset;
+    }
+
+    img {
+      width: 213px;
+      margin-bottom: 28px;
+
+      @include phone {
+        width: 145px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 116%;
+    max-width: 400px;
+
+    @include phone {
+      font-size: 25px;
+      line-height: 116%;
+    }
+  }
+
+  &__description {
+    padding-top: 58px;
+
+    @include phone {
+      padding-top: 50px;
+    }
+
+    &-subtitle {
+      @include title-decor;
+  
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      float: left;
+      min-width: 34%;
+  
+      @include phone {
+        float: none;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-text {
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 116%;
+        margin-bottom: 40px;
+
+        @include phone {
+          font-size: 26px;
+          line-height: 116%;
+        }
+      }
+    }
+  }
+}
+
+.audio {
+  &__section {
+    padding: 20px 0;
+    width: 100%;
+    // display: flex;
+    // justify-content: center;
+  }
+
+  &__wrapper {
+    max-width: 66%;
+    margin-left: auto;
+
+    @include phone {
+      max-width: none;
+      margin-left: unset;
+    }
+  }
+
+  &__ref {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 116%;
+    max-width: 400px;
+    margin-bottom: 78px;
+
+    @include phone {
+      font-size: 21px;
+      line-height: 125%;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__link {
+
+    @include phone {
+      text-decoration: underline;
+      display: inline;
+    }
+
+    &.cool-link::after,
+    &.cool-link::before {
+      background-color: $secondary-color;
+
+      @include phone {
+        content: none;
+      }
+    }
+  }
+
+  &__holder {
+    max-width: 85%;
+
+    @include phone {
+      max-width: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    &-title {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    &-duration {
+      @include phone {
+        display: none;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+
+    @include phone {
+      flex-direction: column-reverse;
+    }
+
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6.5px 0 6.5px 13px;
+      border-color: transparent transparent transparent $secondary-color;
+    }
+
+    &.pause::after {
+      content: '';
+      width: 13px;
+      height: 10px;
+      border-style: solid;
+      border-width: 0 5px 0 5px;
+      border-color: transparent black transparent black;
+    }
+  }
+
+  &__wave {
+    width: 100%;
+    padding-left: 35px;
+
+    @include phone {
+      padding-left: 0;
+    }
+  }
+}

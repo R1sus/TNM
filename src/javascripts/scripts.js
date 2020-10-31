@@ -151,7 +151,17 @@ const initCarousel = () => {
     on: {
       click: function (swiper, event) {
         initProjectModal(event.target);
-      }
+      },
+      init: function() {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          $(swiper.slides[i])
+            .find('.projects__slider-img')
+            .attr({
+              'data-swiper-parallax': 0.75 * swiper.width
+            });
+        }
+      },
     }
   });
 };
@@ -781,6 +791,37 @@ const animateAll = () => {
   animateAboutMe();
   animatePodcasts();
 };
+
+const initAudio = () => {
+
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#c8c8c8',
+    progressColor: '#777',
+    mediaControls: true,
+    responsive: true,
+  });
+
+  wavesurfer.load('videos/audio.wav');
+
+  let isPlayed = false;
+
+  $('#play-audio').on('click',() => {
+    console.log(wavesurfer);
+    if (isPlayed) {
+      wavesurfer.pause();
+    } else {
+      wavesurfer.play();
+    }
+    isPlayed = !isPlayed;
+    $('#play-audio').toggleClass('pause');
+  });
+
+};
+
+if ( document.querySelector('#waveform') !== null ) {
+  initAudio();
+}
 
 setTimeout(() => {
   splitText();
