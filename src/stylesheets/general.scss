@@ -21,6 +21,10 @@ body {
   overflow: hidden;
   cursor: url('../images/cursor.svg') 5 5, auto;
 
+  @include phone {
+    overflow: auto;
+  }
+
   &.podcasts-page {
     background: $secondary-color;
     color: $text-color-light;
