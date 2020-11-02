@@ -2,7 +2,7 @@
 import { gsap } from 'gsap';
 import {
   map, lerp, clamp, getMousePos,
-} from '../magnetic/utils';
+} from './utils';
 
 const imagesMap = {};
 

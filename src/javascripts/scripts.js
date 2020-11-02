@@ -3,9 +3,7 @@
 import $ from 'jquery';
 import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
-import MagnetMouse from 'magnet-mouse';
 import gsap, { TimelineLite, Expo } from 'gsap';
-import { CSSPlugin } from 'gsap/CSSPlugin';
 import LocomotiveScroll from 'locomotive-scroll';
 import getDOM from './dom';
 import cursor from './cursor';
@@ -17,46 +15,48 @@ require('jquery-modal');
 
 window.jQuery = $;
 window.$ = $;
-
 const body = document.querySelector('body');
-const counter = document.querySelector('#counter');
-const progress = document.querySelector('#progress');
-let i = 1;
-let t;
 
-cursor.init();
+const initPreloader = () => {
 
-const preloader = document.querySelector('.preloader');
-let beginLoad;
-const load = () => {
-  i++;
-  counter.innerHTML = i;
-  progress.style.width = `${i}%`;
+  const counter = document.querySelector('#counter');
+  const progress = document.querySelector('#progress');
+  
+  let i = 1;
+  let t;
 
-  if (i === 50) {
-    clearInterval(beginLoad);
-    t = setInterval(load, 15);
+  const preloader = document.querySelector('.preloader');
+  let beginLoad;
+  const load = () => {
+    i++;
+    counter.innerHTML = i;
+    progress.style.width = `${i}%`;
+
+    if (i === 50) {
+      clearInterval(beginLoad);
+      t = setInterval(load, 15);
+    }
+    if (i === 100) {
+      clearInterval(t);
+      const tl = new TimelineLite();
+      tl.to(preloader, {
+        duration: 1.2,
+        opacity: 0,
+        y: 0,
+        transformOrigin: '0% 50%',
+        top: '-100vh',
+        ease: Expo.easeInOut,
+        stagger: 5,
+      }).to(preloader, {
+        visibility: 'hidden',
+        zIndex: '-1',
+      });
+      setTimeout(() => animateIntro(), 600);  
+    }
+  };
+  if (preloader !== null) {
+    beginLoad = setInterval(load, 30);
   }
-  if (i === 100) {
-    clearInterval(t);
-    const tl = new TimelineLite();
-    tl.to(preloader, {
-      duration: 1.2,
-      opacity: 0,
-      y: 0,
-      transformOrigin: '0% 50%',
-      top: '-100vh',
-      ease: Expo.easeInOut,
-      stagger: 5,
-    }).to(preloader, {
-      visibility: 'hidden',
-      zIndex: '-1',
-    });
-    setTimeout(() => animateIntro(), 600);  
-  }
-};
-if (preloader !== null) {
-  beginLoad = setInterval(load, 30);
 }
 
 const initCarousel = () => {
@@ -209,6 +209,33 @@ const initVideo = () => {
   });
 };
 
+const initAudio = () => {
+
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#c8c8c8',
+    progressColor: '#777',
+    mediaControls: true,
+    responsive: true,
+  });
+
+  wavesurfer.load('videos/audio.wav');
+
+  let isPlayed = false;
+
+  $('#play-audio').on('click',() => {
+    console.log(wavesurfer);
+    if (isPlayed) {
+      wavesurfer.pause();
+    } else {
+      wavesurfer.play();
+    }
+    isPlayed = !isPlayed;
+    $('#play-audio').toggleClass('pause');
+  });
+
+};
+
 const initMobileMenu = () => {
   const hamburger = $('.hamburger');
   hamburger.on('click', clickMenuHandler);
@@ -287,14 +314,6 @@ const animationConfig = {
   stagger: 0.05,
 };
 
-const marginAnimationConfig = {
-  duration: 0.4,
-  marginTop: 0,
-  ease: 'power2',
-  stagger: 0.05,
-  opacity: 1,
-};
-
 const imgAnimationConfig = {
   duration: 2.5,
   opacity: 1,
@@ -323,7 +342,7 @@ const animateIntro = () => {
     ...animationConfig,
     height: 'auto',
     duration: 2,
-  }, '-=0.8')
+  }, '-=1.5')
   .to(description,
     {
       ...animationConfig,
@@ -628,7 +647,6 @@ const animatePodcasts = () => {
 const animatePagePodcasts = () => {
   const DOM = getDOM();
   const {
-    link,
     subT,
     text,
     desc,
@@ -716,47 +734,12 @@ const initScroll = () => {
   }
 };
 
-
-const animateAll = () => {
-  animateIntro();
-  animateAbout();
-  animateProjects();
-  animateTiny();
-  animateCards();
-  animateAboutMe();
-  animatePodcasts();
-};
-
-const initAudio = () => {
-
-  var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: '#c8c8c8',
-    progressColor: '#777',
-    mediaControls: true,
-    responsive: true,
-  });
-
-  wavesurfer.load('videos/audio.wav');
-
-  let isPlayed = false;
-
-  $('#play-audio').on('click',() => {
-    console.log(wavesurfer);
-    if (isPlayed) {
-      wavesurfer.pause();
-    } else {
-      wavesurfer.play();
-    }
-    isPlayed = !isPlayed;
-    $('#play-audio').toggleClass('pause');
-  });
-
-};
-
 if ( document.querySelector('#waveform') !== null ) {
   initAudio();
 }
+
+cursor.init();
+initPreloader();
 
 setTimeout(() => {
   splitText();
