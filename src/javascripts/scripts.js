@@ -104,15 +104,15 @@ const initCarousel = () => {
       prevEl: '.project-modal__slider-controls-btn.prev',
     },
     pagination: {
-      el: ' .project-modal__slider-pagination',
-      type: 'progressbar',
-      renderCustom: (swiper, current, total) => `${current}/${total}`,
+      el: '.project-modal__slider-num',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+        const fill = $('.project-modal__slider').find('.fill');
+        const width = (current * 100) / total;
+        $(fill).css('width', `${width}%`);
+        return '0'+ current + ' / ' + '0' + total;
+      },
     },
-    // on: {
-    //   slideChange: (swiper) => {
-    //     console.log(swiper);
-    //   }
-    // }
   });
 
   const projectModalSlider2 = new Swiper('.project-modal__slider1', {
@@ -122,9 +122,14 @@ const initCarousel = () => {
       prevEl: '.project-modal__slider-controls-btn.prev',
     },
     pagination: {
-      el: ' .project-modal__slider-pagination',
-      type: 'progressbar',
-      renderCustom: (swiper, current, total) => `${current}/${total}`,
+      el: '.project-modal__slider-num1',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+        const fill = $('.project-modal__slider1').find('.fill');
+        const width = (current * 100) / total;
+        $(fill).css('width', `${width}%`);
+        return '0'+ current + ' / ' + '0' + total;
+      },
     },
   });
 
