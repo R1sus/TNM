@@ -668,47 +668,6 @@ const animatePagePodcasts = () => {
   }, '-=1.5');
 };
 
-const animatePageManifesto = () => {
-  const DOM = getDOM();
-  const {
-    title,
-    subT,
-    textB,
-    articleText,
-    articleTitle,
-    img,
-  } = DOM.manifesto;
-  const tl = new TimelineLite();
-  tl
-    .to(title, {
-      ...animationConfig,
-      duration: 2,
-    })
-    .to(subT, {
-      ...animationConfig,
-      duration: 1.5,
-    }, '-=1.5')
-    .to(textB, {
-      ...animationConfig,
-      duration: 2,
-      delay: (pos) => pos * 0.06,
-    }, '-=1')
-    .to(img, {
-      ...animationConfig,
-      duration: 1,
-    }, '-=1')
-    .to(articleTitle, {
-      ...animationConfig,
-      duration: 1,
-      delay: (pos) => pos * 0.06,
-    }, '-=0.5')
-    .to(articleText, {
-      ...animationConfig,
-      duration: 1.2,
-      delay: (pos) => pos * 0.06,
-    }, '-=1');
-};
-
 let scroll = null;
 const onLocomotiveScroll = (e) => {
   const DOM = getDOM();
@@ -739,11 +698,6 @@ const onLocomotiveScroll = (e) => {
     if ($(DOM.podcasts.self).offset().top < offset) {
       animatePagePodcasts();
     }
-  }
-  if($('.scroll-container').hasClass('scroll-manifesto')) {
-    // if ($(DOM.manifesto.self).offset().top < offset) {
-      animatePageManifesto();
-    // }
   }
 };
 
