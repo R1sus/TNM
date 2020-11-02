@@ -1,11 +1,9 @@
 /* eslint-disable */
 // Load jQuery from NPM
 import $ from 'jquery';
-import { tns } from 'tiny-slider/src/tiny-slider';
 import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import MagnetMouse from 'magnet-mouse';
-import initMagneticVideoBtn from './magnetic';
 import gsap, { TimelineLite, Expo } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -63,30 +61,6 @@ if (preloader !== null) {
 
 const initCarousel = () => {
 
-  if (document.querySelector('.project-modal__slider2') !== null) {
-    const projectModalSlider = tns({
-      container: '.project-modal__slider2',
-      items: 1,
-      arrowKeys: true,
-      controlsContainer: '.project-modal__slider-controls2',
-      nav: false,
-      mode: 'gallery',
-      speed: 800
-    });
-  }
-
-  if (document.querySelector('.project-modal__slider') !== null) {
-    const projectModalSlider2 = tns({
-      container: '.project-modal__slider',
-      items: 1,
-      arrowKeys: true,
-      controlsContainer: '.project-modal__slider-controls',
-      nav: false,
-      mode: 'gallery',
-      speed: 800
-    });
-  }
-
   const sliderOptions = {
     loop: true,
     speed: 1000,
@@ -123,8 +97,44 @@ const initCarousel = () => {
 
   const photoSlider = new Swiper('.photo-slider', sliderOptions);
 
-  const mySwiper = new Swiper('.projects__slider', {
-    effect: 'fade',
+  const projectModalSlider1 = new Swiper('.project-modal__slider', {
+    ...sliderOptions,
+    navigation: {
+      nextEl: '.project-modal__slider-controls-btn.next',
+      prevEl: '.project-modal__slider-controls-btn.prev',
+    },
+    pagination: {
+      el: ' .project-modal__slider-pagination',
+      type: 'progressbar',
+      renderCustom: (swiper, current, total) => `${current}/${total}`,
+    },
+    // on: {
+    //   slideChange: (swiper) => {
+    //     console.log(swiper);
+    //   }
+    // }
+  });
+
+  const projectModalSlider2 = new Swiper('.project-modal__slider1', {
+    ...sliderOptions,
+    navigation: {
+      nextEl: '.project-modal__slider-controls-btn.next',
+      prevEl: '.project-modal__slider-controls-btn.prev',
+    },
+    pagination: {
+      el: ' .project-modal__slider-pagination',
+      type: 'progressbar',
+      renderCustom: (swiper, current, total) => `${current}/${total}`,
+    },
+  });
+
+  const projectsSlider = new Swiper('.projects__slider', {
+    speed: 1000,
+    parallax: true,
+    grabCursor: true,
+    mousewheel: {
+      releaseOnEdges: true
+    },
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slidesPerView: 2,
@@ -193,86 +203,6 @@ const initVideo = () => {
     }
   });
 };
-
-const initMagnetBtn = () => {
-  let mm = new MagnetMouse({
-    magnet: {
-      element: '.magnet',
-      distance: 50,
-    },
-    throttle: 15,
-  });
-  
-  mm.init();
-};
-
-// const initCursor = () => {
-//   const cursor = document.querySelector('#cursor');
-//   const cursorCircle = cursor.querySelector('.cursor__circle');
-
-//   const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
-//   const pos = { x: 0, y: 0 }; // cursor's coordinates
-//   const speed = 0.1; // between 0 and 1
-
-//   const updateCoordinates = e => {
-//     mouse.x = e.clientX;
-//     mouse.y = e.clientY;
-//   }
-
-//   window.addEventListener('mousemove', updateCoordinates);
-
-//   function getAngle(diffX, diffY) {
-//     return Math.atan2(diffY, diffX) * 180 / Math.PI;
-//   }
-
-//   function getSqueeze(diffX, diffY) {
-//     const distance = Math.sqrt(
-//       Math.pow(diffX, 2) + Math.pow(diffY, 2)
-//     );
-//     const maxSqueeze = 0.15;
-//     const accelerator = 1500;
-//     return Math.min(distance / accelerator, maxSqueeze);
-//   }
-
-//   const updateCursor = () => {
-//     const diffX = Math.round(mouse.x - pos.x);
-//     const diffY = Math.round(mouse.y - pos.y);
-    
-//     pos.x += diffX * speed;
-//     pos.y += diffY * speed;
-    
-//     const angle = getAngle(diffX, diffY);
-//     const squeeze = getSqueeze(diffX, diffY);
-    
-//     const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
-//     const rotate = 'rotate(' + angle +'deg)';
-//     const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
-
-//     cursor.style.transform = translate;
-//     cursorCircle.style.transform = rotate + scale;
-//   };
-
-//   function loop() {
-//     updateCursor();
-//     requestAnimationFrame(loop);
-//   }
-
-//   requestAnimationFrame(loop);
-
-//   const cursorModifiers = document.querySelectorAll('a');
-
-//   cursorModifiers.forEach(curosrModifier => {
-//     curosrModifier.addEventListener('mouseenter', function() {
-//       const className = "hover";
-//       cursor.classList.add(className);
-//     });
-  
-//     curosrModifier.addEventListener('mouseleave', function() {
-//       const className = "hover";
-//       cursor.classList.remove(className);
-//     });
-//   });
-// };
 
 const initMobileMenu = () => {
   const hamburger = $('.hamburger');
@@ -731,7 +661,48 @@ const animatePagePodcasts = () => {
     opacity: 1,
     delay: (pos) => pos * 0.06,
   }, '-=1.5');
-}
+};
+
+const animatePageManifesto = () => {
+  const DOM = getDOM();
+  const {
+    title,
+    subT,
+    textB,
+    articleText,
+    articleTitle,
+    img,
+  } = DOM.manifesto;
+  const tl = new TimelineLite();
+  tl
+    .to(title, {
+      ...animationConfig,
+      duration: 2,
+    })
+    .to(subT, {
+      ...animationConfig,
+      duration: 1.5,
+    }, '-=1.5')
+    .to(textB, {
+      ...animationConfig,
+      duration: 2,
+      delay: (pos) => pos * 0.06,
+    }, '-=1')
+    .to(img, {
+      ...animationConfig,
+      duration: 1,
+    }, '-=1')
+    .to(articleTitle, {
+      ...animationConfig,
+      duration: 1,
+      delay: (pos) => pos * 0.06,
+    }, '-=0.5')
+    .to(articleText, {
+      ...animationConfig,
+      duration: 1.2,
+      delay: (pos) => pos * 0.06,
+    }, '-=1');
+};
 
 let scroll = null;
 const onLocomotiveScroll = (e) => {
@@ -763,6 +734,11 @@ const onLocomotiveScroll = (e) => {
     if ($(DOM.podcasts.self).offset().top < offset) {
       animatePagePodcasts();
     }
+  }
+  if($('.scroll-container').hasClass('scroll-manifesto')) {
+    // if ($(DOM.manifesto.self).offset().top < offset) {
+      animatePageManifesto();
+    // }
   }
 };
 
@@ -826,8 +802,6 @@ if ( document.querySelector('#waveform') !== null ) {
 setTimeout(() => {
   splitText();
   initVideo(),
-  // initCursor(),
-  // initMagnetBtn(),
   initMobileMenu(),
   initCarousel();
   initMenu();

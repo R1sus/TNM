@@ -68,6 +68,14 @@ const getDOM = () => ({
     lineVer: qsa('.podcast__line-ver'),
     link: qs('.podcasts__link'),
   },
+  manifesto: {
+    title: qs('.manifesto__title'),
+    subT: qs('.manifesto__subtitle'),
+    textB: qsa('.manifesto__text-big p'),
+    img: qs('.manifesto__article-img'),
+    articleText: qsa('.manifesto__article p'),
+    articleTitle: qsa('.manifesto__article-title'),
+  },
 });
 
 export default getDOM;
