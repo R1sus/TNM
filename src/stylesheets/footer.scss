@@ -248,8 +248,11 @@
   height: 100%;
   background-size: cover;
   background-position: 50%;
-  // opacity: 0.75;
   mix-blend-mode: multiply;
+}
+
+.-fixed {
+  background-color: $secondary-color;
 }
 
 html:not(.has-scroll-smooth) .c-fixed {
