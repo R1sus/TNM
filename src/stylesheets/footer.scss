@@ -253,6 +253,10 @@
 
 .-fixed {
   background-color: $secondary-color;
+
+  @include phone {
+    background-color: transparent;
+  }
 }
 
 html:not(.has-scroll-smooth) .c-fixed {
