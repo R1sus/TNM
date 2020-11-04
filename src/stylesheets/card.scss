@@ -1,6 +1,8 @@
 .cards {
   @include default-wrapper;
 
+  padding-top: 100px;
+
   @include phone {
     padding-top: 60px;
   }
@@ -41,7 +43,7 @@
     flex-direction: column;
     justify-content: flex-start;
     line-height: 126%;
-    max-width: 310px;
+    max-width: 405px;
     padding-left: 100px;
     opacity: 0;
     transform-origin: 0 100%;

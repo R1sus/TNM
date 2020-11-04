@@ -2,6 +2,7 @@
   @include default-wrapper;
 
   padding-bottom: 0;
+  padding-top: 100px;
 
   @include phone {
     padding-top: 40px;
@@ -25,6 +26,7 @@
         line-height: 110.4%;
         vertical-align: top;
         padding-left: 5px;
+        letter-spacing: normal;
       }
     }
   }
@@ -77,7 +79,12 @@
     &-title {
       @include section-title;
 
+      opacity: 0;
       margin-bottom: 30px;
+
+      &.splitted {
+        opacity: 1;
+      }
     }
 
     &-subtitle {
@@ -137,6 +144,15 @@
       padding: 12px 0 20px;
       position: relative;
       opacity: 0.00001;
+
+      &:hover a.cool-link {
+        &::after {
+          transform-origin: 0% 50%;
+          transform: scaleX(1);
+          transition: transform 0.35s $easing;
+          transition-delay: 0.35s;
+        }
+      }
 
       .podcasts-page & {
         border-color: rgba(255, 255, 255, 0.3);
@@ -220,7 +236,7 @@
     @include inner-title;
 
     margin-bottom: 50px;
-    margin-top: 10px;
+    margin-top: 16px;
     opacity: 0;
     transform-origin: 0 100%;
     transform: translate(0, +100px);

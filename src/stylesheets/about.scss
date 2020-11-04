@@ -28,7 +28,8 @@
 
     .img {
       opacity: 0.00000001;
-      transform: scale(1.2);
+      transform-origin: 0 100%;
+      transform: translate(0, 100px);
 
       @include phone {
         opacity: 1;

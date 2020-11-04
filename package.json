@@ -90,6 +90,7 @@
     "gsap": "^3.5.1",
     "jquery": "^3.4.1",
     "magnet-mouse": "github:fluffy-factory/magnet-mouse",
+    "mediaelement": "^4.2.16",
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",
     "sanitize.css": "^11.0.0",

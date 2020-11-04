@@ -9,7 +9,7 @@
     @include inner-title;
 
     margin-bottom: 130px;
-    margin-top: 10px;
+    margin-top: 16px;
     opacity: 0;
     transition: opacity 0.5s $easing;
 
@@ -84,7 +84,7 @@
 
     &-subtitle {
       @include title-decor;
-  
+
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
@@ -100,7 +100,7 @@
         transform-origin: 0 50%;
         transform: none;
       }
-  
+
       @include phone {
         float: none;
         margin-bottom: 20px;
@@ -123,7 +123,7 @@
           transition: opacity 0.6s $easing;
           @for $i from 1 through 3 {
             &:nth-child(#{$i}){
-                transition-delay: $i*0.8s;
+                transition-delay: $i*0.3s;
             }
           }
         }
@@ -219,6 +219,7 @@
     &-title {
       flex: 1;
       padding: 0 20px;
+      text-transform: uppercase;
     }
 
     &-duration {
@@ -235,7 +236,6 @@
     @include phone {
       flex-direction: column-reverse;
     }
-
   }
 
   &__btn {
@@ -274,10 +274,16 @@
 
   &__wave {
     width: 100%;
-    padding-left: 35px;
+    // padding-left: 35px;
 
     @include phone {
       padding-left: 0;
     }
   }
+}
+
+audio::-webkit-media-controls-enclosure,
+audio::-webkit-media-controls,
+audio {
+  background: transparent;
 }

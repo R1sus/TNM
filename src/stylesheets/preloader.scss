@@ -40,10 +40,10 @@
     width: 1%;
   }
 
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
-    transition: all 1s $easing;
-  }
+  // &.hide {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   z-index: -1;
+  //   transition: all 1s $easing;
+  // }
 }

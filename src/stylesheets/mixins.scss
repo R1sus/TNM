@@ -81,7 +81,11 @@
   position: relative;
   vertical-align: top;
   left: -12px;
-  top: 5px;
+  top: 11px;
+
+  @include phone {
+    top: 5px;
+  }
 }
 
 @mixin desktop {

@@ -5,17 +5,18 @@ import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import gsap, { TimelineLite, Expo } from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
+import mediaelementplayer from 'mediaelement';
 import getDOM from './dom';
 import cursor from './cursor';
 
 import initMenu from './image-hover';
 
 Swiper.use([Navigation, Pagination]);
-require('jquery-modal');
 
 window.jQuery = $;
 window.$ = $;
 const body = document.querySelector('body');
+
 
 const initPreloader = () => {
 
@@ -41,7 +42,7 @@ const initPreloader = () => {
       const tl = new TimelineLite();
       tl.to(preloader, {
         duration: 1.2,
-        opacity: 0,
+        // opacity: 0,
         y: 0,
         transformOrigin: '0% 50%',
         top: '-100vh',
@@ -336,7 +337,7 @@ const animateIntro = () => {
   tl.to(title,
     {
       ...animationConfig,
-      duration: 0.9,
+      duration: 0.7,
     },
   ).to(text, {
     ...animationConfig,
@@ -390,35 +391,29 @@ const animateAbout = () => {
   tl
   .to(logo,{
       ...animationConfig,
-      duration: 0.9,
-    })
-    // .to(img, {
-    //   ...imgAnimationConfig,
-    //   duration: 1.3,
-    //   transform: 'scale(1)',
-    //   ease: 'power2',
-    // })
-    .to(title, {
-      ...animationConfig,
-      ease: 'Power3.easeOut',
-      duration: 1.5,
-      stagger: '0.5',
-    }, '-=0.8')
-    .to(subtitle, {
-      ...animationConfig,
-      duration: 1.3,
-      ease: 'Power3.easeOut',
-    }, '-=1.5')
-    .to(text, {
-      ...animationConfig,
-      duration: 2.5,
-      ease: 'Power3.easeOut',
-    }, '-=1')
-    .to(link, {
-      ...animationConfig,
-      ease: 'Power3.easeOut',
-      duration: 1.5,
-    }, '-=2');
+      duration: 1.1,
+  })
+  .to(title, {
+    ...animationConfig,
+    ease: 'Power3.easeOut',
+    duration: 1.5,
+    stagger: '0.5',
+  }, '-=1')
+  .to(subtitle, {
+    ...animationConfig,
+    duration: 1.3,
+    ease: 'Power3.easeOut',
+  }, '-=1.5')
+  .to(text, {
+    ...animationConfig,
+    duration: 2.5,
+    ease: 'Power3.easeOut',
+  }, '-=1')
+  .to(link, {
+    ...animationConfig,
+    ease: 'Power3.easeOut',
+    duration: 1.5,
+  }, '-=2');
 };
 
 const animateProjects = () => {
@@ -494,7 +489,8 @@ const animateTiny = () => {
       '-=1'
     ).to(pos, 
       {
-        ...animationConfig
+        ...animationConfig,
+        duration: 1.2,
       }, '-=0.7'
     )
     .to(subTitleA, {
@@ -749,4 +745,6 @@ setTimeout(() => {
   initMenu();
   initContactModal();
   setTimeout(initScroll, 100);
+
+// $('.mejs__player').mediaelementplayer();
 }, 1000);

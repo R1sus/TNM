@@ -11,6 +11,7 @@
     @include section-title;
 
     position: relative;
+    margin-bottom: 30px;
 
     &.sub {
       span:last-child:not(.invisible-word) {
@@ -26,6 +27,7 @@
         line-height: 110.4%;
         vertical-align: top;
         padding-left: 5px;
+        letter-spacing: normal;
       }
     }
   }

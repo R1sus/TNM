@@ -9,7 +9,7 @@ function getSqueeze(diffX, diffY) {
     diffX * diffX + diffY * diffY,
   );
   const maxSqueeze = 0.15;
-  const accelerator = 1500;
+  const accelerator = 5000;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 let rotateEnabled = true;

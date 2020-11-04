@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader__logo">
             <img src="images/white_logo.svg" alt="tnm logo">
         </div>
@@ -21,7 +21,7 @@
             </div>
             <div class="preloader__bar" id="progress"></div>
         </div> 
-    </div>
+    </div> -->
 
     <div class="contact">
         <div class="contact__container">
@@ -191,7 +191,7 @@
                 <nav class="mobile-hide">
                     <ul class="header__navigation">
                         <li class="header__navigation-item"><a href="about.html" data-cursor-class="hover-link">About</a></li>
-                        <li class="header__navigation-item"><a href="" data-cursor-class="hover-link">Projects</a></li>
+                        <li class="header__navigation-item"><a href="#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
                         <li class="header__navigation-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
                         <li class="header__navigation-item"><a href="podcasts.html" data-cursor-class="hover-link">Podcast</a></li>
                     </ul>
@@ -214,7 +214,7 @@
                         <div class="mobile-nav__menu">
                             <ul class="mobile-nav__navigation">
                                 <li class="mobile-nav__navigation-item"><a href="about.html">About</a></li>
-                                <li class="mobile-nav__navigation-item"><a href="">Projects</a></li>
+                                <li class="mobile-nav__navigation-item"><a href="#projects" data-scroll-to>Projects</a></li>
                                 <li class="mobile-nav__navigation-item"><a href="manifesto.html">Manifesto</a></li>
                                 <li class="mobile-nav__navigation-item"><a href="podcasts.html">Podcast</a></li>
                             </ul>
@@ -314,12 +314,15 @@
                 <div class="about__container">
                     <div class="about__logo">
                         <div class="about__logo-wrap mobile-hide">
-                            <img src="images/about-logo/t.svg">
+
+                            <img class="img" src="images/t-n-m-logo.svg" alt="tnm logo">
+
+                            <!-- <img src="images/about-logo/t.svg">
                             <img src="images/about-logo/dash.svg" style="margin: auto 7px auto -3px;">
                             <img src="images/about-logo/n.svg">
                             <img src="images/about-logo/dash.svg" style="margin: auto 7px;">
                             <img src="images/about-logo/m.svg" style="margin-right: 7px;">
-                            <img class="about__logo-img-sm" src="images/about-logo/r.svg">
+                            <img class="about__logo-img-sm" src="images/about-logo/r.svg"> -->
                         </div>
                         <img class="mobile-show img" src="images/t-n-m-logo.svg" alt="tnm logo">
                     </div>
@@ -358,7 +361,7 @@
                 </div>
                 
             </section>
-            <section class="projects" data-scroll-section>
+            <section class="projects" data-scroll-section id="projects">
                 <h1 class="projects__title split-word sub">selected projects <sub>06</sub></h1>
                 <div class="projects__slider swiper-container">
                     <div class="projects__slider-nav">
@@ -718,7 +721,7 @@
                                 <h6 class="footer__title">Links</h6>
                                 <ul class="footer__menu-nav">
                                     <li class="footer__menu-nav-item"><a href="about" data-cursor-class="hover-link">About</a></li>
-                                    <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Projects</a></li>
+                                    <li class="footer__menu-nav-item"><a href="#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
                                     <li class="footer__menu-nav-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
                                     <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Contact</a></li>
                                 </ul>
