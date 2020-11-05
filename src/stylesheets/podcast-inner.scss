@@ -11,7 +11,9 @@
     margin-bottom: 130px;
     margin-top: 16px;
     opacity: 0;
-    transition: opacity 0.5s $easing;
+    transform-origin: 0 100%;
+    transform: translate(0, +100px);
+    transition: transform 0.5s $easing, opacity 0.4s $easing;
 
     &.is-inview {
       opacity: 1;
@@ -37,7 +39,9 @@
       width: 213px;
       margin-bottom: 28px;
       opacity: 0;
-      transition: opacity 0.5s $easing;
+      transform-origin: 0 100%;
+      transform: translate(0, +100px);
+      transition: transform 0.5s $easing, opacity 0.4s $easing;
       transition-delay: 0.2s;
 
       &.is-inview {
@@ -60,7 +64,9 @@
     line-height: 116%;
     max-width: 400px;
     opacity: 0;
-    transition: opacity 0.3s $easing;
+    transform-origin: 0 100%;
+    transform: translate(0, +50px);
+    transition: transform 0.5s $easing, opacity 0.4s $easing;
     transition-delay: 0.3s;
 
       &.is-inview {
@@ -92,7 +98,9 @@
       float: left;
       min-width: 34%;
       opacity: 0;
-      transition: opacity 0.3s $easing;
+      transform-origin: 0 100%;
+      transform: translate(0, +50px);
+      transition: transform 0.5s $easing, opacity 0.4s $easing;
       transition-delay: 0.3s;
 
       &.is-inview {
@@ -115,6 +123,10 @@
         line-height: 116%;
         margin-bottom: 40px;
         opacity: 0;
+        transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        transform: translate(0, +50px);
+        transition: transform 0.5s $easing, opacity 0.4s $easing;
 
         &.is-inview {
           opacity: 1;
@@ -161,7 +173,9 @@
     max-width: 400px;
     margin-bottom: 78px;
     opacity: 0;
-    transition: opacity 0.3s $easing;
+    transform-origin: 0 100%;
+    transform: translate(0, +100px);
+    transition: transform 0.5s $easing, opacity 0.4s $easing;
     transition-delay: 0.3s;
 
       &.is-inview {

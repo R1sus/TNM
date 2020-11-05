@@ -149,6 +149,20 @@ const videos = {
   ],
 };
 
+// Video loaders
+const audios = {
+  test: /\.(mp4|webm|wav)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      query: {
+        name: '[name].[hash].[ext]',
+        outputPath: 'images/',
+      },
+    },
+  ],
+};
+
 module.exports = [
   html,
   js,
@@ -158,4 +172,5 @@ module.exports = [
   images,
   fonts,
   videos,
+  audios,
 ];
