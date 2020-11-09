@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 </head>
-<body>
+<body class="general-page">
     
     <div class="preloader">
         <div class="preloader__logo">
@@ -182,7 +182,7 @@
         </div>
     </div>
 
-    <div class="scroll-container general" data-scroll-container>
+    <div class="scroll-container general main" data-scroll-container>
         <header class="header" data-scroll-section>
             <div class="header__wrapper">
                 <div class="header__logo">
@@ -190,10 +190,10 @@
                 </div>
                 <nav class="mobile-hide">
                     <ul class="header__navigation">
-                        <li class="header__navigation-item"><a href="about.html" data-cursor-class="hover-link">About</a></li>
+                        <li class="header__navigation-item"><a href="about.html" data-page-link data-cursor-class="hover-link">About</a></li>
                         <li class="header__navigation-item"><a href="#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
-                        <li class="header__navigation-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
-                        <li class="header__navigation-item"><a href="podcasts.html" data-cursor-class="hover-link">Podcast</a></li>
+                        <li class="header__navigation-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
+                        <li class="header__navigation-item"><a href="podcasts.html" data-page-link data-cursor-class="hover-link">Podcast</a></li>
                     </ul>
                 </nav>
                 <div>
@@ -356,7 +356,7 @@
                                 </p>
                             </div>
                         </div>
-                        <a class="about__link cool-link" href="manifesto.html" data-cursor-class="hover-link">incomplete manifesto</a>
+                        <a class="about__link cool-link" href="manifesto.html" data-page-link data-cursor-class="hover-link">incomplete manifesto</a>
                     </div>
                 </div>
                 
@@ -596,6 +596,7 @@
                             <video
                                 id="video"
                                 src="videos/My-life-journey-How-I-became-a-nomad-architect.mp4"
+                                type="video/mp4"
                                 poster="images/video-poster.png">
                             </video>
                             <button class="about-me__video-btn magnet" id="play-button" data-cursor-class="hover-link"></button>
@@ -623,88 +624,110 @@
                     <div class="podcast__line-ver"></div>
                     <div class="podcasts">
                         <ul class="podcasts__list list">
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">01. Happy Working Lab</a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">01. Happy Working Lab</div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">02. B-Hive Living</a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+                            
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">02. B-Hive Living</div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">03. Arctic Coworking </a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">03. Arctic Coworking </div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">04. ETXE Co-living</a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+                        
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">04. ETXE Co-living</div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">05. Carper Co-living</a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">05. Carper Co-living</div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">06. Woke Co-living </a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">06. Woke Co-living </div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">07. B-Hive Living </a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">07. B-Hive Living </div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
-                            <li class="podcasts__item item" data-cursor-class="hover-link">
-                                <div class="podcasts__item-title">
-                                    <a href="podcast.html" class="cool-link">08. Kindred Quarters</a>
-                                </div>
-                                <div class="podcasts__item-info">
-                                    <span class="podcasts__item-singer">Williams Jhonson Mota</span>
-                                    <span class="podcasts__item-countru">UK / Portugal</span>
-                                </div>
-                                <span class="podcasts__item-duration">31:24</span>
+                            <li class="item">
+                                <a class="podcasts__item" href="podcast.html" data-page-link data-cursor-class="hover-link">
+                                    <div class="podcasts__item-title">
+                                        <div class="cool-link">08. Kindred Quarters</div>
+                                    </div>
+                                    <div class="podcasts__item-info">
+                                        <span class="podcasts__item-singer">Williams Jhonson Mota</span>
+                                        <span class="podcasts__item-countru">UK / Portugal</span>
+                                    </div>
+                                    <span class="podcasts__item-duration">31:24</span>
+                                </a>
                             </li>
                         </ul>
-                        <a class="podcasts__link cool-link" href="podcasts.html" data-cursor-class="hover-link">More podcasts</a>
+                        <a class="podcasts__link cool-link" href="podcasts.html" data-page-link data-cursor-class="hover-link">More podcasts</a>
                     </div>
 
                 </div>
@@ -720,9 +743,9 @@
                             <div class="footer__menu-links">
                                 <h6 class="footer__title">Links</h6>
                                 <ul class="footer__menu-nav">
-                                    <li class="footer__menu-nav-item"><a href="about" data-cursor-class="hover-link">About</a></li>
+                                    <li class="footer__menu-nav-item"><a href="about" data-page-link data-cursor-class="hover-link">About</a></li>
                                     <li class="footer__menu-nav-item"><a href="#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
-                                    <li class="footer__menu-nav-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
+                                    <li class="footer__menu-nav-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
                                     <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Contact</a></li>
                                 </ul>
                                 <div class="footer__menu-copyright mobile-hide">All ©Rights to the The New Movement</div>
@@ -752,7 +775,7 @@
                                     </ul>
                                     <div class="footer__menu-copyright mobile-show">All ©Rights to the The New Movement</div>
                                     <div class="footer__copyright">Designed by
-                                        <a href="http://obys.agency/" class="cool-link">Obys</a>
+                                        <a href="http://obys.agency/" target="_blank" class="cool-link">Obys</a>
                                     </div>
                                 </div>
                             </div>
@@ -762,5 +785,6 @@
             </div>
         </section>
     </div>
+    <div class="curtain"></div>
 </body>
 </html>

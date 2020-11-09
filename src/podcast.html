@@ -12,7 +12,7 @@
   <div class="contact">
     <div class="contact__container">
         <div class="contact__close">
-            <a href="#" class="close-btn"></a>
+            <a href="#" class="close-btn" data-cursor-class="hover-link"></a>
         </div>
         <h1 class="contact__title">Let's get in touch</h1>
         <div class="contact__subtitle">Looking to start a new project?</div>
@@ -27,7 +27,7 @@
         </form>
     </div>
   </div>
-  <div class="scroll-container inner-podcast" data-scroll-container>
+  <div class="scroll-container inner-podcast main" data-scroll-container>
     <header class="header" data-scroll-section>
         <div class="header__wrapper">
             <div class="header__logo">
@@ -35,10 +35,10 @@
             </div>
             <nav class="mobile-hide">
                 <ul class="header__navigation">
-                    <li class="header__navigation-item"><a href="about.html" data-cursor-class="hover-link">About</a></li>
-                    <li class="header__navigation-item"><a href="" data-cursor-class="hover-link">Projects</a></li>
-                    <li class="header__navigation-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
-                    <li class="header__navigation-item"><a href="podcasts.html" data-cursor-class="hover-link">Podcast</a></li>
+                    <li class="header__navigation-item"><a href="about.html" data-page-link data-cursor-class="hover-link">About</a></li>
+                    <li class="header__navigation-item"><a href="index.html#projects" data-page-link data-cursor-class="hover-link">Projects</a></li>
+                    <li class="header__navigation-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
+                    <li class="header__navigation-item"><a href="podcasts.html" data-page-link data-cursor-class="hover-link">Podcast</a></li>
                 </ul>
             </nav>
             <div>
@@ -88,7 +88,7 @@
           </div>
           <div class="audio__section">
             <div class="audio__wrapper">
-              <div class="audio__ref" data-scroll>Visit <a href="" class="audio__link cool-link">Happy Working lab’s website</a>, <a href="" class="audio__link cool-link">FB page</a>, <a href="" class="audio__link cool-link">Instagram</a> account or Vanessa’s <a href="" class="audio__link cool-link">LinkedIn</a> profile.</div>
+              <div class="audio__ref" data-scroll>Visit <a href="" data-cursor-class="hover-link" class="audio__link cool-link">Happy Working lab’s website</a>, <a data-cursor-class="hover-link" href="" class="audio__link cool-link">FB page</a>, <a data-cursor-class="hover-link" href="" class="audio__link cool-link">Instagram</a> account or Vanessa’s <a data-cursor-class="hover-link" href="" class="audio__link cool-link">LinkedIn</a> profile.</div>
               <div class="audio__holder" data-scroll>
                 <div class="audio__info">
                   <div class="audio__info-num">1-2</div>
@@ -104,7 +104,7 @@
                   </div> -->
                   <!-- <div id="waveform" class="audio__wave"></div> -->
                   <audio controls class="audio__wave mejs__player" data-mejsoptions='{"pluginPath": "/path/to/shims/", "alwaysShowControls": "true"}'>
-                    <source src="/videos/audio.wav">
+                    <source src="videos/audio.wav">
                   </audio>
                 </div>
               </div>
@@ -124,9 +124,9 @@
                       <div class="footer__menu-links">
                           <h6 class="footer__title">Links</h6>
                           <ul class="footer__menu-nav">
-                              <li class="footer__menu-nav-item"><a href="about" data-cursor-class="hover-link">About</a></li>
-                              <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Projects</a></li>
-                              <li class="footer__menu-nav-item"><a href="manifesto.html" data-cursor-class="hover-link">Manifesto</a></li>
+                              <li class="footer__menu-nav-item"><a href="about" data-page-link data-cursor-class="hover-link">About</a></li>
+                              <li class="footer__menu-nav-item"><a href="index.html#projects" data-page-link data-cursor-class="hover-link">Projects</a></li>
+                              <li class="footer__menu-nav-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
                               <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Contact</a></li>
                           </ul>
                           <div class="footer__menu-copyright mobile-hide">All ©Rights to the The New Movement</div>
@@ -156,7 +156,7 @@
                               </ul>
                               <div class="footer__menu-copyright mobile-show">All ©Rights to the The New Movement</div>
                               <div class="footer__copyright">Designed by
-                                  <a href="http://obys.agency/" class="cool-link">Obys</a>
+                                  <a href="http://obys.agency/" target="_blank" class="cool-link">Obys</a>
                               </div>
                           </div>
                       </div>
@@ -166,7 +166,7 @@
       </div>
     </section>
   </div>
-  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <div class="curtain"></div>
 </body>
 </html>
 

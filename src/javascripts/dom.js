@@ -67,6 +67,7 @@ const getDOM = () => ({
     lineTop: qsa('.podcast__line-top'),
     lineVer: qsa('.podcast__line-ver'),
     link: qs('.podcasts__link'),
+    subTD: qsa('.podcast__description-title'),
   },
   // manifesto: {
   //   title: qs('.manifesto__title'),

@@ -1,29 +1,30 @@
 .project-modal {
   @extend .contact;
 
+  justify-content: flex-end;
   overflow-y: scroll;
 
   @include phone {
     overflow-y: scroll;
   }
 
-  &.project-modal-slide-1,
-  &.project-modal-slide-3 {
-    justify-content: flex-start;
-  }
+  // &.project-modal-slide-1,
+  // &.project-modal-slide-3 {
+  //   justify-content: flex-start;
+  // }
 
-  &.project-modal-slide-2,
-  &.project-modal-slide-4 {
-    justify-content: flex-end;
+  // &.project-modal-slide-2,
+  // &.project-modal-slide-4 {
+  //   justify-content: flex-end;
 
-    .project-modal__close {
-      right: auto;
-      left: -80px;
+  .project-modal__close {
+    right: auto;
+    left: -80px;
+    top: 15px;
 
-      @include phone {
-        left: auto;
-        right: 15px;
-      }
+    @include phone {
+      left: auto;
+      right: 15px;
     }
   }
 

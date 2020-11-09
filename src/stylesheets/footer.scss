@@ -222,7 +222,7 @@
 
 @media (min-width: 1000px) {
   .c-fixed_wrapper {
-    height: 100vh;
+    height: 100vh ;
   }
 }
 
@@ -251,12 +251,8 @@
   mix-blend-mode: multiply;
 }
 
-.-fixed {
-  background-color: $secondary-color;
-
-  @include phone {
-    background-color: transparent;
-  }
+.-fixed[data-scroll-section] {
+  z-index: 21 !important;
 }
 
 html:not(.has-scroll-smooth) .c-fixed {

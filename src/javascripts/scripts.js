@@ -5,10 +5,9 @@ import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import gsap, { TimelineLite, Expo } from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
-import mediaelementplayer from 'mediaelement';
 import getDOM from './dom';
 import cursor from './cursor';
-
+import curtain from './curtain';
 import initMenu from './image-hover';
 
 Swiper.use([Navigation, Pagination]);
@@ -42,7 +41,6 @@ const initPreloader = () => {
       const tl = new TimelineLite();
       tl.to(preloader, {
         duration: 1.2,
-        // opacity: 0,
         y: 0,
         transformOrigin: '0% 50%',
         top: '-100vh',
@@ -52,13 +50,43 @@ const initPreloader = () => {
         visibility: 'hidden',
         zIndex: '-1',
       });
-      setTimeout(() => animateIntro(), 600);  
+      curtain.show();
+
+      setTimeout(() => {
+        curtain.hide();
+      }, 800);
+      setTimeout(() => animateIntro(), 900);  
     }
   };
   if (preloader !== null) {
     beginLoad = setInterval(load, 30);
   }
 }
+
+document.body.addEventListener('click', e => {
+  if (e.target.tagName === 'A' && e.target.dataset.pageLink !== undefined) {
+    e.preventDefault();
+    const href = e.target.href;
+    curtain.show();
+    setTimeout(() => {
+      window.location.href = href;
+    }, 650);
+  }
+});
+
+if(document.querySelector('.general-page') === null) {
+  curtain.show();
+}
+
+setTimeout(() => {
+  curtain.hide();
+}, 1000);
+
+cursor.init();
+
+setTimeout(() => { 
+  initPreloader();
+}, 900);
 
 const initCarousel = () => {
 
@@ -190,6 +218,11 @@ const initProjectModal = (target) => {
     e.preventDefault();
     $(`.project-modal.project-modal-slide-${slideNum}`).removeClass('show');
   })
+  $(`.project-modal.project-modal-slide-${slideNum}`).on('click', (e) => {
+    if(!$(e.target).is('.project-modal__container') && $('.project-modal__container').has(e.target).length === 0) {
+      $(`.project-modal.project-modal-slide-${slideNum}`).removeClass('show');
+    }
+  })
 }
 
 const initVideo = () => {
@@ -210,33 +243,6 @@ const initVideo = () => {
   });
 };
 
-const initAudio = () => {
-
-  var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: '#c8c8c8',
-    progressColor: '#777',
-    mediaControls: true,
-    responsive: true,
-  });
-
-  wavesurfer.load('videos/audio.wav');
-
-  let isPlayed = false;
-
-  $('#play-audio').on('click',() => {
-    console.log(wavesurfer);
-    if (isPlayed) {
-      wavesurfer.pause();
-    } else {
-      wavesurfer.play();
-    }
-    isPlayed = !isPlayed;
-    $('#play-audio').toggleClass('pause');
-  });
-
-};
-
 const initMobileMenu = () => {
   const hamburger = $('.hamburger');
   hamburger.on('click', clickMenuHandler);
@@ -255,8 +261,13 @@ const initContactModal = () => {
   });
   $('.contact__close').on('click', (e) => {
     e.preventDefault();
-    $('.contact').toggleClass('show');
+    $('.contact').removeClass('show');
   });
+  $('.contact').on('click', (e) => {
+    if(!$(e.target).is('.contact__container') && $('.contact__container').has(e.target).length === 0) {
+      $('.contact').removeClass('show');
+    }
+  })
 }
 
 const splitText = () => {
@@ -347,33 +358,33 @@ const animateIntro = () => {
   .to(description,
     {
       ...animationConfig,
-      duration: 0.8,
+      duration: 1.2,
     },
     '-=1.5',
   ).to(author,
     {
       ...animationConfig,
-    duration: 1.2,
+    duration: 1,
     },
-    '-=1'
+    '-=1.2'
   ).to(pos, 
     {
       ...animationConfig,
-      duration: 1.2,
-    }, '-=0.7'
+      duration: 1,
+    }, '-=0.9'
   ).to(slider,
     {
       ...animationConfig,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power2',
     },
-    '-=1',
+    '-=1.8',
   ).to(controls, 
     {
       ...animationConfig,
       duration: 0.8,
       ease: 'power2',
-    }, '-=0.7');
+    }, '-=1.3');
 };
 
 const animateAbout = () => {
@@ -397,7 +408,6 @@ const animateAbout = () => {
     ...animationConfig,
     ease: 'Power3.easeOut',
     duration: 1.5,
-    stagger: '0.5',
   }, '-=1')
   .to(subtitle, {
     ...animationConfig,
@@ -406,9 +416,9 @@ const animateAbout = () => {
   }, '-=1.5')
   .to(text, {
     ...animationConfig,
-    duration: 2.5,
+    duration: 2,
     ease: 'Power3.easeOut',
-  }, '-=1')
+  }, '-=1.3')
   .to(link, {
     ...animationConfig,
     ease: 'Power3.easeOut',
@@ -454,7 +464,6 @@ const animateTiny = () => {
     .to(title, {
       ...animationConfig,
       duration: 2,
-      stagger: .1
     })
     .to(lineTop, {
       ...imgAnimationConfig,
@@ -466,33 +475,33 @@ const animateTiny = () => {
       duration: 1,
       height: 'auto',
     }, '-=1.5')
-    .to(images, {
-      ...imgAnimationConfig,
-      duration: 1,
-    }, '-=1.5')
     .to(description, { //container
       ...animationConfig,
       height: 'auto',
-      duration: 2,
-    }, '-=1.2')
+      duration: 1.5,
+    }, '-=1')
     .to(quote,
       {
         ...animationConfig,
-        duration: 1.8,
+        duration: 1,
       },
       '-=1.5',
     ).to(author,
       {
         ...animationConfig,
-      duration: 1.2,
+      duration: 1,
       },
-      '-=1'
+      '-=1.3'
     ).to(pos, 
       {
         ...animationConfig,
-        duration: 1.2,
-      }, '-=0.7'
+        duration: 1,
+      }, '-=1.3'
     )
+    .to(images, {
+      ...imgAnimationConfig,
+      duration: 1.5,
+    }, '-=1')
     .to(subTitleA, {
       ...animationConfig,
       duration: 1.5,
@@ -537,18 +546,15 @@ const animateCards = () => {
     .to(text, {
       ...animationConfig,
       duration: 2,
-      ease: 'slowMo',
     }, '-=3.5')
     .to(container, {
       ...imgAnimationConfig,
       duration: 2.5,
-      ease: 'power3',
     }, '-=2.5')
     .to(card, {
       opacity: 1,
-      transform: "translate(0, 0) skewY(0deg)",
-      ease:"Expo.easeOut", 
-      duration: 0.4,
+      transform: "translate(0, 0) skewY(0deg)", 
+      duration: 0.8,
       delay: (pos) => pos * 0.09,
     }, '-=1.5');
 };
@@ -571,16 +577,23 @@ const animateAboutMe = () => {
     .to(textTitle, {
       ...animationConfig,
       duration: 1.5,
-    }, '-=1.5')
+      ease: 'Power3.easeOut',
+    }, '-=1.3')
     .to(text, {
       ...animationConfig,
       duration: 1.5,
-    }, '-=1')
-    .to(video, animationConfig, '-=1')
+      ease: 'Power3.easeOut',
+    }, '-=1.3')
+    .to(video, {
+      ...animationConfig,
+      duration: 1.5,
+      ease: 'Power3.easeOut',
+    }, '-=1.3')
     .to(videoTitle, {
       ...animationConfig,
       duration: 1.5,
-    }, '-=0.5')
+      ease: 'Power3.easeOut',
+    }, '-=1.3')
 };
 
 const animatePodcasts = () => {
@@ -611,7 +624,7 @@ const animatePodcasts = () => {
     .to(lineVer, {
       ...imgAnimationConfig,
       duration: 1,
-      height: 'auto',
+      height: '100vh',
     }, '-=1.5')
     .to(subT, {
       ...animationConfig,
@@ -643,7 +656,7 @@ const animatePodcasts = () => {
 const animatePagePodcasts = () => {
   const DOM = getDOM();
   const {
-    subT,
+    subTD,
     text,
     desc,
     lineTop,
@@ -662,9 +675,9 @@ const animatePagePodcasts = () => {
     ...imgAnimationConfig,
     duration: 1,
     delay: (pos) => pos * 0.06,
-    height: 'auto',
+    height: 'calc(100vh - 80px)',
   }, '-=1.5')
-  .to(subT, {
+  .to(subTD, {
     ...animationConfig,
     duration: 1.5,
   }, '-=1.5')
@@ -675,7 +688,7 @@ const animatePagePodcasts = () => {
   .to(text, {...animationConfig, duration: 1 }, '-=1')
   .to(listItems, {
     ...animationConfig,
-    duration: 0.8,
+    duration: 1,
     ease: 'Expo.easeOut',
     opacity: 1,
     delay: (pos) => pos * 0.06,
@@ -708,12 +721,11 @@ const onLocomotiveScroll = (e) => {
       animatePodcasts();
     }
   }
-  if($('.scroll-container').hasClass('scroll-podcasts')) {
-    if ($(DOM.podcasts.self).offset().top < offset) {
-      animatePagePodcasts();
-    }
-  }
 };
+
+if($('.scroll-container').hasClass('scroll-podcasts')) {
+  setTimeout(animatePagePodcasts, 2300);
+}
 
 const initScroll = () => {
   if ( document.querySelector('[data-scroll-container]') !== null ) {
@@ -730,13 +742,6 @@ const initScroll = () => {
   }
 };
 
-if ( document.querySelector('#waveform') !== null ) {
-  initAudio();
-}
-
-cursor.init();
-initPreloader();
-
 setTimeout(() => {
   splitText();
   initVideo(),
@@ -745,6 +750,4 @@ setTimeout(() => {
   initMenu();
   initContactModal();
   setTimeout(initScroll, 100);
-
-// $('.mejs__player').mediaelementplayer();
 }, 1000);

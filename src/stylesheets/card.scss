@@ -134,6 +134,10 @@
     transition: all 0.5s $easing;
     overflow: hidden;
     padding-top: 10px;
+    max-width: 231px;
+    @include phone {
+      max-width: none;
+    }
   }
 
   &__bottom {
@@ -143,7 +147,7 @@
     left: 0;
     padding: 0 19px 17px;
     transform: translate(0, calc(100% - 44px));
-    transition: transform 0.4s $easing;
+    transition: transform 0.6s $easing;
 
     @include phone {
       position: relative;

@@ -68,10 +68,12 @@
       font-weight: normal;
       font-size: 48px;
       line-height: 116%;
+      max-width: 94%;
 
       @include phone {
         font-size: 26px;
         line-height: 116%;
+        max-width: none;
       }
 
       p {
@@ -125,8 +127,9 @@
         transform-origin: 0 50%;
         transform: none;
         transition: transform 0.5s $easing, opacity 0.4s $easing;
+
         @for $i from 1 through 3 {
-          &:nth-child(#{$i}){
+          &:nth-child(#{$i}) {
               transition-delay: $i*0.06s;
           }
         }

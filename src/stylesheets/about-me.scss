@@ -10,7 +10,7 @@
   &__title {
     @include section-title;
 
-    // max-width: 82%;
+    max-width: 90%;
     margin-bottom: 0;
     line-height: 93%;
 
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: -20px auto 0;
+    margin: -40px auto 0;
 
     @include phone {
       margin-top: 0;
@@ -47,7 +47,7 @@
     padding-right: 80px;
     opacity: 0.0001;
     transform-origin: 0 100%;
-    transform: translate(0, +100px);
+    transform: translate(0, +50px);
     line-height: 126%;
 
     @include phone {
@@ -64,7 +64,7 @@
       line-height: 116%;
       opacity: 0;
       transform-origin: 0 100%;
-      transform: translate(0, +100px);
+      transform: translate(0, +50px);
 
       @include phone {
         opacity: 1;
@@ -82,7 +82,7 @@
   &__video {
     opacity: 0;
     transform-origin: 0 100%;
-    transform: translate(0, +100px);
+    transform: translate(0, +50px);
 
     @include phone {
       opacity: 1;
@@ -99,7 +99,7 @@
       margin-bottom: 15px;
       opacity: 0;
       transform-origin: 0 100%;
-      transform: translate(0, +100px);
+      transform: translate(0, +50px);
 
       @include phone {
         opacity: 1;

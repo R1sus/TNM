@@ -149,9 +149,9 @@ const videos = {
   ],
 };
 
-// Video loaders
+// audio loaders
 const audios = {
-  test: /\.(mp4|webm|wav)$/,
+  test: /\.wav$/,
   use: [
     {
       loader: 'file-loader',
