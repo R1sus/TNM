@@ -255,7 +255,7 @@ const initMobileMenu = () => {
 };
 
 const initContactModal = () => {
-  $('#contact-btn, #contact-btn-mob').on('click', (e) => {
+  $('#contact-btn, #contact-btn-mob, .contact-btn-f').on('click', (e) => {
     e.preventDefault();
     $('.contact').toggleClass('show');
   });
@@ -341,6 +341,7 @@ const animateIntro = () => {
     description,
     slider,
     pos,
+    photo,
     text,
     controls,
   } = DOM.intro;
@@ -361,7 +362,14 @@ const animateIntro = () => {
       duration: 1.2,
     },
     '-=1.5',
-  ).to(author,
+  ).to(photo,
+    {
+      ...animationConfig,
+    duration: 1.3,
+    },
+    '-=1.2'
+  )
+  .to(author,
     {
       ...animationConfig,
     duration: 1,
@@ -599,6 +607,7 @@ const animateAboutMe = () => {
 const animatePodcasts = () => {
   const DOM = getDOM();
   const {
+    titleWr,
     title,
     subT,
     text,
@@ -611,11 +620,14 @@ const animatePodcasts = () => {
 
   const tl = new TimelineLite();
   tl
+    .to(titleWr, {
+      ...animationConfig,
+      duration: 2,
+    })
     .to(title, {
       ...animationConfig,
       duration: 2,
-      stagger: .1
-    })
+    }, '-=2.1')
     .to(lineTop, {
       ...imgAnimationConfig,
       duration: 1,
@@ -624,7 +636,7 @@ const animatePodcasts = () => {
     .to(lineVer, {
       ...imgAnimationConfig,
       duration: 1,
-      height: '100vh',
+      height: '120vh',
     }, '-=1.5')
     .to(subT, {
       ...animationConfig,
@@ -675,7 +687,7 @@ const animatePagePodcasts = () => {
     ...imgAnimationConfig,
     duration: 1,
     delay: (pos) => pos * 0.06,
-    height: 'calc(100vh - 80px)',
+    height: '120vh',
   }, '-=1.5')
   .to(subTD, {
     ...animationConfig,

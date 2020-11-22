@@ -6,7 +6,7 @@
   height: 100vh;
   background-color: $secondary-color;
   transform: translateY(100%);
-  opacity: .3;
+  opacity: 0.001;
   transition: transform .55s $easing, opacity .55s $easing;
   z-index: 999;
   &.show {
@@ -16,6 +16,5 @@
 }
 .curtain-closed {
   transition: transform .55s $easing, opacity .55s $easing;
-  // transform: scale(0.9);
   opacity: .3;
 }

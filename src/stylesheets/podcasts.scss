@@ -12,14 +12,25 @@
   &__title {
     @include section-title;
 
-    &.sub {
+    opacity: 0;
+    position: relative;
+
+    .sub {
       span:last-child:not(.invisible-word) {
         @include title-sub;
       }
     }
 
+    .cool-link::after,
+    .cool-link::before {
+      height: 3px;
+      bottom: 15px;
+      max-width: 90%;
+      background-color: $secondary-color;
+    }
+
     @include phone {
-      // display: flex;
+      opacity: 1;
 
       sub {
         font-size: 12px;
@@ -151,7 +162,7 @@
       justify-content: space-between;
       align-items: flex-start;
       border-top: 1px solid rgba(24, 24, 24, 0.3);
-      padding: 12px 0 20px;
+      padding: 10px 0 24px;
       position: relative;
       opacity: 0.00001;
 
@@ -200,6 +211,7 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        line-height: 116%;
 
         @include phone {
           position: absolute;
@@ -273,7 +285,7 @@
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, +50px);

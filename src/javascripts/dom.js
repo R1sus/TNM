@@ -7,6 +7,7 @@ const getDOM = () => ({
     description: qsa('.intro .intro__description-quote'),
     author: qs('.intro__description-author'),
     pos: qs('.intro__description-position'),
+    photo: qs('.intro__description-photo'),
     slider: qs('.intro__slider'),
     controls: qs('.intro__slider-controls'),
     text: qs('.intro__description'),
@@ -58,6 +59,7 @@ const getDOM = () => ({
   },
   podcasts: {
     self: qs('.podcast'),
+    titleWr: qs('.podcast .podcast__title'),
     title: qsa('.podcast .podcast__title .invisible-word'),
     subT: qsa('.podcast__description-title .invisible-char'),
     desc: qsa('.podcast__description-subtitle'),

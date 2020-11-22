@@ -36,6 +36,7 @@
     position: relative;
     letter-spacing: -0.03em;
     opacity: 0.00001;
+    line-height: 126%;
 
     @include phone {
       opacity: 1;

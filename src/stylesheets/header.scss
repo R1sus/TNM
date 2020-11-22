@@ -2,10 +2,10 @@
   @include default-wrapper;
 
   padding-bottom: 0;
-  padding-top: 20px;
+  padding-top: 27px;
   position: relative;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 19px;
   text-transform: uppercase;
   z-index: 16;
 
@@ -26,7 +26,7 @@
     border-bottom: 1px solid $secondary-color;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
 
     .podcasts-page & {
       border-color: $text-color-light;
@@ -34,14 +34,14 @@
   }
 
   a {
-    padding: 10px 0;
+    // padding: 10px 0;
   }
 
   &__logo {
     max-width: 140px;
 
     img {
-      max-width: 140px;
+      max-width: 158px;
       height: auto;
     }
   }

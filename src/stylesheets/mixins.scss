@@ -66,8 +66,8 @@
     position: absolute;
     display: inline-block;
     left: 0;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     background-color: $secondary-color;
     top: calc(50% - 6px);
@@ -75,7 +75,7 @@
 }
 
 @mixin title-sub {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 110.4%;
   letter-spacing: -0.03em;
   position: relative;

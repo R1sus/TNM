@@ -10,7 +10,7 @@
   align-items: center;
   opacity: 0;
   color: $secondary-color;
-  z-index: 17;
+  z-index: 23;
   pointer-events: none;
   transition: opacity 700ms ease-in-out;
 
@@ -56,7 +56,7 @@
     justify-content: center;
     align-items: center;
 
-    &:after {
+    &::after {
       content: '';
       background-color: $primary-color;
       width: 100%;
@@ -64,18 +64,15 @@
       z-index: 1;
       border-radius: 50%;
       position: absolute;
-      transform: scale(0.1);
+      transform: scale(0);
       transform-origin: 50% 50%;
+      transition: background-color 0.35s ease, transform 0.35s cubic-bezier(0.3, 0.86, 0.36, 0.95);
     }
 
     &:hover {
-      background-color: $secondary-color;
-      transition: background-color 0.4s ease;
-
       &::after {
         transform: scale(1);
         background-color: $secondary-color;
-        transition: transform .35s cubic-bezier(.3,.86,.36,.95);
       }
 
       .close-btn::after,

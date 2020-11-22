@@ -6,6 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <style>
+    /* critical css, keep it here */
+    .curtain {
+        top: 0;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: $secondary-color;
+        transform: translateY(100%);
+        opacity: 0.001;
+        transition: transform .55s $easing, opacity .55s $easing;
+        z-index: 999;
+    }
+    .curtain.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .curtain-closed {
+        transition: transform .55s $easing, opacity .55s $easing;
+        opacity: .3;
+    }
+  </style>
 </head>
 <body>
 
@@ -36,10 +59,10 @@
         </div>
         <nav class="mobile-hide">
             <ul class="header__navigation">
-                <li class="header__navigation-item"><a href="about.html" data-page-link data-cursor-class="hover-link">About</a></li>
-                <li class="header__navigation-item"><a href="index.html#projects" data-page-link data-cursor-class="hover-link">Projects</a></li>
-                <li class="header__navigation-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
-                <li class="header__navigation-item"><a href="podcasts.html" data-page-link data-cursor-class="hover-link">Podcast</a></li>
+              <li class="header__navigation-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
+              <li class="header__navigation-item"><a href="index.html#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
+              <li class="header__navigation-item"><a href="about.html" data-page-link data-cursor-class="hover-link">About</a></li>
+              <li class="header__navigation-item"><a href="podcasts.html" data-page-link data-cursor-class="hover-link">Podcast</a></li>
             </ul>
         </nav>
         <div>
@@ -59,10 +82,10 @@
                 </div>
                 <div class="mobile-nav__menu">
                     <ul class="mobile-nav__navigation">
-                        <li class="mobile-nav__navigation-item"><a href="about.html">About</a></li>
-                        <li class="mobile-nav__navigation-item"><a href="">Projects</a></li>
                         <li class="mobile-nav__navigation-item"><a href="manifesto.html">Manifesto</a></li>
-                        <li class="mobile-nav__navigation-item"><a href="">Podcast</a></li>
+                        <li class="mobile-nav__navigation-item"><a href="index.html#projects" data-scroll-to>Projects</a></li>
+                        <li class="mobile-nav__navigation-item"><a href="about.html">About</a></li>
+                        <li class="mobile-nav__navigation-item"><a href="podcasts.html">Podcast</a></li>
                     </ul>
                     <a id="contact-btn-mob"class="mobile-nav__navigation-item contact-link-mob" href="">Contact</a>
                 </div>
@@ -165,10 +188,11 @@
                     <div class="footer__menu-links">
                         <h6 class="footer__title">Links</h6>
                         <ul class="footer__menu-nav">
-                            <li class="footer__menu-nav-item"><a href="about" data-page-link data-cursor-class="hover-link">About</a></li>
-                            <li class="footer__menu-nav-item"><a href="index.html#projects" data-page-link data-cursor-class="hover-link">Projects</a></li>
-                            <li class="footer__menu-nav-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
-                            <li class="footer__menu-nav-item"><a href="" data-cursor-class="hover-link">Contact</a></li>
+                          <li class="footer__menu-nav-item"><a href="manifesto.html" data-page-link data-cursor-class="hover-link">Manifesto</a></li>
+                          <li class="footer__menu-nav-item"><a href="index.html#projects" data-scroll-to data-cursor-class="hover-link">Projects</a></li>
+                          <li class="footer__menu-nav-item"><a href="about.html" data-page-link data-cursor-class="hover-link">About</a></li>
+                          <li class="footer__menu-nav-item"><a href="podcasts.html" data-scroll-to data-cursor-class="hover-link">Podcast</a></li>
+                          <li class="footer__menu-nav-item"><a href="" class="contact-btn-f" data-cursor-class="hover-link">Contact</a></li>
                         </ul>
                         <div class="footer__menu-copyright mobile-hide">All ©Rights to the The New Movement</div>
                     </div>
@@ -180,11 +204,11 @@
                             I will get back to you within 24 hours.
                         </div>
                         <form class="footer__contact-form">
-                            <label for="email">Email</label>
-                            <input class="input-email" id="email" type="email" placeholder="Your email">
-                            <button data-content="Send" class="btn" type="submit" data-cursor-class="hover-link">
-                                <span class="btn__text">Send</span>
-                            </button>
+                            <!-- <label for="email">Email</label>
+                            <input class="input-email" id="email" type="email" placeholder="Your email"> -->
+                            <button data-content="Get in touch" class="btn contact-btn-f" type="submit" data-cursor-class="hover-link">
+                              <span class="btn__text">Get in touch</span>
+                          </button>
                         </form>
                     </div>
                     <div class="footer__follow">
@@ -207,6 +231,6 @@
     </div>
   </section>
 </div>
-<div class="curtain"></div>
+<div class="curtain show"></div>
 </body>
 </html>

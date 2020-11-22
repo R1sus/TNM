@@ -1,8 +1,15 @@
 .col {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   flex-grow: 1;
   max-width: 25%;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 
   @include phone {
     max-width: 90%;

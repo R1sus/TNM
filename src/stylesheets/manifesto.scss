@@ -35,8 +35,8 @@
 
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 19px;
     float: left;
     min-width: 35%;
     opacity: 0;
@@ -105,10 +105,10 @@
   }
 
   &__article {
-    font-size: 14px;
-    line-height: 126%;
+    font-size: 16px;
+    line-height: 19px;
     display: flex;
-    padding-top: 29px;
+    padding-top: 10px;
 
     @include phone {
       padding-top: 20px;
@@ -116,7 +116,7 @@
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, +50px);
@@ -178,7 +178,8 @@
     &-title {
       font-size: 24px;
       line-height: 116%;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      padding-top: 10px;
       font-style: normal;
       font-weight: normal;
       opacity: 0;

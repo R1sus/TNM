@@ -8,7 +8,7 @@
   &__title {
     @include inner-title;
 
-    margin-bottom: 130px;
+    margin-bottom: 122px;
     margin-top: 16px;
     opacity: 0;
     transform-origin: 0 100%;
@@ -23,6 +23,33 @@
 
     @include phone {
       margin-bottom: 50px;
+    }
+  }
+
+  &__photo {
+    background: $secondary-color;
+    padding: 117px;
+    margin-right: 22px;
+
+    // img {
+    opacity: 0;
+    transform-origin: 0 100%;
+    transform: translate(0, +50px);
+    transition: transform 0.8s $easing, opacity 0.7s $easing;
+    transition-delay: 0.2s;
+
+    &.is-inview {
+      opacity: 1;
+      transform-origin: 0 50%;
+      transform: none;
+    }
+    // }
+
+    @include phone {
+      padding: 27px;
+      margin-right: 0;
+      margin-bottom: 20px;
+      max-width: 145px;
     }
   }
 
@@ -93,8 +120,8 @@
 
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 16px;
+      line-height: 19px;
       float: left;
       min-width: 34%;
       opacity: 0;
@@ -122,6 +149,7 @@
         font-size: 48px;
         line-height: 116%;
         margin-bottom: 40px;
+        max-width: 88%;
         opacity: 0;
         transform-origin: 0 100%;
         transform: translate(0, +50px);
@@ -142,6 +170,7 @@
         @include phone {
           font-size: 26px;
           line-height: 116%;
+          max-width: none;
         }
       }
     }
@@ -152,11 +181,18 @@
   &__section {
     padding: 20px 0;
     width: 100%;
+    display: flex;
+
+    @include phone {
+      flex-direction: column;
+      padding-top: 0;
+    }
   }
 
   &__wrapper {
-    max-width: 66%;
-    margin-left: auto;
+    flex: 1;
+    // max-width: 66%;
+    // margin-left: auto;
 
     @include phone {
       max-width: none;

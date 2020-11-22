@@ -1,11 +1,13 @@
 .about {
   @include default-wrapper;
 
-  height: 100vh;
+  // height: 100vh;
   background-color: $secondary-color;
   color: $text-color-light;
   display: flex;
-  align-items: center;
+  // align-items: center;
+  padding-top: 148px;
+  padding-bottom: 148px;
   justify-content: center;
 
   @include phone {
@@ -102,11 +104,8 @@
   &__subtitle {
     @include title-decor;
 
-    // text-transform: uppercase;
     font-weight: normal;
-    font-size: 14px;
-    // display: flex;
-    // align-items: center;
+    font-size: 16px;
     margin-bottom: 23px;
     opacity: 0;
     transform-origin: 0 100%;
