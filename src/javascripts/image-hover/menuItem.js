@@ -139,7 +139,7 @@ export default class MenuItem {
 
     this.tl = gsap.timeline({
       onStart: () => {
-        gsap.set(this.DOM.el, { zIndex: 1 });
+        gsap.set(this.DOM.el, { zIndex: 5 });
       },
       onComplete: () => {
         gsap.set(this.DOM.reveal, { opacity: 0 });

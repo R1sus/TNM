@@ -93,7 +93,7 @@
       font-size: 24px;
       max-width: 250px;
       margin-bottom: 40px;
-      line-height: 116%;
+      line-height: 117%;
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, 100px);
@@ -124,6 +124,7 @@
     }
 
     &-position {
+      margin-bottom: -3px;
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, 100px);

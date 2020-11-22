@@ -58,7 +58,7 @@
 
 @mixin title-decor {
   position: relative;
-  padding-left: 15px;
+  padding-left: 19px;
   text-transform: uppercase;
 
   &::before {
@@ -70,7 +70,7 @@
     height: 11px;
     border-radius: 50%;
     background-color: $secondary-color;
-    top: calc(50% - 6px);
+    top: calc(50% - 6.5px);
   }
 }
 
@@ -80,7 +80,7 @@
   letter-spacing: -0.03em;
   position: relative;
   vertical-align: top;
-  left: -12px;
+  left: -9px;
   top: 11px;
 
   @include phone {
