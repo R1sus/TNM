@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>The New Movement</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<style>
-    /* critical css, keep it here */
-    .curtain {
-        top: 0;
-        bottom: 0;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background-color: $secondary-color;
-        transform: translateY(100%);
-        opacity: 0.001;
-        transition: transform .55s $easing, opacity .55s $easing;
-        z-index: 999;
-    }
-    .curtain.show {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    .curtain-closed {
-        transition: transform .55s $easing, opacity .55s $easing;
-        opacity: .3;
-    }
-</style>
+    <head>
+        <meta charset="utf-8">
+        <title>The New Movement</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <style>
+  /* critical css, keep it here */
+  .curtain {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #181818;
+    transform: translateY(100%);
+    opacity: 0.001;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0, 1), opacity 0.55s cubic-bezier(0.4, 0, 0, 1);
+    z-index: 999;
+  }
+
+  .curtain.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .curtain-closed {
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0, 1), opacity 0.55s cubic-bezier(0.4, 0, 0, 1);
+    opacity: 0.3;
+  }
+    </style>
 </head>
 <body class="podcasts-page">
 
