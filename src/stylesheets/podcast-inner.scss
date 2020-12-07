@@ -278,6 +278,10 @@
     }
   }
 
+  &-current {
+    margin-right: 10px;
+  }
+
   &__controls {
     display: flex;
     align-items: center;

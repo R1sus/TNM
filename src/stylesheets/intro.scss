@@ -132,6 +132,7 @@
       opacity: 0;
       transform-origin: 0 100%;
       transform: translate(0, 100px);
+      margin-bottom: 4px;
 
       @include phone {
         opacity: 1;
