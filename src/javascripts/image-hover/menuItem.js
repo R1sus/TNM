@@ -10,7 +10,7 @@ function importAll(r) {
   r.keys().forEach((key) => { imagesMap[key] = r(key); });
 }
 
-importAll(require.context('../../images/podcasts/', true, /\.png$/));
+importAll(require.context('../../images/podcasts/', true, /\.jpg$/));
 
 const images = Object.entries(imagesMap);
 
@@ -27,9 +27,11 @@ window.addEventListener('mousemove', (ev) => {
 });
 
 export default class MenuItem {
-  constructor(el, inMenuPosition, animatableProperties) {
+  constructor(el, inMenuPosition, animatableProperties, season) {
     // el is the <a> with class "menu__item"
     this.DOM = { el };
+    // filter images from folder
+    this.images = images.filter(i => i[0].includes(season));
     // position in the Menu
     this.inMenuPosition = inMenuPosition;
     // menu item properties that will animate as we move the mouse around the menu
@@ -61,7 +63,7 @@ export default class MenuItem {
     this.DOM.revealInner.className = 'hover-reveal__inner';
     this.DOM.revealImage = document.createElement('div');
     this.DOM.revealImage.className = 'hover-reveal__img';
-    this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
+    this.DOM.revealImage.style.backgroundImage = `url(${this.images[this.inMenuPosition][1]})`;
 
     this.DOM.revealInner.appendChild(this.DOM.revealImage);
     this.DOM.reveal.appendChild(this.DOM.revealInner);

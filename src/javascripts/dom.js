@@ -56,6 +56,7 @@ const getDOM = () => ({
     text: qs('.about-me__text'),
     video: qs('.about-me__video'),
     videoTitle: qs('.about-me__video-title'),
+    link: qs('.about-me__video-link'),
   },
   podcasts: {
     self: qs('.podcast'),

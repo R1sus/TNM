@@ -5,6 +5,7 @@ export default class Menu {
   constructor(el) {
     // el is the menu element (<nav>)
     this.DOM = { el };
+    this.season = el.dataset.season;
     // the menu item elements (<a>)
     this.DOM.menuItems = this.DOM.el.querySelectorAll('.item');
     // menu item properties that will animate as we move the mouse around the menu
@@ -26,7 +27,7 @@ export default class Menu {
     this.menuItems = [];
     // initialize the MenuItems
     [...this.DOM.menuItems].forEach((item, pos) => this.menuItems.push(
-      new MenuItem(item, pos, this.animatableProperties),
+      new MenuItem(item, pos, this.animatableProperties, this.season),
     ));
     // show the menu items (initial animation where each menu item gets revealed)
     // this.showMenuItems();

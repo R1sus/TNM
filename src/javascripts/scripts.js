@@ -126,25 +126,7 @@ const initCarousel = () => {
 
   const photoSlider = new Swiper('.photo-slider', sliderOptions);
 
-  const projectModalSlider1 = new Swiper('.project-modal__slider', {
-    ...sliderOptions,
-    navigation: {
-      nextEl: '.project-modal__slider-controls-btn.next',
-      prevEl: '.project-modal__slider-controls-btn.prev',
-    },
-    pagination: {
-      el: '.project-modal__slider-num',
-      type: 'custom',
-      renderCustom: function (swiper, current, total) {
-        const fill = $('.project-modal__slider').find('.fill');
-        const width = (current * 100) / total;
-        $(fill).css('width', `${width}%`);
-        return '0'+ current + ' / ' + '0' + total;
-      },
-    },
-  });
-
-  const projectModalSlider2 = new Swiper('.project-modal__slider1', {
+  const projectModalSlider1 = new Swiper('.project-modal__slider1', {
     ...sliderOptions,
     navigation: {
       nextEl: '.project-modal__slider-controls-btn.next',
@@ -155,6 +137,46 @@ const initCarousel = () => {
       type: 'custom',
       renderCustom: function (swiper, current, total) {
         const fill = $('.project-modal__slider1').find('.fill');
+        const width = (current * 100) / total;
+        $(fill).css('width', `${width}%`);
+        return '0'+ current + ' / ' + '0' + total;
+      },
+    },
+  });
+
+  const projectModalSlider2 = new Swiper('.project-modal__slider2', {
+    ...sliderOptions,
+    navigation: {
+      nextEl: '.project-modal__slider-controls-btn.next',
+      prevEl: '.project-modal__slider-controls-btn.prev',
+    },
+    pagination: {
+      el: '.project-modal__slider-num2',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+        const fill = $('.project-modal__slider2').find('.fill');
+        const width = (current * 100) / total;
+        $(fill).css('width', `${width}%`);
+        if (current < 10) {
+          return '0'+ current + ' / ' + total;
+        } else {
+          return current + ' / ' + total;
+        }
+      },
+    },
+  });
+
+  const projectModalSlider3 = new Swiper('.project-modal__slider3', {
+    ...sliderOptions,
+    navigation: {
+      nextEl: '.project-modal__slider-controls-btn.next',
+      prevEl: '.project-modal__slider-controls-btn.prev',
+    },
+    pagination: {
+      el: '.project-modal__slider-num3',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+        const fill = $('.project-modal__slider3').find('.fill');
         const width = (current * 100) / total;
         $(fill).css('width', `${width}%`);
         return '0'+ current + ' / ' + '0' + total;
@@ -575,6 +597,7 @@ const animateAboutMe = () => {
     text,
     video,
     videoTitle,
+    link,
   } = DOM.aboutMe;
   const tl = new TimelineLite();
   tl
@@ -602,6 +625,11 @@ const animateAboutMe = () => {
       duration: 1.5,
       ease: 'Power3.easeOut',
     }, '-=1.3')
+    .to(link, {
+      ...animationConfig,
+      ease: 'Power3.easeOut',
+      duration: 1.5,
+    }, '-=1');
 };
 
 const animatePodcasts = () => {
