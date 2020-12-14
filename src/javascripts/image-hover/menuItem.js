@@ -10,7 +10,7 @@ function importAll(r) {
   r.keys().forEach((key) => { imagesMap[key] = r(key); });
 }
 
-importAll(require.context('../../images/podcasts/', true, /\.jpg$/));
+importAll(require.context('../../images/podcasts/', true, /\.png$/));
 
 const images = Object.entries(imagesMap);
 
