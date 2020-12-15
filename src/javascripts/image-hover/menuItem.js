@@ -32,6 +32,13 @@ export default class MenuItem {
     this.DOM = { el };
     // filter images from folder
     this.images = images.filter(i => i[0].includes(season));
+
+    // workaround string sort in images map
+    if (this.images.length > 9) {
+      const item = this.images[1];
+      this.images.splice(1, 1);
+      this.images.push(item);
+    }
     // position in the Menu
     this.inMenuPosition = inMenuPosition;
     // menu item properties that will animate as we move the mouse around the menu
