@@ -258,4 +258,8 @@
 
 html:not(.has-scroll-smooth) .c-fixed {
   top: 0;
+
+  @include phone {
+    position: relative;
+  }
 }

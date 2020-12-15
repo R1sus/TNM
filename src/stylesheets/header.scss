@@ -10,7 +10,7 @@
   z-index: 16;
 
   @include phone {
-    padding: 15px;
+    padding: 24px 15px 15px;
   }
 
   nav {
@@ -31,10 +31,6 @@
     .podcasts-page & {
       border-color: $text-color-light;
     }
-  }
-
-  a {
-    // padding: 10px 0;
   }
 
   &__logo {

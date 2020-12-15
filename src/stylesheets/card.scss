@@ -15,7 +15,17 @@
     line-height: 90%;
 
     span:nth-child(4) {
-      @media (max-width: $desktop-width+10) {
+      @media (min-width: $desktop-width - 100) and (max-width: $desktop-width+10) {
+        margin-left: -19px;
+      }
+
+      @include phone {
+        margin-left: 0;
+      }
+    }
+
+    span:nth-child(5) {
+      @media (min-width: $tablet-landscape-width) and (max-width: $desktop-width - 100) {
         margin-left: -19px;
       }
 
@@ -43,14 +53,14 @@
     flex-direction: column;
     justify-content: flex-start;
     line-height: 126%;
-    max-width: 405px;
-    padding-left: 100px;
+    max-width: 338px;
+    margin-left: 100px;
     opacity: 0;
     transform-origin: 0 100%;
     transform: translate(0, +100px);
 
     @include phone {
-      padding-left: 0;
+      margin-left: 0;
       opacity: 1;
       transform-origin: 0 50%;
       transform: none;
@@ -135,7 +145,8 @@
     transition: all 0.5s $easing;
     overflow: hidden;
     padding-top: 10px;
-    max-width: 231px;
+    max-width: 281px;
+
     @include phone {
       max-width: none;
     }

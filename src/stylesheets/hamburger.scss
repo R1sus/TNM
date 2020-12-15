@@ -12,6 +12,12 @@
   overflow: visible;
   outline: none !important;
   z-index: 3;
+
+  &.is-active {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+  }
 }
 
 .hamburger:hover {

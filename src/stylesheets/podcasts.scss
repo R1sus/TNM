@@ -31,6 +31,10 @@
       bottom: 15px;
       max-width: 90%;
       background-color: $secondary-color;
+
+      @include phone {
+        bottom: 0;
+      }
     }
 
     @include phone {
@@ -219,7 +223,7 @@
 
         @include phone {
           position: absolute;
-          top: 40px;
+          top: 60px;
           flex-direction: row;
         }
       }

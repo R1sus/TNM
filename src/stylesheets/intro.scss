@@ -61,6 +61,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: flex-end;
 
     @include phone {
       flex-flow: column-reverse;
@@ -223,6 +224,7 @@
       position: relative;
       overflow: hidden;
       max-height: 456px;
+      margin-bottom: -3px;
     }
   }
 

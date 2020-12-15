@@ -27,7 +27,7 @@
 
   &__container {
     width: 55%;
-    max-width: 740px;
+    max-width: 864px;
     background-color: $primary-color;
     padding: 30px;
     position: relative;
@@ -84,7 +84,6 @@
     &-pagination {
       position: relative;
     }
-
   }
 
   &__slider-controls {
@@ -95,7 +94,8 @@
   }
 
   &__col {
-    min-width: 30%;
+    min-width: 46%;
+    max-width: 450px;
 
     @include phone {
       margin-bottom: 20px;
@@ -116,7 +116,7 @@
 
     p {
       margin-bottom: 18px;
-      padding-left: 80px;
+      padding-left: 40px;
 
       @include phone {
         padding-left: 0;
@@ -125,8 +125,8 @@
   }
 
   &__info {
-    margin-bottom: 30px;
-    padding-left: 80px;
+    margin-top: 16px;
+    // padding-left: 80px;
 
     @include phone {
       padding-left: 0;

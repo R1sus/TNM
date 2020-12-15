@@ -11,7 +11,7 @@
     @include section-title;
 
     width: 92%;
-    max-width: 1300px;
+    max-width: 1271px;
     margin-bottom: 0;
     line-height: 93%;
     letter-spacing: -0.02em;
@@ -40,9 +40,14 @@
     margin-top: -40px;
     margin-left: 34vw;
 
+    @media (max-width: 1270px) {
+      margin-top: 0;
+    }
+
     @include phone {
       margin-top: 0;
       max-width: none;
+      margin-left: 0;
     }
   }
 
