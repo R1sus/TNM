@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>The New Movement</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZNH9Q8EM9"></script>
+   <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'G-8ZNH9Q8EM9');
+   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <style>
   /* critical css, keep it here */
@@ -178,7 +187,7 @@
                             Unless I’m deep in the Amazones,
                             I will get back to you within 24 hours.
                         </div>
-                        <form class="footer__contact-form">
+                        <form class="footer__contact-form" action="mailto:nadyabal@gmail.com" method="POST">
                             <label for="email">Email</label>
                             <input class="input-email" id="email" type="email" placeholder="Your email">
                             <button data-content="Get in touch" class="btn contact-btn-f" type="submit" data-cursor-class="hover-link">
