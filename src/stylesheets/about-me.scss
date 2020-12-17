@@ -137,12 +137,13 @@
     }
 
     &-wrap {
-      height: 200px;
+      height: 321px;
       position: relative;
       width: 100%;
       margin-bottom: 17px;
 
       @include phone {
+        height: 200px;
         overflow: hidden;
         display: flex;
         justify-content: center;
