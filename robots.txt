@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://example.com/sitemap.xml
-Host: example.com
+Sitemap: http://thenewmvt.com//sitemap.xml
+Host: thenewmvt.com
