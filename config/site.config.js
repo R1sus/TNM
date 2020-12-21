@@ -9,13 +9,13 @@ if (!ROOT) {
 
 const config = {
   // Your website's name, used for favicon meta tags
-  site_name: 'Static Site Boilerplate',
+  site_name: 'The New Movement',
 
   // Your website's description, used for favicon meta tags
-  site_description: 'A modern boilerplate for static website development',
+  site_description: 'The New Movement is a new school of architecture born in an endless journey to define the structure as a sanctum for the soul.',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://example.com',
+  site_url: 'http://thenewmvt.com/',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',

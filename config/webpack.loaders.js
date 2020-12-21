@@ -10,6 +10,9 @@ const html = {
   use: [
     {
       loader: 'html-loader',
+      options: {
+        minimize: false,
+      },
     },
   ],
 };
